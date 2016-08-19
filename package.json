@@ -1,0 +1,25 @@
+{
+  "name": "resume.github.io",
+  "version": "1.0.0",
+  "description": "my resumes",
+  "main": "index.html",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cn27529/resume.github.io.git"
+  },
+  "keywords": [
+    "resume"
+  ],
+  "author": "cn27529",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cn27529/resume.github.io/issues"
+  },
+  "homepage": "https://github.com/cn27529/resume.github.io#readme",
+  "devDependencies": {
+    "live-server": "^1.1.0"
+  }
+}

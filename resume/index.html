@@ -1,29 +1,110 @@
+<!--http://bootsnipp.com/tags/profile?page=1
+http://bootsnipp.com/snippets/featured/people-card-with-tabs
+-->
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>201608</title>
+    <title>reaume</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-    <style>
-    .list-group-item{
-        float: left;
-        margin: 10px;
-        font-size: 16px;
-    }
-    </style>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script>
+
+        var profile_data = {
+            'title': '海賊王 索隆',
+            'image_urls': ['https://avatars0.githubusercontent.com/u/7908182?v=3&s=460',
+                'http://mepopedia.com/~web104-2b/hw07/hw07-1035445017/76.jpg',
+                'http://thumbsnap.com/i/aErwoDm8.jpg',
+                'http://i.imgur.com/dFgHmw0.jpg',
+                'http://www.chinesecio.com/upload/photo/20140210021636557.jpg',
+                'http://www.getjoys.net/sharingSub/gj1308938318867216551841.jpg'
+            ],
+        };
+
+        $(document).ready(function() {
+
+            $(".btn-pref .btn").click(function() {
+                $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
+                // $(".tab").addClass("active"); // instead of this do the below
+                $(this).removeClass("btn-default").addClass("btn-primary");
+            });
+
+            var pf_img = profile_data.image_urls[5];
+            var pf_title = profile_data.title;
+            $('.card-bkimg').attr('src', pf_img);
+            $('.useravatar img ').attr('src', pf_img);
+            $('.card-title').html(pf_title);
+
+        });
+    </script>
 
 </head>
 
 <body>
     <div class="container">
         <!-- Content here -->
-        <h1>456</h1>
-    <div>
+
+        <div class="card hovercard">
+            <div class="card-background">
+                <img class="card-bkimg" alt="">
+                <!-- http://lorempixel.com/850/280/people/9/ -->
+            </div>
+            <div class="useravatar">
+                <img alt="">
+            </div>
+            <div class="card-info">
+                <span class="card-title">Bruce Huang 黃耀進</span>
+            </div>
+        </div>
+
+        <!--tab area-->
+        <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+            <div class="btn-group" role="group">
+                <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    <div class="hidden-xs">Stars</div>
+                </button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                    <div class="hidden-xs">Favorites</div>
+                </button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    <div class="hidden-xs">Following</div>
+                </button>
+            </div>
+        </div>
+
+        <div class="well">
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="tab1">
+                    <h3>This is tab 1</h3>
+                </div>
+                <div class="tab-pane fade in" id="tab2">
+                    <h3>This is tab 2</h3>
+                </div>
+                <div class="tab-pane fade in" id="tab3">
+                    <h3>This is tab 3</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-sm-6">
+
+
+        </div>
+
+
+
+
+        <div>
 </body>
 
 </html>

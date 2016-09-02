@@ -12,6 +12,8 @@ http://bootsnipp.com/snippets/featured/people-card-with-tabs
     <link rel="stylesheet" href="./bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="./bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <script src="./js/wow.js"></script>
 
     <style>
         @font-face {
@@ -33,9 +35,14 @@ http://bootsnipp.com/snippets/featured/people-card-with-tabs
             border-top-left-radius: 0px;
             box-sizing: border-box;
         }
+        .useravatar{
+          z-index: 9999;
+        }
     </style>
 
     <script>
+        new WOW().init();
+
         var profile_data = {
             'title': '海賊王 索隆',
             'image_urls': ['https://avatars0.githubusercontent.com/u/7908182?v=3&s=460',
@@ -61,6 +68,17 @@ http://bootsnipp.com/snippets/featured/people-card-with-tabs
             $('.useravatar img').attr('src', pf_img);
             $('.card-title').html(pf_title);
 
+
+            $('button[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+                var target = $(e.target).attr("href");
+                console.log(target);
+                //alert(target);
+                //wow fadeInUpBig tab-pane fade in active
+                //$(target).removeClass("tab-pane fade in active").addClass("wow fadeInUpBig tab-pane fade in active");
+            });
+
+
+
         });
     </script>
 
@@ -68,13 +86,12 @@ http://bootsnipp.com/snippets/featured/people-card-with-tabs
 
 <body>
 
-
     <div class="card hovercard">
         <div class="card-background">
             <img class="card-bkimg" alt="">
             <!-- http://lorempixel.com/850/280/people/9/ -->
         </div>
-        <div class="useravatar">
+        <div class="wow zoomIn useravatar">
             <img alt="">
         </div>
         <div class="card-info">
@@ -95,7 +112,7 @@ http://bootsnipp.com/snippets/featured/people-card-with-tabs
             </button>
         </div>
         <div class="btn-group" role="group">
-            <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                 <div class="hidden-xs">Following</div>
             </button>
         </div>

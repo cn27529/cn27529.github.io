@@ -58,7 +58,7 @@ http://bootsnipp.com/snippets/featured/people-card-with-tabs
             var pf_img = profile_data.image_urls[5];
             var pf_title = profile_data.title;
             $('.card-bkimg').attr('src', pf_img);
-            $('.useravatar img ').attr('src', pf_img);
+            $('.useravatar img').attr('src', pf_img);
             $('.card-title').html(pf_title);
 
         });
@@ -67,6 +67,7 @@ http://bootsnipp.com/snippets/featured/people-card-with-tabs
 </head>
 
 <body>
+
 
     <div class="card hovercard">
         <div class="card-background">
@@ -84,8 +85,8 @@ http://bootsnipp.com/snippets/featured/people-card-with-tabs
     <!--tab area-->
     <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
         <div class="btn-group" role="group">
-            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <div class="hidden-xs">Stars</div>
+            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                <div class="hidden-xs">我</div>
             </button>
         </div>
         <div class="btn-group" role="group">

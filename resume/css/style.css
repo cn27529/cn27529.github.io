@@ -19,7 +19,7 @@
     padding-top: 0;
     overflow: hidden;
     text-align: center;
-    background-color: #fff;
+    background-color: #ffffff;
     background-color: rgba(255, 255, 255, 1);
 }
 .card.hovercard .card-background {
@@ -62,7 +62,7 @@
     font-size: 20px;
     line-height: 1;
     color: #262626;
-    
+
     background-color: rgba(255, 255, 255, 0.1);
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;

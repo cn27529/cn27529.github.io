@@ -35,13 +35,22 @@ http://bootsnipp.com/snippets/featured/people-card-with-tabs
             border-top-left-radius: 0px;
             box-sizing: border-box;
         }
-        .useravatar{
-          z-index: 9999;
+
+        .useravatar {
+            z-index: 9999;
         }
     </style>
 
     <script>
-        new WOW().init();
+    
+        var wow = new WOW({
+            boxClass: 'wow',
+            animateClass: 'animated',
+            offset: 0,
+            mobile: true,
+            live: true
+        });
+        wow.init();
 
         var profile_data = {
             'title': '海賊王 索隆',

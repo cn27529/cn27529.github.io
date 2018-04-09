@@ -1,0 +1,1 @@
+function setPageName(o){var e="Hi My page name is "+o;console.log(e)}console.log("Hello World!!!");

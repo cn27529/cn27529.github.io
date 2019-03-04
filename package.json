@@ -1,5 +1,5 @@
 {
-  "name": "resume.github.io",
+  "name": "cn27529.github.io",
   "version": "1.0.0",
   "description": "my resumes",
   "main": "index.html",
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/cn27529/resume.github.io.git"
   },
   "keywords": [
-    "resume"
+    "resume", "blog","luopan"
   ],
   "author": "cn27529",
   "license": "ISC",

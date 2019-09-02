@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="oxxo.studio">
+    <meta name="copyright" content="oxxo.studio">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <title>CSS繪製圓圖</title>
+    <link rel="stylesheet" href="./css/pei.css">
+    <script>
+        $(function () {
+            resize_svg_pei();
+
+            window.onresize = function (event) {
+                resize_svg_pei();
+            }
+
+        });
+
+        function resize_svg_pei() {
+            var mysvg = 'tensvg'; //十字向量圖
+            var wline = 'wline'; //橫線
+            var hline = 'hline'; //直線            
+
+            var w_win = $(window).width();
+            var h_win = $(window).height();
+
+            var w_svg = w_win - 12; //設寬
+            var h_svg = h_win - 12; //設高
+
+            var line_style = 'stroke:#FF3366;stroke-width:1'; //線樣式
+
+            $('#' + mysvg).attr('width', w_svg + 'px').attr('height', h_svg + 'px'); //設定十字向量圖寛高
+
+            //設css檔無效---------
+            $('#' + mysvg).attr('style', 'position: absolute; z-index: 9999;'); //十字向量圖在最上層
+
+            $('#' + wline).attr({
+                style: line_style,
+                x1: "0",
+                y1: "50%",
+                x2: "100%",
+                y2: "50%",
+            });
+
+            $('#' + hline).attr({
+                style: line_style,
+                x1: "50%",
+                y1: "0",
+                x2: "50%",
+                y2: "100%",
+            });
+            //設css檔無效---------
+
+
+            //所有圓圖層置中
+            $('div').each(function () {
+                var id = $(this).attr('id');
+                position_left_on_center(id, w_win);
+                position_top_on_center(id, h_win);
+            });
+
+        }
+
+        function position_left_on_center(id, win_width) {
+            var w = $('#' + id).width() / 2;
+            var left = (win_width / 2) - w + 'px';
+            $('#' + id).css("left", left.toString()); //圖層水平置中
+        }
+
+        function position_top_on_center(id, win_height) {
+            var h = $('#' + id).height() / 2;
+            var left = (win_height / 2) - h + 'px';
+            $('#' + id).css("top", left.toString()); //圖層垂直置中
+        }
+    </script>
+</head>
+
+<body>
+    <div id="pei001" class="pie">第一層
+    </div>
+    <div id="pei002" class="no-pie">正方形
+    </div>
+    <div id="pei003" class="bottom-pie">轉270度</div>
+    <svg id="tensvg">
+        <!--橫線-->
+        <line id="wline" />
+        <!--直線-->
+        <line id="hline" />
+    </svg>
+</body>
+
+</html>

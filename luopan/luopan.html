@@ -6,17 +6,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/luopan.css">
-    <script src="./scripts/luopan.js"></script>
+    <script src="./js/luopan.js"></script>
 
     <script>
-        $(function () {
+        $(function() {
 
             tenline.reset_tenline();
             //luopan.set_src();
             luopan.reset_luopan();
 
             //luopan.set_transform(0.035); //修正刻度起始位置
-            window.onresize = function (event) {
+            window.onresize = function(event) {
                 tenline.reset_tenline();
                 //luopan.set_src();
                 luopan.reset_luopan();
@@ -69,7 +69,7 @@
             this.deg_number = 0;
             //alert('new LuoPan');
 
-            this.set_transform = function (number) {
+            this.set_transform = function(number) {
 
                 var deg = 'rotate(' + number + 'deg)';
                 document.querySelector('#' + this.element_id).style.transform = deg;
@@ -77,22 +77,22 @@
                 this.deg_number = number;
             }
 
-            this.element = function () {
+            this.element = function() {
                 return document.querySelector('#' + this.element_id);
             }
 
-            this.set_src = function () {
+            this.set_src = function() {
 
                 //var luopan = document.querySelector('#' + this.element_id);
                 //luopan.src = this.src;
 
             }
 
-            this.reset_luopan = function () {
+            this.reset_luopan = function() {
 
                 var luopan = document.querySelector('#' + this.element_id);
                 luopan.src = this.src;
-                
+
                 //var qq = $('#' + this.element_id);
                 //alert(qq.html())
                 //$(luopan).show(1500);
@@ -118,7 +118,7 @@
                 var my_top = 0;
                 var my_top_gap = 0
                 if (window.innerWidth >= window.innerHeight) {
-                    my_width = window.innerHeight-30;
+                    my_width = window.innerHeight - 30;
                     my_left = window.innerWidth - window.innerHeight;
                     my_left_gap = 17;
                     my_left = (my_left + my_left_gap) / 2;
@@ -126,15 +126,15 @@
                 }
 
                 if (window.innerWidth <= window.innerHeight) {
-                    my_width = window.innerWidth-30;
+                    my_width = window.innerWidth - 30;
                     my_left = (window.innerWidth - this.w_luopan);
                     my_left_gap = 12;
                     my_left = (my_left - my_left_gap) / 2;
                     my_top = (window.innerHeight - window.innerWidth);
                     my_top_gap = 15;
-                    my_top = (my_top + my_top_gap ) /2;
+                    my_top = (my_top + my_top_gap) / 2;
                 }
-            
+
                 luopan.setAttribute('width', my_width + 'px'); //設定寛為營目同高
                 //console.log('my_left:' + my_left);
 
@@ -168,16 +168,16 @@
             color_code: '#bf00ff'
         })
 
-        var auto_run = function () {
+        var auto_run = function() {
 
-            window.setInterval(function () {
+            window.setInterval(function() {
                 //luopan.set_transform(0.125);
                 luopan.set_transform(0.060);
             }, 60);
 
         }
 
-        var stop_run = function () {
+        var stop_run = function() {
 
             clearInterval(auto_run());
             console.log('stop_run');

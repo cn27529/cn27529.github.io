@@ -3,62 +3,67 @@
 
 <head>
     <title>Luopan</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="./js/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/luopan.css">
-    <script src="./js/luopan.js"></script>
-    <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/jQueryRotate.js"></script>
+    <script src="./js/luopan.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- Tocas UI：CSS 與元件 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.css">
+    <!-- Tocas JS：模塊與 JavaScript 函式 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 頂部固定 -->
+        <div class="ts top fixed inverted borderless large menu">
+            <div class="ts narrow container">
+                <div class="header item">
+                    <i class="home icon"></i>Luopan</div>
+                <a href="#" class="right item" v-on:click="on_rotate">
+                    <i class="compass icon"></i>Enter rotate
+                </a>
+                <a href="#" class="item" v-on:click="on_reset">
+                    <i class="compass icon"></i>Reset rotate
+                </a>
+            </div>
+        </div>
+        <svg class="tensvg" id="tensvg">
+            <!--橫線-->
+            <line id="wline" />
+            <!--直線-->
+            <line id="hline" />
+        </svg>
+        <div class="luopan">
+            <img id="luopan" alt="Luopan image">
+        </div>
+    </div>
+    <!-- https://tocas-ui.com/modules/snackbar/ -->
+    <div class="ts snackbar">
+        <div class="content"></div>
+        <a class="action"></a>
+    </div>
+
 
     <script>
-        $(function () {
+        $(function() {
 
             tenline.reset_tenline();
             luopan.reset_luopan();
 
             //luopan.set_transform(0.035); //修正刻度起始位置
-            window.onresize = function (event) {
+            window.onresize = function(event) {
                 tenline.reset_tenline();
                 luopan.reset_luopan();
             }
 
-            //auto_run();
-
-            /*
-            window.setTimeout(function() {
-                stop_run();
-            }, 5000);
-            */
-
-            //alert('init jquery');
-
-            // //取得mouse每次的距離移動數據
-            // var my_mouseX = 0; //初始0
-            // $('body').mousemove(function (e) {
-
-            //     //console.log(e.clientX);
-            //     var mouse_now_X = e.clientX;
-            //     //每次的移動點
-            //     var move_number = 1;
-
-            //     //轉動羅盤
-            //     if (mouse_now_X > my_mouseX) {
-            //         luopan.deg_number -= move_number;
-            //         //luopan.set_transform(move_number);
-            //     } else {
-            //         luopan.deg_number += move_number;
-            //         //luopan.set_transform(move_number);
-            //     }
-            //     //記錄目前座標數據
-            //     my_mouseX = mouse_now_X;
-
-            // }).onmouseover(function (e) {
-            //     var mouse_now_X = e.clientX;
-            //     //記錄目前座標數據
-            //     //my_mouseX = mouse_now_X;
-            // });
-
         });
+
+
 
         var luopan = new Luopan({
             element_id: 'luopan',
@@ -76,10 +81,10 @@
             stroke_width: 2
         })
 
-        var auto_run = function (prop) {
+        var auto_run = function(prop) {
 
             //setTimeout('run(6)', 3000);
-            window.setInterval(function () {
+            window.setInterval(function() {
                 //auto_run(0.125);
                 luopan.set_transform(prop);
                 //console.log(luopan.deg_number)
@@ -87,7 +92,7 @@
 
         }
 
-        var stop_run = function () {
+        var stop_run = function() {
             clearInterval('auto_run');
             console.log('stop_run');
         }
@@ -97,20 +102,101 @@
         //     move: 'right'
         // });
 
+
+        var handleErrors = function handleErrors(response) {
+            if (!response.ok) {
+                throw Error(response.statusText);
+            }
+            return response;
+        };
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                transform_rotate: 0,
+                loading: false,
+            },
+            mounted: function() {
+
+                //this.dataItems.sort((a, b) => (a.apiURL > b.apiURL) ? 1 : -1) //es6
+                //this.dataItems.sort(function (a, b) { return a.apiName > b.apiName ? 1 : -1; });
+
+            },
+            created: function() {
+
+                this.showData();
+                //this.dataItems = ;
+
+            },
+            //el methods
+            methods: {
+
+                on_rotate: function(event) {
+
+                    Swal.fire({
+                        title: 'Enter rotate',
+                        input: 'number',
+                        inputPlaceholder: 'Enter rotate'
+                    }).then(function(data) {
+
+                        var rotate = data.value;
+                        //console.log(rotate);
+
+                        setTimeout(function() {
+                            luopan.find_transform({
+                                number: rotate
+                            });
+                        })
+
+
+                    })
+
+                },
+
+                on_reset: function(event) {
+
+                    luopan.find_transform({
+                        number: 180
+                    });
+
+                },
+
+                greet: function(event) {
+
+                    // `this` 在方法里指向当前 Vue 实例
+                    //alert('Hello ' + this.name + '!')
+                    // `event` 是原生 DOM 事件
+                    if (event) {
+
+                        //alert(event.target.tagName)
+
+                        if (1 == 1) {
+                            this.loading = true;
+                            this.showData();
+                        } else {
+
+                            ts('.snackbar').snackbar({
+                                content: this.apiDates,
+                                action: 'warning',
+                                actionEmphasis: 'warning',
+                            });
+
+                        }
+
+                    }
+
+                },
+
+                showData: function() {
+
+                    this.loading = false;
+
+                },
+
+            },
+
+        })
     </script>
-
-</head>
-
-<body>
-    <svg class="tensvg" id="tensvg">
-        <!--橫線-->
-        <line id="wline" />
-        <!--直線-->
-        <line id="hline" />
-    </svg>
-    <div class="luopan">
-        <img id="luopan" alt="Luopan image">
-    </div>
 
 
 </body>

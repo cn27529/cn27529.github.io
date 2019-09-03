@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Luopan</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/luopan.css">
+    <script src="./js/luopan.js"></script>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/jQueryRotate.js"></script>
+
+    <script>
+        $(function () {
+
+            tenline.reset_tenline();
+            luopan.reset_luopan();
+
+            //luopan.set_transform(0.035); //修正刻度起始位置
+            window.onresize = function (event) {
+                tenline.reset_tenline();
+                luopan.reset_luopan();
+            }
+
+            //auto_run();
+
+            /*
+            window.setTimeout(function() {
+                stop_run();
+            }, 5000);
+            */
+
+            //alert('init jquery');
+
+            // //取得mouse每次的距離移動數據
+            // var my_mouseX = 0; //初始0
+            // $('body').mousemove(function (e) {
+
+            //     //console.log(e.clientX);
+            //     var mouse_now_X = e.clientX;
+            //     //每次的移動點
+            //     var move_number = 1;
+
+            //     //轉動羅盤
+            //     if (mouse_now_X > my_mouseX) {
+            //         luopan.deg_number -= move_number;
+            //         //luopan.set_transform(move_number);
+            //     } else {
+            //         luopan.deg_number += move_number;
+            //         //luopan.set_transform(move_number);
+            //     }
+            //     //記錄目前座標數據
+            //     my_mouseX = mouse_now_X;
+
+            // }).onmouseover(function (e) {
+            //     var mouse_now_X = e.clientX;
+            //     //記錄目前座標數據
+            //     //my_mouseX = mouse_now_X;
+            // });
+
+        });
+
+        var luopan = new Luopan({
+            element_id: 'luopan',
+            src: './images/luopan-201904.png'
+        });
+
+        //紫紅藍黑綠
+        var colors = ['#730099', '#cc0000', '#0044cc', '#000000', '#006622']
+
+        var tenline = new TenLine({
+            element_id: 'tensvg',
+            w_id: 'wline',
+            h_id: 'hline',
+            color_code: colors[1],
+            stroke_width: 2
+        })
+
+        var auto_run = function (prop) {
+
+            //setTimeout('run(6)', 3000);
+            window.setInterval(function () {
+                //auto_run(0.125);
+                luopan.set_transform(prop);
+                //console.log(luopan.deg_number)
+            }, 50);
+
+        }
+
+        var stop_run = function () {
+            clearInterval('auto_run');
+            console.log('stop_run');
+        }
+
+        // auto_run({
+        //     number: 0.125,
+        //     move: 'right'
+        // });
+
+    </script>
+
+</head>
+
+<body>
+    <svg class="tensvg" id="tensvg">
+        <!--橫線-->
+        <line id="wline" />
+        <!--直線-->
+        <line id="hline" />
+    </svg>
+    <div class="luopan">
+        <img id="luopan" alt="Luopan image">
+    </div>
+
+
+</body>
+
+</html>

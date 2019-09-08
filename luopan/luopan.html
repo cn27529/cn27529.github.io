@@ -2,72 +2,192 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width" />
     <title>Luopan</title>
-    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/luopan.css">
-    <script src="./js/jQueryRotate.js"></script>
     <script src="./js/luopan.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <!-- Tocas UI：CSS 與元件 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.css">
-    <!-- Tocas JS：模塊與 JavaScript 函式 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+    <script>
+        $(function() {
+
+            tenline.reset_tenline();
+            //luopan.set_src();
+            luopan.reset_luopan();
+
+            //luopan.set_transform(0.035); //修正刻度起始位置
+            window.onresize = function(event) {
+                tenline.reset_tenline();
+                //luopan.set_src();
+                luopan.reset_luopan();
+            }
+
+            //auto_run();
+
+            /*
+            window.setTimeout(function() {
+                stop_run();
+            }, 5000);
+            */
+
+            //alert('init jquery');
+
+            // //取得mouse每次的距離移動數據
+            // var my_mouseX = 0; //初始0
+            // $('body').mousemove(function (e) {
+
+            //     //console.log(e.clientX);
+            //     var mouse_now_X = e.clientX;
+            //     //每次的移動點
+            //     var move_number = 1;
+
+            //     //轉動羅盤
+            //     if (mouse_now_X > my_mouseX) {
+            //         luopan.deg_number -= move_number;
+            //         //luopan.set_transform(move_number);
+            //     } else {
+            //         luopan.deg_number += move_number;
+            //         //luopan.set_transform(move_number);
+            //     }
+            //     //記錄目前座標數據
+            //     my_mouseX = mouse_now_X;
+
+            // }).onmouseover(function (e) {
+            //     var mouse_now_X = e.clientX;
+            //     //記錄目前座標數據
+            //     //my_mouseX = mouse_now_X;
+            // });
+
+        });
+
+        function Luopan(prop) {
+
+            this.src = 'http://res.cloudinary.com/cn27529/image/upload/v1523242966/luopan-02_slkj2y.png';
+            this.w_luopan = window.innerWidth - 20;
+            this.h_luopan = window.innerHeight - 20;
+            this.element_id = prop.element_id;
+            this.deg_number = 0;
+            //alert('new LuoPan');
+
+            this.set_transform = function(number) {
+
+                var deg = 'rotate(' + number + 'deg)';
+                document.querySelector('#' + this.element_id).style.transform = deg;
+                //this.element_obj.css('transform', deg);
+                this.deg_number = number;
+            }
+
+            this.element = function() {
+                return document.querySelector('#' + this.element_id);
+            }
+
+            this.set_src = function() {
+
+                //var luopan = document.querySelector('#' + this.element_id);
+                //luopan.src = this.src;
+
+            }
+
+            this.reset_luopan = function() {
+
+                var luopan = document.querySelector('#' + this.element_id);
+                luopan.src = this.src;
+
+                //var qq = $('#' + this.element_id);
+                //alert(qq.html())
+                //$(luopan).show(1500);
+                //qq.hide()
+
+
+                this.w_luopan = window.innerWidth - 30;
+                this.h_luopan = window.innerHeight - 30;
+
+                var my_width = 0;
+
+                if (this.h_luopan >= this.w_luopan) {
+                    this.h_luopan = this.w_luopan; //高要等於寛
+                    my_width = this.w_luopan;
+                }
+                if (this.w_luopan >= this.h_luopan) {
+                    this.w_luopan = this.h_luopan;
+                }
+
+                var my_left_gap = 0; //修正誤差
+                //取得left要位移的位置
+                var my_left = 0;
+                var my_top = 0;
+                var my_top_gap = 0
+                if (window.innerWidth >= window.innerHeight) {
+                    my_width = window.innerHeight - 30;
+                    my_left = window.innerWidth - window.innerHeight;
+                    my_left_gap = 17;
+                    my_left = (my_left + my_left_gap) / 2;
+                    my_top = 8;
+                }
+
+                if (window.innerWidth <= window.innerHeight) {
+                    my_width = window.innerWidth - 30;
+                    my_left = (window.innerWidth - this.w_luopan);
+                    my_left_gap = 12;
+                    my_left = (my_left - my_left_gap) / 2;
+                    my_top = (window.innerHeight - window.innerWidth);
+                    my_top_gap = 15;
+                    my_top = (my_top + my_top_gap) / 2;
+                }
+
+                luopan.setAttribute('width', my_width + 'px'); //設定寛為營目同高
+                //console.log('my_left:' + my_left);
+
+                var my_style = 'border: 0px solid #000000; position: absolute; z-index: -999; top: ' + my_top +
+                    'px; left: ' + my_left +
+                    'px;';
+
+                //this.h_luopan = this.h_luopan - 50; //要比營目高小一點
+
+                var luopan = document.querySelector('#' + this.element_id);
+                luopan.setAttribute('style', my_style);
+
+                console.log('window.innerWidth=', window.innerWidth);
+                console.log('window.innerHeight=', window.innerHeight);
+                console.log('luopan my_style=', my_style);
+                console.log('w_luopan=', this.w_luopan);
+                console.log('h_luopan=', this.h_luopan);
+
+            }
+
+        }
+
+        var luopan = new Luopan({
+            element_id: 'luopan'
+        });
+
+        var tenline = new TenLine({
+            element_id: 'tensvg',
+            w_id: 'wline',
+            h_id: 'hline',
+            color_code: '#bf00ff'
+        })
+
+        var auto_run = function() {
+
+            window.setInterval(function() {
+                //luopan.set_transform(0.125);
+                luopan.set_transform(0.060);
+            }, 60);
+
+        }
+
+        var stop_run = function() {
+
+            clearInterval(auto_run());
+            console.log('stop_run');
+
+        }
+    </script>
+
 </head>
 
 <body>
-    <div class="ts container" id="app">
-        <!--buttonsbar-->
-        <div class="computer only">
-            <div class="ts active bottom right snackbar">
-                <div class="content">
-                    <i class="setting big icon"></i>
-                    <button class="ts big icon button" v-on:click="on_rotate">
-                        <i class="compass icon"></i>
-                        迴轉羅盤
-                    </button>
-                    <button class="ts big icon button" v-on:click="on_reset">
-                        <i class="undo icon"></i>
-                        回正位
-                    </button>
-                    <button class="ts big icon button" v-on:click="on_ten">
-                        <i class="plus icon"></i>
-                        十字線
-                    </button>
-
-                </div>
-            </div>
-        </div>
-        <div class="mobile only">
-            <div class="ts active bottom right snackbar">
-                <div class="content">
-                    <i class="setting big icon"></i>
-                    <button class="ts icon button" v-on:click="on_rotate">
-                        <i class="compass icon"></i>
-                        迴轉羅盤
-                    </button>
-                    <button class="ts icon button" v-on:click="on_reset">
-                        <i class="undo icon"></i>
-                        歸四正位
-                    </button>
-                    <button class="ts icon button" v-on:click="on_ten">
-                        <i class="plus icon"></i>
-                        十字線
-                    </button>
-
-                </div>
-            </div>
-        </div>
-
-
-
-
-    </div>
     <svg class="tensvg" id="tensvg">
         <!--橫線-->
         <line id="wline" />
@@ -77,177 +197,6 @@
     <div class="luopan">
         <img id="luopan" alt="Luopan image">
     </div>
-
-
-    <!-- https://tocas-ui.com/modules/snackbar/ -->
-    <div class="ts snackbar">
-        <div class="content"></div>
-        <a class="action"></a>
-    </div>
-
-    <script>
-        $(function() {
-
-            tenline.reset_tenline();
-            luopan.reset_luopan();
-
-            //luopan.set_transform(0.035); //修正刻度起始位置
-            window.onresize = function(event) {
-                tenline.reset_tenline();
-                luopan.reset_luopan();
-            }
-
-        });
-
-
-
-        var luopan = new Luopan({
-            element_id: 'luopan',
-            src: './images/luopan-201904.png'
-        });
-
-        //紫紅藍黑綠
-        var colors = ['#730099', '#cc0000', '#0044cc', '#000000', '#006622']
-
-        var tenline = new TenLine({
-            element_id: 'tensvg',
-            w_id: 'wline',
-            h_id: 'hline',
-            color_code: colors[1],
-            stroke_width: 2
-        })
-
-        var auto_run = function(prop) {
-
-            //setTimeout('run(6)', 3000);
-            window.setInterval(function() {
-                //auto_run(0.125);
-                luopan.set_transform(prop);
-                //console.log(luopan.deg_number)
-            }, 1000);
-
-        }
-
-        var stop_run = function() {
-            clearInterval('auto_run');
-            console.log('stop_run');
-        }
-
-        // auto_run({
-        //     number: 0.125,
-        //     move: 'right'
-        // });
-
-
-        var handleErrors = function handleErrors(response) {
-            if (!response.ok) {
-                throw Error(response.statusText);
-            }
-            return response;
-        };
-
-        var app = new Vue({
-            el: '#app',
-            data: {
-                transform_rotate: 0,
-                loading: false,
-                show_line: true,
-            },
-            mounted: function() {
-
-                //this.dataItems.sort((a, b) => (a.apiURL > b.apiURL) ? 1 : -1) //es6
-                //this.dataItems.sort(function (a, b) { return a.apiName > b.apiName ? 1 : -1; });
-
-            },
-            created: function() {
-
-                this.showData();
-                //this.dataItems = ;
-
-            },
-            //el methods
-            methods: {
-
-                on_rotate: function(event) {
-
-                    Swal.fire({
-                        title: 'Enter rotate',
-                        input: 'number',
-                        inputPlaceholder: 'Enter rotate'
-                    }).then(function(data) {
-
-                        var rotate = data.value;
-                        console.log('rotate', rotate);
-                        if (rotate !== undefined) {
-                            setTimeout(function() {
-                                luopan.find_transform({
-                                    number: rotate
-                                });
-                            }, 1000)
-                            window.rotate = rotate;
-                        }
-
-                    })
-
-                },
-
-                on_reset: function(event) {
-
-                    setTimeout(function() {
-                        luopan.find_transform({
-                            number: 180
-                        });
-                    }, 100)
-
-                },
-
-                on_ten: function(event) {
-
-                    if (this.show_line)
-                        this.show_line = false;
-                    else
-                        this.show_line = true;
-                    tenline.show_line(this.show_line);
-
-                },
-
-                greet: function(event) {
-
-                    // `this` 在方法里指向当前 Vue 实例
-                    //alert('Hello ' + this.name + '!')
-                    // `event` 是原生 DOM 事件
-                    if (event) {
-
-                        //alert(event.target.tagName)
-
-                        if (1 == 1) {
-                            this.loading = true;
-                            this.showData();
-                        } else {
-
-                            ts('.snackbar').snackbar({
-                                content: this.apiDates,
-                                action: 'warning',
-                                actionEmphasis: 'warning',
-                            });
-
-                        }
-
-                    }
-
-                },
-
-                showData: function() {
-
-                    this.loading = false;
-
-                },
-
-            },
-
-        })
-    </script>
-
 </body>
 
 </html>

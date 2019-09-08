@@ -23,27 +23,51 @@
 <body>
     <div class="ts container" id="app">
         <!--buttonsbar-->
-        <div class="ts active bottom right snackbar">
-            <div class="content">
-                <i class="setting big icon"></i>
-                <button class="ts icon button" v-on:click="on_rotate">
-                    <i class="compass icon"></i>
-                    Rotate
-                </button>
-                <button class="ts icon button" v-on:click="on_reset">
-                    <i class="undo icon"></i>
-                    Undo
-                </button>
-                <button class="ts icon button" v-on:click="on_ten">
-                    <i class="plus icon"></i>
-                    Ten Line
-                </button>
+        <div class="large screen only">
+            <div class="ts active bottom right snackbar">
+                <div class="content">
+                    <i class="setting big icon"></i>
+                    <button class="ts big icon button" v-on:click="on_rotate">
+                        <i class="compass icon"></i>
+                        迴轉羅盤
+                    </button>
+                    <button class="ts big icon button" v-on:click="on_reset">
+                        <i class="undo icon"></i>
+                        回正位
+                    </button>
+                    <button class="ts big icon button" v-on:click="on_ten">
+                        <i class="plus icon"></i>
+                        十字線
+                    </button>
 
+                </div>
+            </div>
+        </div>
+        <div class="mobile or tablet only">
+            <div class="ts active bottom right snackbar">
+                <div class="content">
+                    <i class="setting big icon"></i>
+                    <button class="ts icon button" v-on:click="on_rotate">
+                        <i class="compass icon"></i>
+                        迴轉羅盤
+                    </button>
+                    <button class="ts icon button" v-on:click="on_reset">
+                        <i class="undo icon"></i>
+                        歸四正位
+                    </button>
+                    <button class="ts icon button" v-on:click="on_ten">
+                        <i class="plus icon"></i>
+                        十字線
+                    </button>
+
+                </div>
             </div>
         </div>
 
-    </div>
 
+
+
+    </div>
     <svg class="tensvg" id="tensvg">
         <!--橫線-->
         <line id="wline" />
@@ -54,6 +78,7 @@
         <img id="luopan" alt="Luopan image">
     </div>
 
+
     <!-- https://tocas-ui.com/modules/snackbar/ -->
     <div class="ts snackbar">
         <div class="content"></div>
@@ -63,12 +88,12 @@
     <script>
         $(function() {
 
-            //tenline.reset_tenline();
+            tenline.reset_tenline();
             luopan.reset_luopan();
 
             //luopan.set_transform(0.035); //修正刻度起始位置
             window.onresize = function(event) {
-                //tenline.reset_tenline();
+                tenline.reset_tenline();
                 luopan.reset_luopan();
             }
 
@@ -99,7 +124,7 @@
                 //auto_run(0.125);
                 luopan.set_transform(prop);
                 //console.log(luopan.deg_number)
-            }, 50);
+            }, 1000);
 
         }
 
@@ -126,6 +151,7 @@
             data: {
                 transform_rotate: 0,
                 loading: false,
+                show_line: true,
             },
             mounted: function() {
 
@@ -151,14 +177,15 @@
                     }).then(function(data) {
 
                         var rotate = data.value;
-                        //console.log(rotate);
-
-                        setTimeout(function() {
-                            luopan.find_transform({
-                                number: rotate
-                            });
-                        }, 100)
-
+                        console.log('rotate', rotate);
+                        if (rotate !== undefined) {
+                            setTimeout(function() {
+                                luopan.find_transform({
+                                    number: rotate
+                                });
+                            }, 1000)
+                            window.rotate = rotate;
+                        }
 
                     })
 
@@ -176,7 +203,11 @@
 
                 on_ten: function(event) {
 
-
+                    if (this.show_line)
+                        this.show_line = false;
+                    else
+                        this.show_line = true;
+                    tenline.show_line(this.show_line);
 
                 },
 

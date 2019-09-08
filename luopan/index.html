@@ -26,10 +26,9 @@
         <div class="large device only">
             <div class="ts active bottom right snackbar">
                 <div class="content">
-                    <i class="setting big icon"></i>
                     <button class="ts big icon button" v-on:click="on_rotate">
                         <i class="compass icon"></i>
-                        迴轉羅盤
+                        轉動羅盤
                     </button>
                     <button class="ts big icon button" v-on:click="on_reset">
                         <i class="undo icon"></i>
@@ -46,10 +45,9 @@
         <div class="mobile or tablet only">
             <div class="ts active bottom right snackbar">
                 <div class="content">
-                    <i class="setting small icon"></i>
                     <button class="ts small icon button" v-on:click="on_rotate">
                         <i class="compass icon"></i>
-                        迴轉羅盤
+                        轉動羅盤
                     </button>
                     <button class="ts small icon button" v-on:click="on_reset">
                         <i class="undo icon"></i>
@@ -99,7 +97,7 @@
 
         var luopan = new Luopan({
             element_id: 'luopan',
-            src: './images/luopan-201904.png'
+            src: './images/luopan-201904-無極.png'
         });
 
         //紫紅藍黑綠
@@ -167,18 +165,12 @@
 
                 on_rotate: function(event) {
 
-                    if (window.rotate !== undefined) {
-                        tenline.reset_tenline();
-                        luopan.set_transform({
-                            number: window.rotate
-                        });
-                    }
-
+                    console.log('window.rotate', window.rotate);
 
                     Swal.fire({
-                        title: '輸入數字0~359, 迴轉羅盤',
+                        title: '輸入數字0~359, 轉動羅盤',
                         input: 'number',
-                        inputPlaceholder: '0~359'
+                        inputPlaceholder: '270'
                     }).then(function(data) {
 
                         var rotate = data.value;
@@ -207,7 +199,8 @@
                         luopan.find_transform({
                             number: 180
                         });
-                    }, 100)
+                    }, 1000)
+                    window.rotate = 180;
 
                 },
 

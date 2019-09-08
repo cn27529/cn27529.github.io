@@ -64,9 +64,6 @@
             </div>
         </div>
 
-
-
-
     </div>
     <svg class="tensvg" id="tensvg">
         <!--橫線-->
@@ -78,9 +75,8 @@
         <img id="luopan" alt="Luopan image">
     </div>
 
-
     <!-- https://tocas-ui.com/modules/snackbar/ -->
-    <div class="ts snackbar">
+    <div class="ts bottom left snackbar">
         <div class="content"></div>
         <a class="action"></a>
     </div>
@@ -171,21 +167,34 @@
 
                 on_rotate: function(event) {
 
+                    if (window.rotate !== undefined) {
+                        tenline.reset_tenline();
+                        luopan.set_transform({
+                            number: window.rotate
+                        });
+                    }
+
+
                     Swal.fire({
-                        title: '輸入數字0~359',
+                        title: '輸入數字0~359, 迴轉羅盤',
                         input: 'number',
-                        inputPlaceholder: 'Enter rotate'
+                        inputPlaceholder: '0~359'
                     }).then(function(data) {
 
                         var rotate = data.value;
                         console.log('rotate', rotate);
                         if (rotate !== undefined) {
+
+                            tenline.reset_tenline();
+                            luopan.reset_luopan();
+
                             setTimeout(function() {
                                 luopan.find_transform({
                                     number: rotate
                                 });
                             }, 1000)
                             window.rotate = rotate;
+
                         }
 
                     })
@@ -235,7 +244,7 @@
                         } else {
 
                             ts('.snackbar').snackbar({
-                                content: this.apiDates,
+                                content: window.rotateß,
                                 action: 'warning',
                                 actionEmphasis: 'warning',
                             });

@@ -1,1 +1,6 @@
-function setPageName(o){var e="Hi My page name is "+o;console.log(e)}console.log("Hello World!!!");
+console.log("Hello World!!!");
+
+function setPageName(name){
+    var helloPageName = 'Hi My page name is ' + name;
+    console.log(helloPageName);
+}

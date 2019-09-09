@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Luopan</title>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/luopan.css">
+    <script src="./js/jQueryRotate.js"></script>
+    <script src="./js/luopan.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- Tocas UI：CSS 與元件 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.css">
+    <!-- Tocas JS：模塊與 JavaScript 函式 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+</head>
+
+<body>
+    <div class="ts container" id="app">
+        <!--buttonsbar-->
+        <div class="large device only">
+            <div class="ts active bottom right snackbar">
+                <div class="content">
+                    <button class="ts big icon button" v-on:click="on_rotate">
+                        <i class="compass icon"></i>
+                        轉動羅盤
+                    </button>
+                    <button class="ts big icon button" v-on:click="on_reset">
+                        <i class="undo icon"></i>
+                        歸四正位
+                    </button>
+                    <button class="ts big icon button" v-on:click="on_ten">
+                        <i class="plus icon"></i>
+                        {{ text_line }}
+                    </button>
+
+                </div>
+            </div>
+        </div>
+        <div class="mobile or tablet only">
+            <div class="ts active bottom right snackbar">
+                <div class="content">
+                    <button class="ts small icon button" v-on:click="on_rotate">
+                        <i class="compass icon"></i>
+                        轉動羅盤
+                    </button>
+                    <button class="ts small icon button" v-on:click="on_reset">
+                        <i class="undo icon"></i>
+                        歸四正位
+                    </button>
+                    <button class="ts small icon button" v-on:click="on_ten">
+                        <i class="plus icon"></i>
+                        {{ text_line }}
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <svg class="tensvg" id="tensvg">
+        <!--橫線-->
+        <line id="wline" />
+        <!--直線-->
+        <line id="hline" />
+    </svg>
+    <div class="luopan">
+        <img id="luopan" alt="Luopan image">
+    </div>
+
+    <!-- https://tocas-ui.com/modules/snackbar/ -->
+    <div class="ts bottom left snackbar">
+        <div class="content"></div>
+        <a class="action"></a>
+    </div>
+
+    <script>
+        $(function() {
+
+            tenline.reset_tenline();
+            luopan.reset_luopan();
+
+            //luopan.set_transform(0.035); //修正刻度起始位置
+            window.onresize = function(event) {
+                tenline.reset_tenline();
+                luopan.reset_luopan();
+            }
+
+        });
+
+
+
+        var luopan = new Luopan({
+            element_id: 'luopan',
+            src: './images/luopan-201904-無極.png'
+        });
+
+        //紫紅藍黑綠
+        var colors = ['#730099', '#cc0000', '#0044cc', '#000000', '#006622']
+
+        var tenline = new TenLine({
+            element_id: 'tensvg',
+            w_id: 'wline',
+            h_id: 'hline',
+            color_code: colors[1],
+            stroke_width: 1
+        })
+
+        var auto_run = function(prop) {
+
+            //setTimeout('run(6)', 3000);
+            window.setInterval(function() {
+                //auto_run(0.125);
+                luopan.set_transform(prop);
+                //console.log(luopan.deg_number)
+            }, 1000);
+
+        }
+
+        var stop_run = function() {
+            clearInterval('auto_run');
+            console.log('stop_run');
+        }
+
+        // auto_run({
+        //     number: 0.125,
+        //     move: 'right'
+        // });
+
+
+        var handleErrors = function handleErrors(response) {
+            if (!response.ok) {
+                throw Error(response.statusText);
+            }
+            return response;
+        };
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                transform_rotate: 0,
+                loading: false,
+                show_line: true,
+                text_line: '隱藏',
+            },
+            mounted: function() {
+
+                //this.dataItems.sort((a, b) => (a.apiURL > b.apiURL) ? 1 : -1) //es6
+                //this.dataItems.sort(function (a, b) { return a.apiName > b.apiName ? 1 : -1; });
+
+            },
+            created: function() {
+
+                this.showData();
+                //this.dataItems = ;
+
+            },
+            //el methods
+            methods: {
+
+                on_rotate: function(event) {
+
+                    console.log('window.rotate', window.rotate);
+
+                    Swal.fire({
+                        title: '輸入數字0~359, 轉動羅盤',
+                        input: 'number',
+                        inputPlaceholder: '270'
+                    }).then(function(data) {
+
+                        var rotate = data.value;
+                        console.log('rotate', rotate);
+                        if (rotate !== undefined) {
+
+                            tenline.reset_tenline();
+                            luopan.reset_luopan();
+
+                            setTimeout(function() {
+                                luopan.find_transform({
+                                    number: rotate
+                                });
+                            }, 1000)
+                            window.rotate = rotate;
+
+                        }
+
+                    })
+
+                },
+
+                on_reset: function(event) {
+
+                    setTimeout(function() {
+                        luopan.find_transform({
+                            number: 180
+                        });
+                    }, 1000)
+                    window.rotate = 180;
+
+                },
+
+                on_ten: function(event) {
+
+                    if (this.show_line) {
+                        this.text_line = '顯示';
+                    } else {
+                        this.text_line = '隱藏';
+                    }
+
+                    if (this.show_line) {
+                        this.show_line = false;
+                    } else {
+                        this.show_line = true;
+                    }
+
+                    tenline.show_line(this.show_line);
+
+                },
+
+                greet: function(event) {
+
+                    // `this` 在方法里指向当前 Vue 实例
+                    //alert('Hello ' + this.name + '!')
+                    // `event` 是原生 DOM 事件
+                    if (event) {
+
+                        //alert(event.target.tagName)
+
+                        if (1 == 1) {
+                            this.loading = true;
+                            this.showData();
+                        } else {
+
+                            ts('.snackbar').snackbar({
+                                content: window.rotateß,
+                                action: 'warning',
+                                actionEmphasis: 'warning',
+                            });
+
+                        }
+
+                    }
+
+                },
+
+                showData: function() {
+
+                    this.loading = false;
+
+                },
+
+            },
+
+        })
+    </script>
+
+</body>
+
+</html>

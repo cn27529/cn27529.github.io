@@ -26,41 +26,46 @@
         <div class="large device only">
             <div class="ts active bottom right snackbar">
                 <div class="content">
-                    <button class="ts big icon button" v-on:click="on_rotate">
-                        <i class="compass icon"></i>
-                        轉動羅盤
-                    </button>
-                    <button class="ts big icon button" v-on:click="on_reset">
-                        <i class="undo icon"></i>
-                        歸四正位
-                    </button>
-                    <button class="ts big icon button" v-on:click="on_ten">
-                        <i class="plus icon"></i>
-                        {{ text_line }}
-                    </button>
-
+                    <div class="ts buttons">
+                        <button class="ts big labeled icon button" v-on:click="on_rotate">
+                            <i class="compass icon"></i>
+                            轉動羅盤
+                        </button>
+                        <button class="ts big labeled icon button" v-on:click="on_reset">
+                            <i class="undo icon"></i>
+                            歸四正位
+                        </button>
+                        <button class="ts big labeled icon button" v-on:click="on_ten">
+                            <i class="plus icon"></i>
+                            {{ text_line }}
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="mobile or tablet only">
             <div class="ts active bottom right snackbar">
                 <div class="content">
-                    <button class="ts small icon button" v-on:click="on_rotate">
-                        <i class="compass icon"></i>
-                        轉動羅盤
-                    </button>
-                    <button class="ts small icon button" v-on:click="on_reset">
-                        <i class="undo icon"></i>
-                        歸四正位
-                    </button>
-                    <button class="ts small icon button" v-on:click="on_ten">
-                        <i class="plus icon"></i>
-                        {{ text_line }}
-                    </button>
-
+                    <div class="ts buttons">
+                        <button class="ts small labeled icon button" v-on:click="on_rotate">
+                            <i class="compass icon"></i>
+                            轉動羅盤
+                        </button>
+                        <button class="ts small labeled icon button" v-on:click="on_reset">
+                            <i class="undo icon"></i>
+                            歸四正位
+                        </button>
+                        <button class="ts small labeled icon button" v-on:click="on_ten">
+                            <i class="plus icon"></i>
+                            {{ text_line }}
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
+
+
+
 
     </div>
     <svg class="tensvg" id="tensvg">
@@ -80,20 +85,25 @@
     </div>
 
     <script>
-        $(function() {
+        $(function () {
 
-            tenline.reset_tenline();
-            luopan.reset_luopan();
+            ui_reset(null);
 
             //luopan.set_transform(0.035); //修正刻度起始位置
-            window.onresize = function(event) {
-                tenline.reset_tenline();
-                luopan.reset_luopan();
+            window.onresize = function (event) {
+                ui_reset(null);
             }
 
         });
 
-
+        var ui_reset = function (cb) {
+            tenline.reset_tenline();
+            luopan.reset_luopan();
+            var isFun = typeof cb === 'function';
+            if (typeof cb === 'function') {
+                cb();
+            }
+        }
 
         var luopan = new Luopan({
             element_id: 'luopan',
@@ -111,10 +121,10 @@
             stroke_width: 1
         })
 
-        var auto_run = function(prop) {
+        var auto_run = function (prop) {
 
             //setTimeout('run(6)', 3000);
-            window.setInterval(function() {
+            window.setInterval(function () {
                 //auto_run(0.125);
                 luopan.set_transform(prop);
                 //console.log(luopan.deg_number)
@@ -122,7 +132,7 @@
 
         }
 
-        var stop_run = function() {
+        var stop_run = function () {
             clearInterval('auto_run');
             console.log('stop_run');
         }
@@ -148,13 +158,13 @@
                 show_line: true,
                 text_line: '隱藏',
             },
-            mounted: function() {
+            mounted: function () {
 
                 //this.dataItems.sort((a, b) => (a.apiURL > b.apiURL) ? 1 : -1) //es6
                 //this.dataItems.sort(function (a, b) { return a.apiName > b.apiName ? 1 : -1; });
 
             },
-            created: function() {
+            created: function () {
 
                 this.showData();
                 //this.dataItems = ;
@@ -163,7 +173,7 @@
             //el methods
             methods: {
 
-                on_rotate: function(event) {
+                on_rotate: function (event) {
 
                     console.log('window.rotate', window.rotate);
 
@@ -171,21 +181,20 @@
                         title: '輸入數字0~359, 轉動羅盤',
                         input: 'number',
                         inputPlaceholder: '270'
-                    }).then(function(data) {
+                    }).then(function (data) {
 
                         var rotate = data.value;
                         console.log('rotate', rotate);
                         if (rotate !== undefined) {
 
-                            tenline.reset_tenline();
-                            luopan.reset_luopan();
-
-                            setTimeout(function() {
-                                luopan.find_transform({
-                                    number: rotate
-                                });
-                            }, 1000)
-                            window.rotate = rotate;
+                            ui_reset(function () {
+                                setTimeout(function () {
+                                    luopan.find_transform({
+                                        number: rotate
+                                    });
+                                }, 1000)
+                                window.rotate = rotate;
+                            });
 
                         }
 
@@ -193,18 +202,20 @@
 
                 },
 
-                on_reset: function(event) {
+                on_reset: function (event) {
 
-                    setTimeout(function() {
-                        luopan.find_transform({
-                            number: 180
-                        });
-                    }, 1000)
-                    window.rotate = 180;
+                    ui_reset(function () {
+                        setTimeout(function () {
+                            luopan.find_transform({
+                                number: 360
+                            });
+                        }, 1000)
+                        window.rotate = 360;
+                    });
 
                 },
 
-                on_ten: function(event) {
+                on_ten: function (event) {
 
                     if (this.show_line) {
                         this.text_line = '顯示';
@@ -222,7 +233,7 @@
 
                 },
 
-                greet: function(event) {
+                greet: function (event) {
 
                     // `this` 在方法里指向当前 Vue 实例
                     //alert('Hello ' + this.name + '!')
@@ -237,7 +248,7 @@
                         } else {
 
                             ts('.snackbar').snackbar({
-                                content: window.rotateß,
+                                content: window.rotate,
                                 action: 'warning',
                                 actionEmphasis: 'warning',
                             });
@@ -248,7 +259,7 @@
 
                 },
 
-                showData: function() {
+                showData: function () {
 
                     this.loading = false;
 

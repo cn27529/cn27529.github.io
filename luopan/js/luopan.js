@@ -179,6 +179,7 @@ var Luopan = function Luopan(props) {
                 cb('the image has failed');
             };
         }
+
         luopan.src = this.src;
 
         var my_left_gap = 0; //修正誤差

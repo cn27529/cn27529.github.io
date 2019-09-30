@@ -93,6 +93,13 @@
         });
 
         var ui_reset = function(cb) {
+
+            Swal.fire({
+                title: '請稍後，羅盤正在加載中',
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+
             tenline.reset_tenline();
             luopan.reset_luopan(show_luopan);
             var isFun = typeof cb === 'function';
@@ -101,7 +108,7 @@
 
         var show_luopan = function(data) {
             console.log('show_luopan', data);
-
+            Swal.close();
         }
 
         window.onresize = function(event) {

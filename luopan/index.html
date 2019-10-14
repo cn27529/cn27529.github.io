@@ -92,7 +92,7 @@
             src: './images/luopan-201904-now.png'
         });
 
-        var ui_reset = function(cb) {
+        var ui_reset = function (cb) {
 
             Swal.fire({
                 title: '羅盤正在加載中',
@@ -106,23 +106,23 @@
             if (typeof cb === 'function') cb();
         }
 
-        var show_luopan = function(data) {
+        var show_luopan = function (data) {
             console.log('show_luopan', data);
             Swal.close();
         }
 
-        window.onresize = function(event) {
+        window.onresize = function (event) {
             //ui_reset(null);
         }
 
-        //紫紅藍黑綠
+        //紫紅藍黑綠暗紅
         var colors = ['#730099', '#cc0000', '#0044cc', '#000000', '#006622']
 
         var tenline = new TenLine({
             ele_id: 'tensvg',
             w_id: 'wline',
             h_id: 'hline',
-            color_code: colors[1],
+            color_code: colors[4],
             stroke_width: 1
         })
 
@@ -137,7 +137,7 @@
 
         // }
 
-        var stop_run = function() {
+        var stop_run = function () {
             clearInterval('auto_run');
             console.log('stop_run');
         }
@@ -163,13 +163,13 @@
                 show_line: true,
                 text_line: '隱藏',
             },
-            mounted: function() {
+            mounted: function () {
 
                 //this.dataItems.sort((a, b) => (a.apiURL > b.apiURL) ? 1 : -1) //es6
                 //this.dataItems.sort(function (a, b) { return a.apiName > b.apiName ? 1 : -1; });
 
             },
-            created: function() {
+            created: function () {
 
                 this.showData();
                 //this.dataItems = ;
@@ -179,7 +179,7 @@
             //el methods
             methods: {
 
-                on_rotate: function(event) {
+                on_rotate: function (event) {
 
                     console.log('window.rotate', window.rotate);
 
@@ -187,14 +187,14 @@
                         title: '輸入數字0~359, 轉動羅盤',
                         input: 'number',
                         inputPlaceholder: '270'
-                    }).then(function(data) {
+                    }).then(function (data) {
 
                         var rotate = data.value;
                         console.log('rotate', rotate);
                         if (rotate !== undefined) {
 
-                            ui_reset(function() {
-                                setTimeout(function() {
+                            ui_reset(function () {
+                                setTimeout(function () {
                                     luopan.find_transform({
                                         number: rotate
                                     });
@@ -208,10 +208,10 @@
 
                 },
 
-                on_reset: function(event) {
+                on_reset: function (event) {
 
-                    ui_reset(function() {
-                        setTimeout(function() {
+                    ui_reset(function () {
+                        setTimeout(function () {
                             luopan.find_transform({
                                 number: 360
                             });
@@ -221,7 +221,7 @@
 
                 },
 
-                on_ten: function(event) {
+                on_ten: function (event) {
 
                     if (this.show_line) {
                         this.text_line = '顯示';
@@ -239,7 +239,7 @@
 
                 },
 
-                greet: function(event) {
+                greet: function (event) {
 
                     // `this` 在方法里指向当前 Vue 实例
                     //alert('Hello ' + this.name + '!')
@@ -265,7 +265,7 @@
 
                 },
 
-                showData: function() {
+                showData: function () {
 
                     this.loading = false;
 

@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+    crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+
+
+
+  <title>Hello, world!</title>
+</head>
+
+<body>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <h1>
+        DWB
+      </h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">
+
+            <button class="btn btn-outline-info mr-4 active" type="button">
+              <i class="fas fa-file"></i>表單
+            </button>
+
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+
+
+
+          </a>
+        </li>
+        <li class="nav-item form-inline">
+
+        </li>
+      </ul>
+
+      <div class="form-inline">
+
+        <input class="form-control mr-4" type="search" placeholder="Search" aria-label="Search" style="width: 500px;">
+        <button class="btn btn-outline-info mr-4" type="submit">
+          <i class="fas fa-search"></i>Search
+        </button>
+        <button class="btn btn-outline-info mr-4" type="button">
+          <i class="fas fa-cog"></i>設定
+        </button>
+        <div class="card text-center rounded-circle">
+          <div class="card-body">
+            <h6 class="card-text">黃耀進</h6>
+            <h6>12061117</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <h6>&nbsp;</h6>
+
+
+
+  <div class="tabsBox">
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="url" href="./unassign-list.html" role="tab" aria-controls="home" aria-selected="false">
+          未指派表單
+          <span class="badge badge-pill badge-info"></span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="url" href="./process-list.html" role="tab" aria-controls="profile" aria-selected="false">進行中表單
+          <span class="badge badge-pill badge-info"></span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="url" href="./submit-list.html" role="tab" aria-controls="contact" aria-selected="false">己送出表單
+          <span class="badge badge-pill badge-info"></span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="contact4-tab" data-toggle="url" href="#contact4" role="tab" aria-controls="contact4" aria-selected="false">待審核表單
+          <span class="badge badge-pill badge-info"></span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="contact5-tab" data-toggle="url" href="#contact5" role="tab" aria-controls="contact5" aria-selected="false">己完成表單
+          <span class="badge badge-pill badge-info"></span>
+        </a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade active show" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div>
+          <h6>&nbsp;</h6>
+
+          <table class="table table-hover">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name / Tel / Email
+                  <i class="fas fa-sort"></i>
+                </th>
+                <th scope="col">Type
+                  <i class="fas fa-sort"></i>
+                </th>
+                <th scope="col">Type value
+                  <i class="fas fa-sort"></i>
+                </th>
+                <th scope="col">Photos</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">151</th>
+                <td>
+                  <div class="row">
+                    <div class="col">Mark</div>
+                    <div class="col">0928111222</div>
+                    <div class="col">yyyeyeye@email.com</div>
+                  </div>
+
+                </td>
+                <td>
+                  Slip/Trip/Fall
+                </td>
+                <td>
+                  Floor openings
+                </td>
+                <td>
+                  <i class="fas fa-images"></i>
+                  <span class="badge badge-pill badge-info">4</span>
+                </td>
+                <td>
+                  <a href="info.html" class="btn btn-outline-info" role="button">
+                    <i class="fas fa-info"></i>表單內容
+                  </a>
+                  <button class="btn btn-outline-info" type="button">
+                    <i class="fas fa-hand-point-right"></i>指派表單
+                  </button>
+                  <button class="btn btn-outline-info" type="button">
+                    <i class="fas fa-ban"></i>判定為無效表單
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">152</th>
+                <td>
+                  <div class="row">
+                    <div class="col">王小明</div>
+                    <div class="col">0928111222</div>
+                    <div class="col">yyyeyeye@email.com</div>
+                  </div>
+                </td>
+                <td>
+                  滑倒/絆倒/人體下墮</td>
+                <td>樓面洞穴</td>
+                <td>
+                  <i class="fas fa-images"></i>
+                  <span class="badge badge-pill badge-info">5</span>
+                </td>
+                <td>
+                  <a href="info.html" class="btn btn-outline-info" role="button">
+                    <i class="fas fa-info"></i>表單內容
+                  </a>
+                  <button class="btn btn-outline-info" type="button">
+                    <i class="fas fa-hand-point-right"></i>指派表單
+                  </button>
+                  <button class="btn btn-outline-info" type="button">
+                    <i class="fas fa-ban"></i>判定為無效表單
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">153</th>
+                <td>Larry</td>
+                <td>Otto</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                <td>the Bird</td>
+              </tr>
+              <tr>
+                <th scope="row">154</th>
+                <td>Larry</td>
+                <td>Otto</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                <td>the Bird</td>
+              </tr>
+              <tr>
+                <th scope="row">155</th>
+                <td>Larry</td>
+                <td>Otto</td>
+                <td>the Bird</td>
+                <td>the Bird</td>
+                <td>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div id="table-foot">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&lt;</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">4</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">5</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&gt;</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Last">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+
+
+        </div>
+      </div>
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <p>
+          <h1>2</h1>
+        </p>
+      </div>
+      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <p>
+          <h1>3</h1>
+        </p>
+      </div>
+      <div class="tab-pane fade" id="contact4" role="tabpanel" aria-labelledby="contact-tab">
+        <p>
+          <h1>4</h1>
+        </p>
+      </div>
+      <div class="tab-pane fade" id="contact5" role="tabpanel" aria-labelledby="contact-tab">
+        <p>
+          <h1>5</h1>
+          <select class="form-control">
+            <option>Slip/Trip/Fall</option>
+            <option>Physical</option>
+            <option>Mechanical</option>
+            <option>Electrical</option>
+            <option>Other</option>
+          </select>
+
+          <select class="form-control">
+            <option>Floor openings</option>
+            <option>Scaffolding</option>
+            <option>Ladder</option>
+            <option>Poor lighting</option>
+            <option>Edge protection</option>
+            <option>Working at height</option>
+            <option>Slippery surface</option>
+          </select>
+
+          <select class="form-control">
+            <option>滑倒/絆倒/人體下墮</option>
+            <option>物理</option>
+            <option>機械</option>
+            <option>電力</option>
+            <option>化學</option>
+            <option>其他</option>
+          </select>
+
+          <select class="form-control">
+            <option>樓面洞穴</option>
+            <option>棚架</option>
+            <option>梯具</option>
+            <option>光線不足</option>
+            <option>樓邊保護</option>
+            <option>高空工作</option>
+            <option>地面濕滑</option>
+          </select>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+<style>
+  i {
+    margin: 5px;
+    margin-right: 10px;
+  }
+</style>
+
+</html>

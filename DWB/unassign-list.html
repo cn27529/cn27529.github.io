@@ -10,8 +10,13 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
     crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
   <title>Hello, world!</title>
+
+
+
+
 </head>
 
 <body>
@@ -35,7 +40,7 @@
           <a class="nav-link" href="#">
 
             <button class="btn btn-outline-info mr-4 active" type="button">
-              <i class="fas fa-file"></i>表單
+              <i class="fas fa-file"></i>PST
             </button>
 
           </a>
@@ -54,65 +59,43 @@
 
       <div class="form-inline">
 
-        <input class="form-control mr-4" type="search" placeholder="Search" aria-label="Search" style="width: 500px;">
+        <input class="form-control mr-4" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-info mr-4" type="submit">
           <i class="fas fa-search"></i>Search
         </button>
-        <button class="btn btn-outline-info mr-4" type="button">
-          <i class="fas fa-cog"></i>設定
-        </button>
-        <div class="card text-center rounded-circle">
+        <div class="card text-center rounded-circle" style="background-image: url('./images/小叮噹icon.jpg'); background-size: cover;">
           <div class="card-body">
-            <h6 class="card-text">黃耀進</h6>
-            <h6>12061117</h6>
+            <!-- Bruce
+            <br> 12061117 -->
           </div>
         </div>
+        </form>
       </div>
-    </div>
   </nav>
 
-  <h6>&nbsp;</h6>
-
+  </nav>
+  <br>
   <div class="tabsBox">
 
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item">
-        <a class="nav-link active" id="home-tab" data-toggle="url" href="./unassign-list.html" role="tab" aria-controls="home" aria-selected="false">
-          未指派表單
+        <a class="nav-link active text-capitalize" id="home-tab" data-toggle="url" href="./unassign-list.html" role="tab" aria-controls="home"
+          aria-selected="false">
+          pickup list
           <span class="badge badge-pill badge-info"></span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" id="profile-tab" data-toggle="url" href="./process-list.html" role="tab" aria-controls="profile" aria-selected="false">進行中表單
-          <span class="badge badge-pill badge-info"></span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="contact-tab" data-toggle="url" href="./submit-list.html" role="tab" aria-controls="contact" aria-selected="false">己送出表單
-          <span class="badge badge-pill badge-info"></span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="contact4-tab" data-toggle="url" href="#contact4" role="tab" aria-controls="contact4" aria-selected="false">待審核表單
-          <span class="badge badge-pill badge-info"></span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="contact5-tab" data-toggle="url" href="#contact5" role="tab" aria-controls="contact5" aria-selected="false">己完成表單
-          <span class="badge badge-pill badge-info"></span>
-        </a>
-      </li>
+
     </ul>
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade active show" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div>
-          <h6>&nbsp;</h6>
-
+          <br>
           <table class="table table-hover">
             <thead class="thead-dark">
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name / Tel / Email
+                <th scope="col" class="text-capitalize">order</th>
+                <th scope="col">Name/ Tel/ Email
                   <i class="fas fa-sort"></i>
                 </th>
                 <th scope="col">Type
@@ -127,12 +110,12 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row">151</th>
+                <th scope="row">DWB191106001</th>
                 <td>
                   <div class="row">
                     <div class="col">Mark</div>
                     <div class="col">0928111222</div>
-                    <div class="col">yyyeyeye@email.com</div>
+                    <div class="col">123456@email.com</div>
                   </div>
 
                 </td>
@@ -143,51 +126,49 @@
                   Floor openings
                 </td>
                 <td>
-                  <i class="fas fa-images"></i>
-                  <span class="badge badge-pill badge-info">4</span>
+                  <a href="#" onclick="on_sliderbox(this, 'DWB1911060001')">
+                    <i class="fas fa-images"></i>
+                    <span class="badge badge-pill badge-info">5</span>
+                  </a>
                 </td>
                 <td>
-                  <a href="info.html" class="btn btn-outline-info" role="button">
-                    <i class="fas fa-info"></i>表單內容
+                  <a href=" # " class="btn btn-outline-info " role="button " onclick="on_info(this, 'DWB1911060001') ">
+                    <i class="fas fa-info "></i>View content
                   </a>
-                  <button class="btn btn-outline-info" type="button">
-                    <i class="fas fa-hand-point-right"></i>指派表單
-                  </button>
-                  <button class="btn btn-outline-info" type="button">
-                    <i class="fas fa-ban"></i>判定為無效表單
+                  <button class="btn btn-outline-info " type="button " onclick="on_do_invalid(this) ">
+                    <i class="fas fa-ban "></i>Do invalid
                   </button>
                 </td>
               </tr>
               <tr>
-                <th scope="row">152</th>
+                <th scope="row ">DWB191106002</th>
                 <td>
-                  <div class="row">
-                    <div class="col">王小明</div>
-                    <div class="col">0928111222</div>
-                    <div class="col">yyyeyeye@email.com</div>
+                  <div class="row ">
+                    <div class="col ">王小明</div>
+                    <div class="col ">0928111222</div>
+                    <div class="col ">123456@email.com</div>
                   </div>
                 </td>
                 <td>
                   滑倒/絆倒/人體下墮</td>
                 <td>樓面洞穴</td>
                 <td>
-                  <i class="fas fa-images"></i>
-                  <span class="badge badge-pill badge-info">5</span>
+                  <a href="#" onclick="on_sliderbox(this, 'DWB1911060002')">
+                    <i class="fas fa-images"></i>
+                    <span class="badge badge-pill badge-info">4</span>
+                  </a>
                 </td>
                 <td>
-                  <a href="info.html" class="btn btn-outline-info" role="button">
-                    <i class="fas fa-info"></i>表單內容
+                  <a href="# " class="btn btn-outline-info " role="button " onclick="on_info(this, 'DWB1911060002') ">
+                    <i class="fas fa-info "></i>View content
                   </a>
-                  <button class="btn btn-outline-info" type="button">
-                    <i class="fas fa-hand-point-right"></i>指派表單
-                  </button>
-                  <button class="btn btn-outline-info" type="button">
-                    <i class="fas fa-ban"></i>判定為無效表單
+                  <button class="btn btn-outline-info " type="button " onclick="on_do_invalid(this) ">
+                    <i class="fas fa-ban "></i>Do invalid
                   </button>
                 </td>
               </tr>
               <tr>
-                <th scope="row">153</th>
+                <th scope="row ">DWB191106003</th>
                 <td>Larry</td>
                 <td>Otto</td>
                 <td>the Bird</td>
@@ -195,7 +176,7 @@
                 <td>the Bird</td>
               </tr>
               <tr>
-                <th scope="row">154</th>
+                <th scope="row ">DWB191106004</th>
                 <td>Larry</td>
                 <td>Otto</td>
                 <td>the Bird</td>
@@ -203,7 +184,7 @@
                 <td>the Bird</td>
               </tr>
               <tr>
-                <th scope="row">155</th>
+                <th scope="row ">DWB191106005</th>
                 <td>Larry</td>
                 <td>Otto</td>
                 <td>the Bird</td>
@@ -215,42 +196,42 @@
             </tbody>
           </table>
 
-          <div id="table-foot">
-            <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-center">
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
+          <div id="table-foot ">
+            <nav aria-label="Page navigation example ">
+              <ul class="pagination justify-content-center ">
+                <li class="page-item ">
+                  <a class="page-link " href="# " aria-label="Previous ">
+                    <span aria-hidden="true ">&laquo;</span>
                   </a>
                 </li>
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&lt;</span>
+                <li class="page-item ">
+                  <a class="page-link " href="# " aria-label="Previous ">
+                    <span aria-hidden="true ">&lt;</span>
                   </a>
                 </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">1</a>
+                <li class="page-item ">
+                  <a class="page-link " href="# ">1</a>
                 </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">2</a>
+                <li class="page-item ">
+                  <a class="page-link " href="# ">2</a>
                 </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">3</a>
+                <li class="page-item ">
+                  <a class="page-link " href="# ">3</a>
                 </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">4</a>
+                <li class="page-item ">
+                  <a class="page-link " href="# ">4</a>
                 </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">5</a>
+                <li class="page-item ">
+                  <a class="page-link " href="# ">5</a>
                 </li>
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&gt;</span>
+                <li class="page-item ">
+                  <a class="page-link " href="# " aria-label="Next ">
+                    <span aria-hidden="true ">&gt;</span>
                   </a>
                 </li>
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Last">
-                    <span aria-hidden="true">&raquo;</span>
+                <li class="page-item ">
+                  <a class="page-link " href="# " aria-label="Last ">
+                    <span aria-hidden="true ">&raquo;</span>
                   </a>
                 </li>
               </ul>
@@ -261,25 +242,25 @@
 
         </div>
       </div>
-      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="tab-pane fade " id="profile " role="tabpanel " aria-labelledby="profile-tab ">
         <p>
           <h1>2</h1>
         </p>
       </div>
-      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+      <div class="tab-pane fade " id="contact " role="tabpanel " aria-labelledby="contact-tab ">
         <p>
           <h1>3</h1>
         </p>
       </div>
-      <div class="tab-pane fade" id="contact4" role="tabpanel" aria-labelledby="contact-tab">
+      <div class="tab-pane fade " id="contact4 " role="tabpanel " aria-labelledby="contact-tab ">
         <p>
           <h1>4</h1>
         </p>
       </div>
-      <div class="tab-pane fade" id="contact5" role="tabpanel" aria-labelledby="contact-tab">
+      <div class="tab-pane fade " id="contact5 " role="tabpanel " aria-labelledby="contact-tab ">
         <p>
           <h1>5</h1>
-          <select class="form-control">
+          <select class="form-control ">
             <option>Slip/Trip/Fall</option>
             <option>Physical</option>
             <option>Mechanical</option>
@@ -287,7 +268,7 @@
             <option>Other</option>
           </select>
 
-          <select class="form-control">
+          <select class="form-control ">
             <option>Floor openings</option>
             <option>Scaffolding</option>
             <option>Ladder</option>
@@ -297,7 +278,7 @@
             <option>Slippery surface</option>
           </select>
 
-          <select class="form-control">
+          <select class="form-control ">
             <option>滑倒/絆倒/人體下墮</option>
             <option>物理</option>
             <option>機械</option>
@@ -306,7 +287,7 @@
             <option>其他</option>
           </select>
 
-          <select class="form-control">
+          <select class="form-control ">
             <option>樓面洞穴</option>
             <option>棚架</option>
             <option>梯具</option>
@@ -320,15 +301,39 @@
     </div>
   </div>
 
+  <div id="do_invalid ">
+
+  </div>
+
+  <div id="sliderbox">
+    <!-- Swiper -->
+    <div class="swiper-container ">
+      <div class="swiper-wrapper ">
+        <div class="swiper-slide ">
+          <img class=" img-fluid" src="./images/flower1.jpg" alt="image">
+        </div>
+        <div class="swiper-slide ">Slide 2</div>
+        <div class="swiper-slide ">Slide 3</div>
+        <div class="swiper-slide ">Slide 4</div>
+        <div class="swiper-slide ">Slide 5</div>
+        <div class="swiper-slide ">Slide 6</div>
+        <div class="swiper-slide ">Slide 7</div>
+        <div class="swiper-slide ">Slide 8</div>
+        <div class="swiper-slide ">Slide 9</div>
+        <div class="swiper-slide ">Slide 10</div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo "
+    crossorigin="anonymous "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 "
+    crossorigin="anonymous "></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM "
+    crossorigin="anonymous "></script>
 </body>
 
 <style>
@@ -336,6 +341,112 @@
     margin: 5px;
     margin-right: 10px;
   }
+
+  .btn {
+    margin-right: 5px;
+  }
+
+  .nav-link {
+    font-size: 23px;
+  }
+
+  .card-body {
+    font-size: 12px;
+    padding: 0px;
+    padding-top: 22px;
+  }
+
+  .card {
+    width: 65px;
+    height: 65px;
+  }
 </style>
+
+<script>
+
+  var on_sliderbox = function on_sliderbox(e, order_number) {
+
+    var el = document.querySelector('#sliderbox');
+
+    Swal.fire({
+      title: order_number,
+      //icon: 'info',
+      html: el,
+      showCloseButton: false,
+      showCancelButton: false,
+      focusConfirm: false,
+
+    })
+
+  }
+
+  var swiper = new Swiper('.swiper-container');
+
+  var on_info = function on_info(e, order_number) {
+
+    Swal.fire({
+      title: order_number,
+      //icon: 'info',
+      html:
+        'You can use <b>bold text</b>, ' +
+        '<a href="//sweetalert2.github.io ">links</a> ' +
+        'and other HTML tags',
+      showCloseButton: true,
+      showCancelButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up "></i> Great!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      cancelButtonText:
+        '<i class="fa fa-thumbs-down "></i>',
+      cancelButtonAriaLabel: 'Thumbs down'
+    })
+
+  }
+
+  var on_do_invalid = function on_do_invalid(e) {
+
+    var swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-outline-info',
+        cancelButton: 'btn btn-outline-danger'
+      },
+      buttonsStyling: false
+    })
+
+    swalWithBootstrapButtons.fire({
+      //title: 'Are you sure?',
+      //text: "You won 't be able to revert this!",
+      //icon: 'warning ',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, Valid ',
+      cancelButtonText: 'No, Invalid! ',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.value) {
+
+        swalWithBootstrapButtons.fire(
+          'Set Valid ',
+          'Your data has been Valid. :) ',
+          //'success '
+        )
+
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Set Invalid ',
+          'Your data has been Invalid. :( ',
+          //'error '
+        )
+      }
+    })
+
+
+
+  }
+
+</script>
 
 </html>

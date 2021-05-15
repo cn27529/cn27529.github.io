@@ -8,19 +8,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cn27529/resume.github.io.git"
+    "url": "git+https://github.com/cn27529/cn27529.github.io.git"
   },
   "keywords": [
     "resume",
     "blog",
-    "luopan"
+    "luopan",
+    "cv"
   ],
   "author": "cn27529",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cn27529/resume.github.io/issues"
+    "url": "https://github.com/cn27529/cn27529.github.io/issues"
   },
-  "homepage": "https://github.com/cn27529/resume.github.io#readme",
+  "homepage": "https://github.com/cn27529/cn27529.github.io#readme",
   "devDependencies": {
     "live-server": "^1.2.1"
   }

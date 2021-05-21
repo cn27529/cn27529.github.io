@@ -6,7 +6,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .top-massage {
@@ -16,13 +16,19 @@ h6 {
   text-shadow: 3px 1px 0 #000000;
 }
 
-.booking-hair {
+.booking-form {
   height: 600px;
 }
 
-.booking-hair .w3-cell {
-  width: 33.3%;
+.booking-form-center {
+  width: 60%;
+}
+
+.booking-form-left,
+.booking-form-right {
+  width: 20%;
 }
 
 .footer-address {
+  letter-spacing: 0.15em;
 }

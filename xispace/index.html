@@ -20,7 +20,7 @@
       display: none;
     }
     .big {
-      font-size: 25px;
+      font-size: 30px;
       margin: auto;
     }
   </style>
@@ -70,35 +70,40 @@
       
 
       <!-- Automatic Slideshow Images -->
+
+      <div class="mySlides w3-display-container">
+        <img src="./images/w3c/cloud_01_800x600.jpg" style="width: 100%;" />
+        <div class="w3-display-bottomright w3-padding w3-text-sand w3-black">
+          程式學習課程</div>
+      </div>
+
       <div class="mySlides w3-display-container w3-center">
         <img src="./images/w3c/w3c_html5.jpg" style="width: 100%;" />
-        <div
-          class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-          <h3>HTML入門-網頁學習課程</h3>
-          <p><b>在經過將近一個月的預售之後，Suzuki 也於今天聖誕節正式發表小改款的 Swift
-            Hybrid/ Swift Sport Hybrid，其中前者外觀進行了小幅修飾、同時換裝了與
-            ignis Hybrid</b></p>
-        </div>
+        <div class="w3-display-bottomright w3-padding w3-text-sand w3-black">
+          程式學習課程</div>
       </div>
+
       <div class="mySlides w3-display-container w3-center">
         <img src="./images/w3c/w3c_html5_level.jpg" style="width: 100%;" />
-        <div
-          class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small"
-        >
-          <h3>Swift Hybrid</h3>
-          <p><b>這次小改款的Swift
-            針對水箱罩重新設計，使其看起來更加立體動感，外觀真的就只有小針美容，不說還真的看不出來。</b></p>
-        </div>
+        <div class="w3-display-bottomright w3-padding w3-text-sand w3-black">
+          程式學習課程</div>
       </div>
       <div class="mySlides w3-display-container w3-center">
-        <img src="./images/img_ss3.jpg" style="width: 100%;" />
-        <div
-          class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small"
-        >
-          <h3>Swift Sport Hybrid</h3>
-          <p><b>只有手排配置，因此這次「非手排不買」的熱血客群總算成真，Taiwan Suzuki
-            就給你六速手排車型！</b></p>
-        </div>
+        <img src="./images/w3c/w3c_js_quiz_start.jpg" style="width: 100%;" />
+        <div class="w3-display-bottomright w3-padding w3-text-sand w3-black">
+          程式學習課程</div>
+      </div>
+
+      <div class="mySlides w3-display-container w3-center">
+        <img src="./images/w3c/w3c_html_quiz_start.jpg" style="width: 100%;" />
+        <div class="w3-display-bottomright w3-padding w3-text-sand w3-black">
+          程式學習課程</div>
+      </div>
+
+      <div class="mySlides w3-display-container w3-center">
+        <img src="./images/w3c/w3c_css_quiz_start.jpg" style="width: 100%;" />
+        <div class="w3-display-bottomright w3-padding w3-text-sand w3-black">
+          程式學習課程</div>
       </div>
 
       <!-- The One Section -->
@@ -162,17 +167,24 @@
         style="max-width: 800px;"
         id="contact">
         <h2 class="w3-wide w3-center">CONTACT</h2>
-        <p class="w3-opacity w3-center"><i>Fan? Drop a note!</i></p>
+        <p class="w3-opacity w3-center"><i></i></p>
         <div class="w3-row w3-padding-32">
           <div class="w3-col m6 w3-large w3-margin-bottom">
-            <i class="fa fa-map-marker" style="width: 30px;"></i> Chicago, US<br />
-            <i class="fa fa-phone" style="width: 30px;"></i> Phone: +00
-            151515<br />
-            <i class="fa fa-envelope" style="width: 30px;"> </i> Email:
-            mail@mail.com<br />
+            <i class="fa fa-map-marker" style="width: 30px;"></i> Taipei, zh-TW
+            <br />
+            <i class="fa fa-phone" style="width: 30px;"></i> 
+            Phone: <a href="tel:+886928230520">+886928230520</a>
+            <br />
+            <i class="fa fa-envelope" style="width: 30px;"></i>
+            <input class="w3-button w3-black" type="button" value="cn27529@gmail.com" 
+             onclick="mailto()" >
+
+            
+
+            <br />
           </div>
-          <div class="w3-col m6">
-            <form action="/action_page.php" target="_blank">
+          <div class="w3-col m6" style="display: none;">
+            <form action="#" target="_blank">
               <div class="w3-row-padding" style="margin: 0 -16px 8px -16px;">
                 <div class="w3-half">
                   <input
@@ -240,6 +252,13 @@
         } else {
           x.className = x.className.replace(" w3-show", "");
         }
+      }
+
+      function mailto()
+      {
+        
+        self.location.href='mailto:cn27529@gmail.com';
+
       }
 
     </script>

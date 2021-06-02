@@ -27,7 +27,7 @@
   <body class="w3-monospace">
 
     <!-- Navbar -->
-    <div class="w3-top w3-allerta w3-large">
+    <div class="w3-top">
       <div class="w3-bar w3-black w3-card">
         <a
           class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
@@ -39,7 +39,7 @@
         <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
         <a
           href="#xisapce"
-          class="w3-bar-item w3-button w3-padding-large w3-hide-small">析空間Xispace</a>
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small">析空間 Xispace</a>
         <a
           href="#contact"
           class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
@@ -52,20 +52,20 @@
 
     <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
     <div id="navDemo"
-      class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top w3-allerta w3-large"
+      class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top"
       style="margin-top: 46px;">
       <a
         href="#xisapce"
         class="w3-bar-item w3-button w3-padding-large"
-        onclick="myFunction()">析空間Xispace</a>
+        onclick="myFunction()">析空間 Xispace</a>
       <a
         href="#contact"
         class="w3-bar-item w3-button w3-padding-large"
-        onclick="myFunction()">CONTACT</a>
+        onclick="myFunction()">CONTACT</a>    
     </div>
 
      <!-- Page content -->
-    <div class="w3-content" style="max-width: 1200px; margin-top: 46px;">
+    <div class="w3-content" style="max-width: 100%; margin-top: 46px;">
       
       <!-- Slideshow Section -->
       <div class="mySlides w3-display-container w3-animate-fading">
@@ -104,10 +104,10 @@
       </div>
 
       <!-- 小朋友程式學習課程 Section -->
-      <div class="w3-container w3-content w3-center w3-padding-16" style="max-width: 1200px;" 
+      <div class="w3-container w3-content w3-center w3-padding-16" style="max-width: 1080px;" 
       id="xisapce">
         
-        <h2 class="w3-wide w3-center">小朋友程式學習課程</h2>
+        <h2>小朋友程式學習課程</h2>
         <p class="w3-justify">
           <span class="big">以</span>互動式遊戲進行對小朋友的程式教學，沒有基礎也無仿，對電腦科學有興趣的小朋友們，都可以來體驗看看，我們對未來也規畫了不定期對做弱勢的或者徧鄉的族群們，能有免費的教學與旁聽的機會，以我們的力量回饋社會。這個商品，使用線上服務方式實施教學，適合對已經會基本電腦操作概念的學習對象。
         </p>
@@ -123,11 +123,11 @@
       <!-- html5 Section -->
       <div class="w3-row" id="html5">
 
-        <h2 class="w3-wide w3-center">程式學習課程</h2>
+        <h2 class="w3-center">程式學習課程</h2>
 
         <div class="w3-third w3-padding">
           <div class="w3-card">
-            <img src="./images/w3c/w3c-html.jpg" style="width: 100%;">
+            <img src="./images/w3c/w3c-javascript.jpg" style="width: 100%;">
             <div class="w3-container w3-wide">
               <h4></h4>
               <p></p>
@@ -137,7 +137,7 @@
 
         <div class="w3-third w3-padding">
           <div class="w3-card">
-            <img src="./images/w3c/w3c-javascript.jpg" style="width: 100%;">
+            <img src="./images/w3c/w3c-html.jpg" style="width: 100%;">
             <div class="w3-container w3-wide">
               <h4></h4>
               <p></p>
@@ -158,13 +158,13 @@
       </div>
 
       <!-- The Contact Section -->
-      <div class="w3-container w3-content w3-padding-64" style="max-width: 800px;" id="contact">
+      <div
+        class="w3-container w3-content w3-padding-64"
+        style="max-width: 800px;"
+        id="contact">
         <h2 class="w3-wide w3-center">CONTACT</h2>
-
         <p class="w3-opacity w3-center"><i></i></p>
-
-        <div class="w3-row w3-padding">
-
+        <div class="w3-row w3-padding-32">
           <div class="w3-col m6 w3-large w3-margin-bottom">
             <i class="fa fa-map-marker" style="width: 30px;"></i> Taipei, zh-TW
             <br />
@@ -174,9 +174,11 @@
             <i class="fa fa-envelope" style="width: 30px;"></i>
             <input class="w3-button w3-black" type="button" value="cn27529@gmail.com" 
              onclick="mailto()" >
+
+            
+
             <br />
           </div>
-          
           <div class="w3-col m6" style="display: none;">
             <form action="#" target="_blank">
               <div class="w3-row-padding" style="margin: 0 -16px 8px -16px;">

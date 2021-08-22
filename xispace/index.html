@@ -1,260 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-  <title>析空間 Xispace</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Allerta+Stencil"
-  />
-  <style>
-    .w3-allerta {
-      font-family: "Allerta Stencil", sans-serif;
-    }
-    .mySlides {
-      display: none;
-    }
-    .big {
-      font-size: 30px;
-      margin: auto;
-    }
-  </style>
-  <body class="w3-monospace">
+<title>析空間 Xispace</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil" />
+<style>
+  .w3-allerta {
+    font-family: "Allerta Stencil", sans-serif;
+  }
 
-    <!-- Navbar -->
-    <div class="w3-top w3-allerta w3-large">
-      <div class="w3-bar w3-black w3-card">
-        <a
-          class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
-          href="javascript:void(0)"
-          onclick="myFunction()"
-          title="Toggle Navigation Menu"
-          ><i class="fa fa-bars"></i
-        ></a>
-        <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-        <a
-          href="#xisapce"
-          class="w3-bar-item w3-button w3-padding-large w3-hide-small">析空間Xispace</a>
-        <a
-          href="#contact"
-          class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
-        <a
-          href="javascript:void(0)"
-          class="w3-padding-large w3-hover-red w3-hide-small w3-right"
-          ><i class="fa fa-search"></i></a>
-      </div>
+  .mySlides {
+    display: none;
+  }
+
+  .big {
+    font-size: 30px;
+    margin: auto;
+  }
+</style>
+
+<body class="w3-monospace">
+
+  <!-- Navbar -->
+  <div class="w3-top w3-allerta w3-large">
+    <div class="w3-bar w3-black w3-card">
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)"
+        onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+      <a href="#xisapce" class="w3-bar-item w3-button w3-padding-large w3-hide-small">析空間Xispace</a>
+      <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+      <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i
+          class="fa fa-search"></i></a>
+    </div>
+  </div>
+
+  <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+  <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top w3-allerta w3-large"
+    style="margin-top: 46px;">
+    <a href="#xisapce" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">析空間Xispace</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
+  </div>
+
+  <!-- Page content -->
+  <div class="w3-content" style="max-width: auto; margin-top: 46px;">
+
+    <!-- Slideshow Section -->
+    <div class="mySlides w3-display-container w3-animate-fading">
+      <img src="./images/w3c/cloud_01_800x600.jpg" style="width: 100%;" />
+      <div class="w3-display-bottomright w3-padding w3-text-sand w3-black">
+        程式學習課程</div>
     </div>
 
-    <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-    <div id="navDemo"
-      class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top w3-allerta w3-large"
-      style="margin-top: 46px;">
-      <a
-        href="#xisapce"
-        class="w3-bar-item w3-button w3-padding-large"
-        onclick="myFunction()">析空間Xispace</a>
-      <a
-        href="#contact"
-        class="w3-bar-item w3-button w3-padding-large"
-        onclick="myFunction()">CONTACT</a>
+    <div class="mySlides w3-display-container w3-animate-fading">
+      <img src="./images/w3c/w3c_html5.jpg" style="width: 100%;" />
+      <div class="w3-display-bottomright w3-padding w3-text-sand w3-black">
+        程式學習課程</div>
     </div>
 
-     <!-- Page content -->
-    <div class="w3-content" style="max-width: auto; margin-top: 46px;">
-      
-      <!-- Slideshow Section -->
-      <div class="mySlides w3-display-container w3-animate-fading">
-        <img src="./images/w3c/cloud_01_800x600.jpg" style="width: 100%;" />
-        <div class="w3-display-bottomright w3-padding w3-text-sand w3-black">
-          程式學習課程</div>
-      </div>
-
-      <div class="mySlides w3-display-container w3-animate-fading">
-        <img src="./images/w3c/w3c_html5.jpg" style="width: 100%;" />
-        <div class="w3-display-bottomright w3-padding w3-text-sand w3-black">
-          程式學習課程</div>
-      </div>
-
-      <div class="mySlides w3-display-container w3-animate-fading">
-        <img src="./images/w3c/w3c_html5_level.jpg" style="width: 100%;" />
-        <div class="w3-display-bottomright w3-padding w3-text-sand w3-black">
-          程式學習課程</div>
-      </div>
-      <div class="mySlides w3-display-container w3-animate-fading">
-        <img src="./images/w3c/w3c_js_quiz_start.jpg" style="width: 100%;" />
-        <div class="w3-display-bottomright w3-padding w3-text-sand w3-black">
-          程式學習課程</div>
-      </div>
-
-      <div class="mySlides w3-display-container w3-animate-fading">
-        <img src="./images/w3c/w3c_html_quiz_start.jpg" style="width: 100%;" />
-        <div class="w3-display-bottomright w3-padding w3-text-sand w3-black">
-          程式學習課程</div>
-      </div>
-
-      <div class="mySlides w3-display-container w3-animate-fading">
-        <img src="./images/w3c/w3c_css_quiz_start.jpg" style="width: 100%;" />
-        <div class="w3-display-bottomright w3-padding w3-text-sand w3-black">
-          程式學習課程</div>
-      </div>
-
-      <!-- 小朋友程式學習課程 Section -->
-      <div class="w3-container w3-content w3-center w3-padding-16" style="max-width: auto;" 
-      id="xisapce">
-        
-        <h2 class="w3-wide w3-center">小朋友程式學習課程</h2>
-        <p class="w3-justify">
-          <span class="big">以</span>互動式遊戲進行對小朋友的程式教學，沒有基礎也無仿，對電腦科學有興趣的小朋友們，都可以來體驗看看，我們對未來也規畫了不定期對做弱勢的或者徧鄉的族群們，能有免費的教學與旁聽的機會，以我們的力量回饋社會。這個商品，使用線上服務方式實施教學，適合對已經會基本電腦操作概念的學習對象。
-        </p>
-        <p class="w3-justify">
-          <span class="big">我</span>們採用當今最熱門Node.js(nodejs)做為基底，Node.js採用Google開發的V8執行程式碼。由它來搭建小朋友們對程式的基礎，為什麼我們選用nodejs而不選擇Java或Python或者其它的語言呢？為什麼我們覺nodejs是最適合的呢？原因只有一個，那就是在以最小的編程資源的原則下，免去複雜的環境設定，我們讓小朋友們在線編程，在線運行，在線佈署，提高親合力，所以非它莫屬，我們也經過了分析一些特點，它不用安裝任何應用開發程序在自己的電腦中，以免在一開始接觸的時候，就因為電腦環境上的狀況百出，而失去了興趣然而產生不好的觀感。
-        </p>
-        <p class="w3-justify">
-          <span class="big">當</span>然Java與Python它們比較屬於商業的高級應用，所以這是我們較不力推的，後兩者們更適合較高等學級的同學們來進行的。在2020年的stackoverflow對於程式語言的統計中nodejs是最受歡迎的語言，這個語言，適於前端，適於後端，適於資料庫，適於桌面，適於移動，適於硬體控制，都統統可以由nodejs來運行，雖然nodejs不是萬能，建立好的邏輯思考的開始，一切就由它入手吧。當然，這一切只是開始，開始小朋友們的邏輯運算，在他們的腦子裡建立起邏輯運算的概念，他們的未來是我們無法想像的廣大，啟發他的天賦，說不定他就是未來世界的偉大人才。
-        </p>
-
-      </div>
-
-      <!-- html5 Section -->
-      <div class="w3-row" id="html5">
-
-        <h2 class="w3-wide w3-center">程式學習課程</h2>
-
-        <div class="w3-third w3-padding">
-          <div class="w3-card">
-            <img src="./images/w3c/w3c-html.jpg" style="width: 100%;">
-            <div class="w3-container w3-wide">
-              <h4></h4>
-              <p></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="w3-third w3-padding">
-          <div class="w3-card">
-            <img src="./images/w3c/w3c-javascript.jpg" style="width: 100%;">
-            <div class="w3-container w3-wide">
-              <h4></h4>
-              <p></p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="w3-third w3-padding">
-          <div class="w3-card">
-            <img src="./images/w3c/w3c-css.jpg" style="width: 100%;">
-            <div class="w3-container w3-wide">
-              <h4></h4>
-              <p></p>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-
-      <!-- The Contact Section -->
-      <div class="w3-container w3-content w3-padding-64" style="max-width: auto;" id="contact">
-        <h2 class="w3-wide w3-center">CONTACT</h2>
-
-        <p class="w3-opacity w3-center"><i></i></p>
-
-        <div class="w3-row w3-padding">
-
-          <div class="w3-col m6 w3-large w3-margin-bottom">
-            <i class="fa fa-map-marker" style="width: 30px;"></i> Taipei, zh-TW
-            <br />
-            <i class="fa fa-phone" style="width: 30px;"></i> 
-            Phone: <a href="tel:+886928230520">+886928230520</a>
-            <br />
-            <i class="fa fa-envelope" style="width: 30px;"></i>
-            <input class="w3-button w3-black" type="button" value="cn27529@gmail.com" 
-             onclick="mailto()" >
-            <br />
-          </div>
-          
-          <div class="w3-col m6" style="display: none;">
-            <form action="#" target="_blank">
-              <div class="w3-row-padding" style="margin: 0 -16px 8px -16px;">
-                <div class="w3-half">
-                  <input
-                    class="w3-input w3-border"
-                    type="text"
-                    placeholder="Name"
-                    required name="Name"/>
-                </div>
-                <div class="w3-half">
-                  <input
-                    class="w3-input w3-border"
-                    type="text"
-                    placeholder="Email"
-                    required
-                    name="Email"/>
-                </div>
-              </div>
-              <input
-                class="w3-input w3-border"
-                type="text"
-                placeholder="Message"
-                required
-                name="Message"/>
-              <button
-                class="w3-button w3-black w3-section w3-right"
-                type="submit">
-                SEND
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-      
+    <div class="mySlides w3-display-container w3-animate-fading">
+      <img src="./images/w3c/w3c_html5_level.jpg" style="width: 100%;" />
+      <div class="w3-display-bottomright w3-padding w3-text-sand w3-black">
+        程式學習課程</div>
+    </div>
+    <div class="mySlides w3-display-container w3-animate-fading">
+      <img src="./images/w3c/w3c_js_quiz_start.jpg" style="width: 100%;" />
+      <div class="w3-display-bottomright w3-padding w3-text-sand w3-black">
+        程式學習課程</div>
     </div>
 
-    <footer class="w3-container w3-black">
-      <p class="w3-center w3-small w3-allerta">
-        Copyright © 2021 Xispace. All rights reserved.
+    <div class="mySlides w3-display-container w3-animate-fading">
+      <img src="./images/w3c/w3c_html_quiz_start.jpg" style="width: 100%;" />
+      <div class="w3-display-bottomright w3-padding w3-text-sand w3-black">
+        程式學習課程</div>
+    </div>
+
+    <div class="mySlides w3-display-container w3-animate-fading">
+      <img src="./images/w3c/w3c_css_quiz_start.jpg" style="width: 100%;" />
+      <div class="w3-display-bottomright w3-padding w3-text-sand w3-black">
+        程式學習課程</div>
+    </div>
+
+    <!-- 小朋友程式學習課程 Section -->
+    <div class="w3-container w3-content w3-center w3-padding-16" style="max-width: auto;" id="xisapce">
+
+      <h2 class="w3-wide w3-center">小朋友程式學習課程</h2>
+      <p class="w3-justify">
+        <span
+          class="big">以</span>互動式遊戲進行對小朋友的程式教學，沒有基礎也無仿，對電腦科學有興趣的小朋友們，都可以來體驗看看，我們對未來也規畫了不定期對做弱勢的或者徧鄉的族群們，能有免費的教學與旁聽的機會，以我們的力量回饋社會。這個商品，使用線上服務方式實施教學，適合對已經會基本電腦操作概念的學習對象。
       </p>
-    </footer>
+      <p class="w3-justify">
+        <span
+          class="big">我</span>們採用當今最熱門Node.js(nodejs)做為基底，Node.js採用Google開發的V8執行程式碼。由它來搭建小朋友們對程式的基礎，為什麼我們選用nodejs而不選擇Java或Python或者其它的語言呢？為什麼我們覺nodejs是最適合的呢？原因只有一個，那就是在以最小的編程資源的原則下，免去複雜的環境設定，我們讓小朋友們在線編程，在線運行，在線佈署，提高親合力，所以非它莫屬，我們也經過了分析一些特點，它不用安裝任何應用開發程序在自己的電腦中，以免在一開始接觸的時候，就因為電腦環境上的狀況百出，而失去了興趣然而產生不好的觀感。
+      </p>
+      <p class="w3-justify">
+        <span
+          class="big">當</span>然Java與Python它們比較屬於商業的高級應用，所以這是我們較不力推的，後兩者們更適合較高等學級的同學們來進行的。在2020年的stackoverflow對於程式語言的統計中nodejs是最受歡迎的語言，這個語言，適於前端，適於後端，適於資料庫，適於桌面，適於移動，適於硬體控制，都統統可以由nodejs來運行，雖然nodejs不是萬能，建立好的邏輯思考的開始，一切就由它入手吧。當然，這一切只是開始，開始小朋友們的邏輯運算，在他們的腦子裡建立起邏輯運算的概念，他們的未來是我們無法想像的廣大，啟發他的天賦，說不定他就是未來世界的偉大人才。
+      </p>
 
-    <script>
-      // Automatic Slideshow - change image every 4 seconds
-      var myIndex = 0;
-      carousel();
+    </div>
 
-      function carousel() {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";  
-        }
-        myIndex++;
-        if (myIndex > x.length) {myIndex = 1}    
-        x[myIndex-1].style.display = "block";  
-        setTimeout(carousel, 5000);    
+    <!-- html5 Section -->
+    <div class="w3-row" id="html5">
+
+      <h2 class="w3-wide w3-center">程式學習課程</h2>
+
+      <div class="w3-third w3-padding">
+        <div class="w3-card">
+          <img src="./images/w3c/w3c-html.jpg" style="width: 100%;">
+          <div class="w3-container w3-wide">
+            <h4></h4>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-third w3-padding">
+        <div class="w3-card">
+          <img src="./images/w3c/w3c-javascript.jpg" style="width: 100%;">
+          <div class="w3-container w3-wide">
+            <h4></h4>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-third w3-padding">
+        <div class="w3-card">
+          <img src="./images/w3c/w3c-css.jpg" style="width: 100%;">
+          <div class="w3-container w3-wide">
+            <h4></h4>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- The Contact Section -->
+    <div class="w3-container w3-content w3-padding-64" style="max-width: auto;" id="contact">
+      <h2 class="w3-wide w3-center">CONTACT</h2>
+
+      <p class="w3-opacity w3-center"><i></i></p>
+
+      <div class="w3-row w3-padding">
+
+        <div class="w3-col m6 w3-large w3-margin-bottom">
+          <i class="fa fa-map-marker" style="width: 30px;"></i> Taipei, zh-TW
+          <br />
+          <i class="fa fa-phone" style="width: 30px;"></i>
+          Phone: <a href="tel:+886928230520">+886928230520</a>
+          <br />
+          <i class="fa fa-envelope" style="width: 30px;"></i>
+          <a target="_blank" href="mailto:mailme@xispace.app" class="w3-btn w3-black">mailme@xispace.app</a>
+          <br />
+        </div>
+
+        <div class="w3-col m6" style="display: none;">
+          <form action="#" target="_blank">
+            <div class="w3-row-padding" style="margin: 0 -16px 8px -16px;">
+              <div class="w3-half">
+                <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name" />
+              </div>
+              <div class="w3-half">
+                <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email" />
+              </div>
+            </div>
+            <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message" />
+            <button class="w3-button w3-black w3-section w3-right" type="submit">
+              SEND
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="w3-container w3-black">
+    <p class="w3-center w3-small w3-allerta">
+      Copyright © 2021 Xispace. All rights reserved.
+    </p>
+  </footer>
+
+  <script>
+    // Automatic Slideshow - change image every 4 seconds
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
       }
+      myIndex++;
+      if (myIndex > x.length) { myIndex = 1 }
+      x[myIndex - 1].style.display = "block";
+      setTimeout(carousel, 5000);
+    }
 
 
-      // Used to toggle the menu on small screens when clicking on the menu button
-      function myFunction() {
-        var x = document.getElementById("navDemo");
-        if (x.className.indexOf("w3-show") == -1) {
-          x.className += " w3-show";
-        } else {
-          x.className = x.className.replace(" w3-show", "");
-        }
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
       }
+    }
 
-      function mailto()
-      {
-        
-        self.location.href='mailto:cn27529@gmail.com';
+    function mailto() {
 
-      }
+      self.location.href = 'mailto:mailme@xispace.app';
+      //<a target="_blank" href="mailto:mailme@xispace.app" class="w3-btn w3-teal">mailme@xispace.app</a>
+    }
 
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>

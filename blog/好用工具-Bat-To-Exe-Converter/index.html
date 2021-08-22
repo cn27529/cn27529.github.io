@@ -1,259 +1,505 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  
 
-  
+<head>
+  <meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+
+
+
   <title>好用工具 Bat To Exe Converter | 世界因你而進步</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="時常在寫批次檔(Batch, .bat)幫助我處理一些日常的工作，例如說備份資料庫、建立 SSH Tunnel、或是將所有子目錄下的 .svn 目錄改成 _svn 目錄、…等等。有些 Batch Script 甚至會寫超過一百行，若你想保護辛苦寫的批次檔時，就可以利用&amp;nbsp;Bat To Exe Converter&amp;nbsp;幫你轉成 .exe 執行檔。簡單的說，這套工具有 4 個特色：  隱">
-<meta name="keywords" content="Windows 相關,Command line">
-<meta property="og:type" content="article">
-<meta property="og:title" content="好用工具 Bat To Exe Converter">
-<meta property="og:url" content="http://cn27529.github.io/blog/好用工具-Bat-To-Exe-Converter/index.html">
-<meta property="og:site_name" content="世界因你而進步">
-<meta property="og:description" content="時常在寫批次檔(Batch, .bat)幫助我處理一些日常的工作，例如說備份資料庫、建立 SSH Tunnel、或是將所有子目錄下的 .svn 目錄改成 _svn 目錄、…等等。有些 Batch Script 甚至會寫超過一百行，若你想保護辛苦寫的批次檔時，就可以利用&amp;nbsp;Bat To Exe Converter&amp;nbsp;幫你轉成 .exe 執行檔。簡單的說，這套工具有 4 個特色：  隱">
-<meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://blog.miniasp.com/image.axd?picture=WindowsLiveWriter/BatToExeConverter_149F2/image_thumb.png">
-<meta property="og:updated_time" content="2019-03-04T03:52:26.603Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="好用工具 Bat To Exe Converter">
-<meta name="twitter:description" content="時常在寫批次檔(Batch, .bat)幫助我處理一些日常的工作，例如說備份資料庫、建立 SSH Tunnel、或是將所有子目錄下的 .svn 目錄改成 _svn 目錄、…等等。有些 Batch Script 甚至會寫超過一百行，若你想保護辛苦寫的批次檔時，就可以利用&amp;nbsp;Bat To Exe Converter&amp;nbsp;幫你轉成 .exe 執行檔。簡單的說，這套工具有 4 個特色：  隱">
-<meta name="twitter:image" content="http://blog.miniasp.com/image.axd?picture=WindowsLiveWriter/BatToExeConverter_149F2/image_thumb.png">
-  
-    <link rel="alternate" href="/atom.xml" title="世界因你而進步" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
+  <meta name="description"
+    content="時常在寫批次檔(Batch, .bat)幫助我處理一些日常的工作，例如說備份資料庫、建立 SSH Tunnel、或是將所有子目錄下的 .svn 目錄改成 _svn 目錄、…等等。有些 Batch Script 甚至會寫超過一百行，若你想保護辛苦寫的批次檔時，就可以利用&amp;nbsp;Bat To Exe Converter&amp;nbsp;幫你轉成 .exe 執行檔。簡單的說，這套工具有 4 個特色：  隱">
+  <meta name="keywords" content="Windows 相關,Command line">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="好用工具 Bat To Exe Converter">
+  <meta property="og:url" content="https://xispace.app/blog/好用工具-Bat-To-Exe-Converter/index.html">
+  <meta property="og:site_name" content="世界因你而進步">
+  <meta property="og:description"
+    content="時常在寫批次檔(Batch, .bat)幫助我處理一些日常的工作，例如說備份資料庫、建立 SSH Tunnel、或是將所有子目錄下的 .svn 目錄改成 _svn 目錄、…等等。有些 Batch Script 甚至會寫超過一百行，若你想保護辛苦寫的批次檔時，就可以利用&amp;nbsp;Bat To Exe Converter&amp;nbsp;幫你轉成 .exe 執行檔。簡單的說，這套工具有 4 個特色：  隱">
+  <meta property="og:locale" content="zh-tw">
+  <meta property="og:image"
+    content="http://blog.miniasp.com/image.axd?picture=WindowsLiveWriter/BatToExeConverter_149F2/image_thumb.png">
+  <meta property="og:updated_time" content="2019-03-04T03:52:26.603Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="好用工具 Bat To Exe Converter">
+  <meta name="twitter:description"
+    content="時常在寫批次檔(Batch, .bat)幫助我處理一些日常的工作，例如說備份資料庫、建立 SSH Tunnel、或是將所有子目錄下的 .svn 目錄改成 _svn 目錄、…等等。有些 Batch Script 甚至會寫超過一百行，若你想保護辛苦寫的批次檔時，就可以利用&amp;nbsp;Bat To Exe Converter&amp;nbsp;幫你轉成 .exe 執行檔。簡單的說，這套工具有 4 個特色：  隱">
+  <meta name="twitter:image"
+    content="http://blog.miniasp.com/image.axd?picture=WindowsLiveWriter/BatToExeConverter_149F2/image_thumb.png">
+
+  <link rel="alternate" href="/atom.xml" title="世界因你而進步" type="application/atom+xml">
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+
   <link rel="stylesheet" href="/css/style.css">
 </head>
+
 </html>
+
 <body>
   <div id="container">
     <div id="wrap">
       <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">世界因你而進步</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">blog.helloworld4u.com</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://cn27529.github.io/blog"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-好用工具-Bat-To-Exe-Converter" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/好用工具-Bat-To-Exe-Converter/" class="article-date">
-  <time datetime="2010-10-21T23:55:00.000Z" itemprop="datePublished">2010-10-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      好用工具 Bat To Exe Converter
-    </h1>
-  
+        <div id="banner"></div>
+        <div id="header-outer" class="outer">
+          <div id="header-title" class="inner">
+            <h1 id="logo-wrap">
+              <a href="/" id="logo">世界因你而進步</a>
+            </h1>
 
+            <h2 id="subtitle-wrap">
+              <a href="/" id="subtitle">blog.helloworld4u.com</a>
+            </h2>
+
+          </div>
+          <div id="header-inner" class="inner">
+            <nav id="main-nav">
+              <a id="main-nav-toggle" class="nav-icon"></a>
+
+              <a class="main-nav-link" href="/">Home</a>
+
+              <a class="main-nav-link" href="/archives">Archives</a>
+
+            </nav>
+            <nav id="sub-nav">
+
+              <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+
+              <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+            </nav>
+            <div id="search-form-wrap">
+              <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input
+                  type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit"
+                  class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch"
+                  value="https://xispace.app/blog"></form>
+            </div>
+          </div>
+        </div>
       </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><span class="Apple-style-span" style="font-size: small;"><span class="Apple-style-span" style="font-size: 13px;"><span class="Apple-style-span" style="color: #444444; font-family: Arial, Helvetica, sans-serif; font-size: small; line-height: 23px;"></span></span></span><br><span class="Apple-style-span" style="font-size: small;"><span class="Apple-style-span" style="font-size: 13px;"><span class="Apple-style-span" style="color: #444444; font-family: Arial, Helvetica, sans-serif; font-size: small; line-height: 23px;"><div style="margin-top: 0px;">時常在寫批次檔(Batch, <em>.bat)幫助我處理一些日常的工作，例如說備份資料庫、建立 SSH Tunnel、或是將所有子目錄下的 .svn 目錄改成 _svn 目錄、…等等。有些 Batch Script 甚至會寫超過一百行，若你想保護辛苦寫的批次檔時，就可以利用&nbsp;<a href="http://www.f2ko.de/English/b2e/index.php" target="_blank" rel="noopener">Bat To Exe Converter</a>&nbsp;幫你轉成 </em>.exe 執行檔。</div><div style="margin-top: 0px;">簡單的說，這套工具有 4 個特色：</div></span></span></span></p>
-<ol>
-<li>隱藏原始碼。（這是無庸置疑的）</li>
-<li>支援 “沒有互動視窗”的應用程式(Ghost applications)，可讓你的程式在背景作業。</li>
-<li>批次檔轉換後的執行檔可設定應用程式圖示、檔案版本、產品版本、公司名稱、程式描述、版權宣告等應用程式資訊。</li>
-<li><p>可以不只將批次檔轉成執行檔，還可以將批次檔相關的檔案、文件或程式也一併結合在一起。<div style="margin-top: 0px;">正所謂「一圖解千文」，如下圖示就是此工具唯一的 GUI 操作介面：</div><div class="separator" style="clear: both; text-align: center;"><a href="http://blog.miniasp.com/image.axd?picture=WindowsLiveWriter/BatToExeConverter_149F2/image_thumb.png" target="_blank" rel="noopener"><img src="http://blog.miniasp.com/image.axd?picture=WindowsLiveWriter/BatToExeConverter_149F2/image_thumb.png" alt></a></div><div style="margin-top: 0px;"><br></div><div style="margin-top: 0px;"></div><div style="margin-top: 0px;">下載後的壓縮檔中會有兩個檔案，一個是&nbsp;<strong>Bat_To_Exe_Converter.exe</strong>&nbsp;執行檔，另一個是 help.chm 說明檔，可查詢指令列(Command Line)操作的用法。</div><div style="margin-top: 0px;">若要透過指令列的方式執行轉換動作，至少需要設定 4 個參數才能執行，其參數的說明如下：</div></p>
-</li>
-<li><p>第一個參數是<strong>來源批次檔</strong></p>
-</li>
-<li>第二個參數是<strong>輸出的執行檔</strong></li>
-<li>第三個參數是&nbsp;<strong>Icon 的檔案路徑</strong></li>
-<li>第四個參數是設定你的<strong>應用程式類型</strong>&nbsp;( Console 或 Ghost )</li>
-<li><strong>第五個之後的參數</strong>都是要<strong>外掛進來的檔案</strong>，也就是要跟這個原本的批次檔一起工作的程式。<div style="margin-top: 0px;">範例1：將 a.bat 轉成 a.exe，其中的 “” 代表不要設定 Icon，1 代表轉換成 Console application</div><div class="csharpcode-wrapper" style="background-color: #f7f7f7; border-bottom-color: green; border-bottom-style: dotted; border-bottom-width: 1px; border-left-color: green; border-left-style: dotted; border-left-width: 1px; border-right-color: green; border-right-style: dotted; border-right-width: 1px; border-top-color: green; border-top-style: dotted; border-top-width: 1px; cursor: text; font-family: Consolas, 'Courier New', Courier, monospace; font-size: 8pt; line-height: 12pt; margin-bottom: 20px; margin-left: 10px; margin-right: 0px; margin-top: 20px; max-height: 250px; overflow-x: auto; overflow-y: auto; padding-bottom: 4px; padding-left: 4px; padding-right: 4px; padding-top: 4px; width: 585px;"><pre class="csharpcode" style="background-color: #f7f7f7; border-bottom-color: green; border-bottom-style: none; border-bottom-width: 1px; border-left-color: green; border-left-style: none; border-left-width: 1px; border-right-color: green; border-right-style: none; border-right-width: 1px; border-top-color: green; border-top-style: none; border-top-width: 1px; color: black; cursor: text; font-family: Consolas, 'Courier New', Courier, monospace; font-size: 8pt; line-height: 12pt; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; max-height: 250px; overflow-x: visible; overflow-y: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; width: 567px;">Bat_To_Exe_Converter.exe  a.bat  a.exe  <span class="str" style="color: #006080;">“”</span>  1</pre></div><div style="margin-top: 0px;">範例2：將 a.bat 轉成 a.exe，其中的 0 代表轉換成 Ghost application ( 背景作業模式 )</div><div class="csharpcode-wrapper" style="background-color: #f7f7f7; border-bottom-color: green; border-bottom-style: dotted; border-bottom-width: 1px; border-left-color: green; border-left-style: dotted; border-left-width: 1px; border-right-color: green; border-right-style: dotted; border-right-width: 1px; border-top-color: green; border-top-style: dotted; border-top-width: 1px; cursor: text; font-family: Consolas, 'Courier New', Courier, monospace; font-size: 8pt; line-height: 12pt; margin-bottom: 20px; margin-left: 10px; margin-right: 0px; margin-top: 20px; max-height: 250px; overflow-x: auto; overflow-y: auto; padding-bottom: 4px; padding-left: 4px; padding-right: 4px; padding-top: 4px; width: 585px;"><pre class="csharpcode" style="background-color: #f7f7f7; border-bottom-color: green; border-bottom-style: none; border-bottom-width: 1px; border-left-color: green; border-left-style: none; border-left-width: 1px; border-right-color: green; border-right-style: none; border-right-width: 1px; border-top-color: green; border-top-style: none; border-top-width: 1px; color: black; cursor: text; font-family: Consolas, 'Courier New', Courier, monospace; font-size: 8pt; line-height: 12pt; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; max-height: 250px; overflow-x: visible; overflow-y: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; width: 567px;">Bat_To_Exe_Converter.exe  a.bat  a.exe  <span class="str" style="color: #006080;">“”</span>  0</pre></div><div style="margin-top: 0px;">範例3：將 a.bat 轉成 a.exe，並且也將 myprogram1.exe 與 test.jpg 兩個檔案都打包放進 a.exe 中，讓 a.exe 在執行時可以引用這兩個檔案。</div><div class="csharpcode-wrapper" style="background-color: #f7f7f7; border-bottom-color: green; border-bottom-style: dotted; border-bottom-width: 1px; border-left-color: green; border-left-style: dotted; border-left-width: 1px; border-right-color: green; border-right-style: dotted; border-right-width: 1px; border-top-color: green; border-top-style: dotted; border-top-width: 1px; cursor: text; font-family: Consolas, 'Courier New', Courier, monospace; font-size: 8pt; line-height: 12pt; margin-bottom: 20px; margin-left: 10px; margin-right: 0px; margin-top: 20px; max-height: 250px; overflow-x: auto; overflow-y: auto; padding-bottom: 4px; padding-left: 4px; padding-right: 4px; padding-top: 4px; width: 585px;"><pre class="csharpcode" style="background-color: #f7f7f7; border-bottom-color: green; border-bottom-style: none; border-bottom-width: 1px; border-left-color: green; border-left-style: none; border-left-width: 1px; border-right-color: green; border-right-style: none; border-right-width: 1px; border-top-color: green; border-top-style: none; border-top-width: 1px; color: black; cursor: text; font-family: Consolas, 'Courier New', Courier, monospace; font-size: 8pt; line-height: 12pt; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; max-height: 250px; overflow-x: visible; overflow-y: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; width: 567px;">Bat_To_Exe_Converter.exe  a.bat  a.exe  <span class="str" style="color: #006080;">“”</span>  1  myprogram1.exe  test.jpg</pre></div><div style="margin-top: 0px;">另外，我也做了個小測試，情境如下：</div></li>
-</ol>
-<ul>
-<li>我寫一個 a.bat 內容是&nbsp;<strong>type a.txt</strong></li>
-<li>然後建立一個 a.txt 內容是&nbsp;<strong>12345</strong></li>
-<li>然後執行&nbsp;<strong>Bat_To_Exe_Converter.exe a.bat a.exe “” 1 a.txt</strong>&nbsp;將 a.txt 綁進 a.exe 中</li>
-<li>之後<strong>將 a.txt 的內容修改</strong>成&nbsp;<strong>67890</strong></li>
-<li>接者我<strong>執行 a.exe</strong>&nbsp;得到的結果是&nbsp;<strong>67890</strong></li>
-<li>接者我從該目錄<strong>刪除 a.txt 檔案</strong></li>
-<li><strong>再執行一次 a.exe</strong>&nbsp;我得到的結果是&nbsp;<strong>12345</strong><div style="margin-top: 0px;">由此可知，即便將檔案一併綁進轉換後的執行檔中，原本批次檔讀取的訊息還是先從原本所在的目錄讀取檔案，若讀取不到才會讀取被綁進執行檔中的檔案。</div><div style="margin-top: 0px;"><br></div><div style="margin-top: 0px;">引用自:&nbsp;<a href="http://blog.miniasp.com/post/2008/10/Useful-tool-Bat-to-Exe-Converter.aspx" target="_blank" rel="noopener">http://blog.miniasp.com/post/2008/10/Useful-tool-Bat-to-Exe-Converter.aspx</a></div><div style="margin-top: 0px;"><br></div><div class="blogger-post-footer">Copyright © 2018 helloworld4u.com All rights reserved.</div></li>
-</ul>
+      <div class="outer">
+        <section id="main">
+          <article id="post-好用工具-Bat-To-Exe-Converter" class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-meta">
+              <a href="/好用工具-Bat-To-Exe-Converter/" class="article-date">
+                <time datetime="2010-10-21T23:55:00.000Z" itemprop="datePublished">2010-10-22</time>
+              </a>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://cn27529.github.io/blog/好用工具-Bat-To-Exe-Converter/" data-id="cjsu0axoh00862cpz2r32kri1" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Command-line/">Command line</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows-相關/">Windows 相關</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/IIS網頁壓縮/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          IIS網頁壓縮
-        
-      </div>
-    </a>
-  
-  
-    <a href="/JQuery-UI-Dialog和ASP-NET-Button/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">JQuery UI Dialog和ASP.NET Button</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AJAXControlToolkit/">AJAXControlToolkit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ASP-NET/">ASP.NET</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ActionScript/">ActionScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bot/">Bot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Command-line/">Command line</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ConvertToPDF/">ConvertToPDF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DotNet-Library/">DotNet Library</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Email/">Email</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitBook/">GitBook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IE/">IE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IIS/">IIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MP3/">MP3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MS-SQL/">MS-SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/">MVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pycharm/">Pycharm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reactjs/">Reactjs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SublimeText/">SublimeText</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TelegramBot/">TelegramBot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VM/">VM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windowns-Service/">Windowns Service</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows-相關/">Windows 相關</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/color-code/">color code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ejs/">ejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pm2/">pm2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqlite/">sqlite</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web2py/">web2py</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/瀏覽器/">瀏覽器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/線上工具/">線上工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/軟体應用相關/">軟体應用相關</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/軟工文件工具/">軟工文件工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/隨便寫寫/">隨便寫寫</a></li></ul>
-    </div>
-  </div>
+            </div>
+            <div class="article-inner">
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/AJAXControlToolkit/" style="font-size: 10px;">AJAXControlToolkit</a> <a href="/tags/ASP-NET/" style="font-size: 17.14px;">ASP.NET</a> <a href="/tags/ActionScript/" style="font-size: 12.86px;">ActionScript</a> <a href="/tags/Bot/" style="font-size: 10px;">Bot</a> <a href="/tags/C/" style="font-size: 15px;">C#</a> <a href="/tags/CSS3/" style="font-size: 16.43px;">CSS3</a> <a href="/tags/Command-line/" style="font-size: 14.29px;">Command line</a> <a href="/tags/ConvertToPDF/" style="font-size: 10px;">ConvertToPDF</a> <a href="/tags/Database/" style="font-size: 10px;">Database</a> <a href="/tags/Django/" style="font-size: 14.29px;">Django</a> <a href="/tags/DotNet-Library/" style="font-size: 12.86px;">DotNet Library</a> <a href="/tags/Email/" style="font-size: 10px;">Email</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/GitBook/" style="font-size: 10px;">GitBook</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/HTML/" style="font-size: 19.29px;">HTML</a> <a href="/tags/IE/" style="font-size: 12.14px;">IE</a> <a href="/tags/IIS/" style="font-size: 11.43px;">IIS</a> <a href="/tags/JSON/" style="font-size: 11.43px;">JSON</a> <a href="/tags/MP3/" style="font-size: 10px;">MP3</a> <a href="/tags/MS-SQL/" style="font-size: 12.86px;">MS-SQL</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/Mac/" style="font-size: 14.29px;">Mac</a> <a href="/tags/Nodejs/" style="font-size: 12.86px;">Nodejs</a> <a href="/tags/Pycharm/" style="font-size: 11.43px;">Pycharm</a> <a href="/tags/Python/" style="font-size: 15.71px;">Python</a> <a href="/tags/Reactjs/" style="font-size: 10px;">Reactjs</a> <a href="/tags/SublimeText/" style="font-size: 11.43px;">SublimeText</a> <a href="/tags/TelegramBot/" style="font-size: 10px;">TelegramBot</a> <a href="/tags/VM/" style="font-size: 10px;">VM</a> <a href="/tags/Windowns-Service/" style="font-size: 10.71px;">Windowns Service</a> <a href="/tags/Windows-相關/" style="font-size: 18.57px;">Windows 相關</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/color-code/" style="font-size: 10px;">color code</a> <a href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/jQuery/" style="font-size: 18.57px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/pm2/" style="font-size: 10.71px;">pm2</a> <a href="/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/tags/vscode/" style="font-size: 11.43px;">vscode</a> <a href="/tags/web2py/" style="font-size: 10.71px;">web2py</a> <a href="/tags/瀏覽器/" style="font-size: 11.43px;">瀏覽器</a> <a href="/tags/線上工具/" style="font-size: 13.57px;">線上工具</a> <a href="/tags/軟体應用相關/" style="font-size: 17.86px;">軟体應用相關</a> <a href="/tags/軟工文件工具/" style="font-size: 10px;">軟工文件工具</a> <a href="/tags/隨便寫寫/" style="font-size: 12.14px;">隨便寫寫</a>
-    </div>
-  </div>
+              <header class="article-header">
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">
-      Archives
-    </h3>
-    <div class="widget">
-      <!-- <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">十月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">三月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">二月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11/">十一月 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08/">八月 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">六月 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05/">五月 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02/">二月 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">一月 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11/">十一月 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10/">十月 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08/">八月 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">六月 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05/">五月 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">四月 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">三月 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">十一月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10/">十月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09/">九月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06/">六月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05/">五月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04/">四月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03/">三月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02/">二月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2003/03/">三月 2003</a></li></ul> -->
-      <!-- 20190304修改 -->
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">2018-10</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">2018-06</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">2018-05</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">2017-08</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">2017-07</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">2017-05</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">2017-03</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">2016-08</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016-03</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015-10</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015-09</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015-08</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015-07</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015-03</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014-11</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014-01</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">2012-10</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">2012-04</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">2012-03</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">2012-02</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11/">2011-11</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08/">2011-08</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">2011-06</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05/">2011-05</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02/">2011-02</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">2011-01</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11/">2010-11</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10/">2010-10</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08/">2010-08</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">2010-06</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05/">2010-05</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">2010-04</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">2010-03</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">2009-11</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10/">2009-10</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09/">2009-09</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06/">2009-06</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05/">2009-05</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04/">2009-04</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03/">2009-03</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02/">2009-02</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2003/03/">2003-03</a><span class="archive-list-count">1</span></li></ul>
-    </div>
-  </div>
-  
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/vscode-Bracket-Pair-Colorizer-有了彩色括號不再眼花惹/">vscode-Bracket Pair Colorizer-有了彩色括號不再眼花惹</a>
-          </li>
-        
-          <li>
-            <a href="/EJS常用標簽/">EJS常用標簽</a>
-          </li>
-        
-          <li>
-            <a href="/好用的線上產生HTML碼的彩色的程式碼-hilite-me-幹好繞口/">好用的線上產生HTML碼的彩色的程式碼-hilite.me, 幹好繞口</a>
-          </li>
-        
-          <li>
-            <a href="/pm2-App-name/">pm2, App name</a>
-          </li>
-        
-          <li>
-            <a href="/node-telegram-bot-api-建立你的telegram機器人/">node-telegram-bot-api, 建立你的telegram機器人</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
-        
+                <h1 class="article-title" itemprop="name">
+                  好用工具 Bat To Exe Converter
+                </h1>
+
+
+              </header>
+
+              <div class="article-entry" itemprop="articleBody">
+
+                <p><span class="Apple-style-span" style="font-size: small;"><span class="Apple-style-span"
+                      style="font-size: 13px;"><span class="Apple-style-span"
+                        style="color: #444444; font-family: Arial, Helvetica, sans-serif; font-size: small; line-height: 23px;"></span></span></span><br><span
+                    class="Apple-style-span" style="font-size: small;"><span class="Apple-style-span"
+                      style="font-size: 13px;"><span class="Apple-style-span"
+                        style="color: #444444; font-family: Arial, Helvetica, sans-serif; font-size: small; line-height: 23px;">
+                        <div style="margin-top: 0px;">時常在寫批次檔(Batch, <em>.bat)幫助我處理一些日常的工作，例如說備份資料庫、建立 SSH
+                            Tunnel、或是將所有子目錄下的 .svn 目錄改成 _svn 目錄、…等等。有些 Batch Script
+                            甚至會寫超過一百行，若你想保護辛苦寫的批次檔時，就可以利用&nbsp;<a href="http://www.f2ko.de/English/b2e/index.php"
+                              target="_blank" rel="noopener">Bat To Exe Converter</a>&nbsp;幫你轉成 </em>.exe 執行檔。</div>
+                        <div style="margin-top: 0px;">簡單的說，這套工具有 4 個特色：</div>
+                      </span></span></span></p>
+                <ol>
+                  <li>隱藏原始碼。（這是無庸置疑的）</li>
+                  <li>支援 “沒有互動視窗”的應用程式(Ghost applications)，可讓你的程式在背景作業。</li>
+                  <li>批次檔轉換後的執行檔可設定應用程式圖示、檔案版本、產品版本、公司名稱、程式描述、版權宣告等應用程式資訊。</li>
+                  <li>
+                    <p>可以不只將批次檔轉成執行檔，還可以將批次檔相關的檔案、文件或程式也一併結合在一起。
+                    <div style="margin-top: 0px;">正所謂「一圖解千文」，如下圖示就是此工具唯一的 GUI 操作介面：</div>
+                    <div class="separator" style="clear: both; text-align: center;"><a
+                        href="http://blog.miniasp.com/image.axd?picture=WindowsLiveWriter/BatToExeConverter_149F2/image_thumb.png"
+                        target="_blank" rel="noopener"><img
+                          src="http://blog.miniasp.com/image.axd?picture=WindowsLiveWriter/BatToExeConverter_149F2/image_thumb.png"
+                          alt></a></div>
+                    <div style="margin-top: 0px;"><br></div>
+                    <div style="margin-top: 0px;"></div>
+                    <div style="margin-top: 0px;">
+                      下載後的壓縮檔中會有兩個檔案，一個是&nbsp;<strong>Bat_To_Exe_Converter.exe</strong>&nbsp;執行檔，另一個是 help.chm
+                      說明檔，可查詢指令列(Command Line)操作的用法。</div>
+                    <div style="margin-top: 0px;">若要透過指令列的方式執行轉換動作，至少需要設定 4 個參數才能執行，其參數的說明如下：</div>
+                    </p>
+                  </li>
+                  <li>
+                    <p>第一個參數是<strong>來源批次檔</strong></p>
+                  </li>
+                  <li>第二個參數是<strong>輸出的執行檔</strong></li>
+                  <li>第三個參數是&nbsp;<strong>Icon 的檔案路徑</strong></li>
+                  <li>第四個參數是設定你的<strong>應用程式類型</strong>&nbsp;( Console 或 Ghost )</li>
+                  <li><strong>第五個之後的參數</strong>都是要<strong>外掛進來的檔案</strong>，也就是要跟這個原本的批次檔一起工作的程式。<div
+                      style="margin-top: 0px;">範例1：將 a.bat 轉成 a.exe，其中的 “” 代表不要設定 Icon，1 代表轉換成 Console application</div>
+                    <div class="csharpcode-wrapper"
+                      style="background-color: #f7f7f7; border-bottom-color: green; border-bottom-style: dotted; border-bottom-width: 1px; border-left-color: green; border-left-style: dotted; border-left-width: 1px; border-right-color: green; border-right-style: dotted; border-right-width: 1px; border-top-color: green; border-top-style: dotted; border-top-width: 1px; cursor: text; font-family: Consolas, 'Courier New', Courier, monospace; font-size: 8pt; line-height: 12pt; margin-bottom: 20px; margin-left: 10px; margin-right: 0px; margin-top: 20px; max-height: 250px; overflow-x: auto; overflow-y: auto; padding-bottom: 4px; padding-left: 4px; padding-right: 4px; padding-top: 4px; width: 585px;">
+                      <pre class="csharpcode"
+                        style="background-color: #f7f7f7; border-bottom-color: green; border-bottom-style: none; border-bottom-width: 1px; border-left-color: green; border-left-style: none; border-left-width: 1px; border-right-color: green; border-right-style: none; border-right-width: 1px; border-top-color: green; border-top-style: none; border-top-width: 1px; color: black; cursor: text; font-family: Consolas, 'Courier New', Courier, monospace; font-size: 8pt; line-height: 12pt; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; max-height: 250px; overflow-x: visible; overflow-y: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; width: 567px;">Bat_To_Exe_Converter.exe  a.bat  a.exe  <span class="str" style="color: #006080;">“”</span>  1</pre>
+                    </div>
+                    <div style="margin-top: 0px;">範例2：將 a.bat 轉成 a.exe，其中的 0 代表轉換成 Ghost application ( 背景作業模式 )</div>
+                    <div class="csharpcode-wrapper"
+                      style="background-color: #f7f7f7; border-bottom-color: green; border-bottom-style: dotted; border-bottom-width: 1px; border-left-color: green; border-left-style: dotted; border-left-width: 1px; border-right-color: green; border-right-style: dotted; border-right-width: 1px; border-top-color: green; border-top-style: dotted; border-top-width: 1px; cursor: text; font-family: Consolas, 'Courier New', Courier, monospace; font-size: 8pt; line-height: 12pt; margin-bottom: 20px; margin-left: 10px; margin-right: 0px; margin-top: 20px; max-height: 250px; overflow-x: auto; overflow-y: auto; padding-bottom: 4px; padding-left: 4px; padding-right: 4px; padding-top: 4px; width: 585px;">
+                      <pre class="csharpcode"
+                        style="background-color: #f7f7f7; border-bottom-color: green; border-bottom-style: none; border-bottom-width: 1px; border-left-color: green; border-left-style: none; border-left-width: 1px; border-right-color: green; border-right-style: none; border-right-width: 1px; border-top-color: green; border-top-style: none; border-top-width: 1px; color: black; cursor: text; font-family: Consolas, 'Courier New', Courier, monospace; font-size: 8pt; line-height: 12pt; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; max-height: 250px; overflow-x: visible; overflow-y: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; width: 567px;">Bat_To_Exe_Converter.exe  a.bat  a.exe  <span class="str" style="color: #006080;">“”</span>  0</pre>
+                    </div>
+                    <div style="margin-top: 0px;">範例3：將 a.bat 轉成 a.exe，並且也將 myprogram1.exe 與 test.jpg 兩個檔案都打包放進 a.exe
+                      中，讓 a.exe 在執行時可以引用這兩個檔案。</div>
+                    <div class="csharpcode-wrapper"
+                      style="background-color: #f7f7f7; border-bottom-color: green; border-bottom-style: dotted; border-bottom-width: 1px; border-left-color: green; border-left-style: dotted; border-left-width: 1px; border-right-color: green; border-right-style: dotted; border-right-width: 1px; border-top-color: green; border-top-style: dotted; border-top-width: 1px; cursor: text; font-family: Consolas, 'Courier New', Courier, monospace; font-size: 8pt; line-height: 12pt; margin-bottom: 20px; margin-left: 10px; margin-right: 0px; margin-top: 20px; max-height: 250px; overflow-x: auto; overflow-y: auto; padding-bottom: 4px; padding-left: 4px; padding-right: 4px; padding-top: 4px; width: 585px;">
+                      <pre class="csharpcode"
+                        style="background-color: #f7f7f7; border-bottom-color: green; border-bottom-style: none; border-bottom-width: 1px; border-left-color: green; border-left-style: none; border-left-width: 1px; border-right-color: green; border-right-style: none; border-right-width: 1px; border-top-color: green; border-top-style: none; border-top-width: 1px; color: black; cursor: text; font-family: Consolas, 'Courier New', Courier, monospace; font-size: 8pt; line-height: 12pt; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; max-height: 250px; overflow-x: visible; overflow-y: visible; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; width: 567px;">Bat_To_Exe_Converter.exe  a.bat  a.exe  <span class="str" style="color: #006080;">“”</span>  1  myprogram1.exe  test.jpg</pre>
+                    </div>
+                    <div style="margin-top: 0px;">另外，我也做了個小測試，情境如下：</div>
+                  </li>
+                </ol>
+                <ul>
+                  <li>我寫一個 a.bat 內容是&nbsp;<strong>type a.txt</strong></li>
+                  <li>然後建立一個 a.txt 內容是&nbsp;<strong>12345</strong></li>
+                  <li>然後執行&nbsp;<strong>Bat_To_Exe_Converter.exe a.bat a.exe “” 1 a.txt</strong>&nbsp;將 a.txt 綁進 a.exe 中
+                  </li>
+                  <li>之後<strong>將 a.txt 的內容修改</strong>成&nbsp;<strong>67890</strong></li>
+                  <li>接者我<strong>執行 a.exe</strong>&nbsp;得到的結果是&nbsp;<strong>67890</strong></li>
+                  <li>接者我從該目錄<strong>刪除 a.txt 檔案</strong></li>
+                  <li><strong>再執行一次 a.exe</strong>&nbsp;我得到的結果是&nbsp;<strong>12345</strong>
+                    <div style="margin-top: 0px;">由此可知，即便將檔案一併綁進轉換後的執行檔中，原本批次檔讀取的訊息還是先從原本所在的目錄讀取檔案，若讀取不到才會讀取被綁進執行檔中的檔案。
+                    </div>
+                    <div style="margin-top: 0px;"><br></div>
+                    <div style="margin-top: 0px;">引用自:&nbsp;<a
+                        href="http://blog.miniasp.com/post/2008/10/Useful-tool-Bat-to-Exe-Converter.aspx"
+                        target="_blank"
+                        rel="noopener">http://blog.miniasp.com/post/2008/10/Useful-tool-Bat-to-Exe-Converter.aspx</a>
+                    </div>
+                    <div style="margin-top: 0px;"><br></div>
+                    <div class="blogger-post-footer">Copyright © 2018 helloworld4u.com All rights reserved.</div>
+                  </li>
+                </ul>
+
+
+              </div>
+              <footer class="article-footer">
+                <a data-url="https://xispace.app/blog/好用工具-Bat-To-Exe-Converter/" data-id="cjsu0axoh00862cpz2r32kri1"
+                  class="article-share-link">Share</a>
+
+
+                <ul class="article-tag-list">
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Command-line/">Command
+                      line</a></li>
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows-相關/">Windows
+                      相關</a></li>
+                </ul>
+
+              </footer>
+            </div>
+
+
+            <nav id="article-nav">
+
+              <a href="/IIS網頁壓縮/" id="article-nav-newer" class="article-nav-link-wrap">
+                <strong class="article-nav-caption">Newer</strong>
+                <div class="article-nav-title">
+
+                  IIS網頁壓縮
+
+                </div>
+              </a>
+
+
+              <a href="/JQuery-UI-Dialog和ASP-NET-Button/" id="article-nav-older" class="article-nav-link-wrap">
+                <strong class="article-nav-caption">Older</strong>
+                <div class="article-nav-title">JQuery UI Dialog和ASP.NET Button</div>
+              </a>
+
+            </nav>
+
+
+          </article>
+
+        </section>
+
+        <aside id="sidebar">
+
+
+
+
+
+          <div class="widget-wrap">
+            <h3 class="widget-title">Tags</h3>
+            <div class="widget">
+              <ul class="tag-list">
+                <li class="tag-list-item"><a class="tag-list-link"
+                    href="/tags/AJAXControlToolkit/">AJAXControlToolkit</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/ASP-NET/">ASP.NET</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/ActionScript/">ActionScript</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Bot/">Bot</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C#</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Command-line/">Command line</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/ConvertToPDF/">ConvertToPDF</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/DotNet-Library/">DotNet Library</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Email/">Email</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/GitBook/">GitBook</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/IE/">IE</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/IIS/">IIS</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/MP3/">MP3</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/MS-SQL/">MS-SQL</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/">MVC</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Pycharm/">Pycharm</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Reactjs/">Reactjs</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/SublimeText/">SublimeText</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/TelegramBot/">TelegramBot</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/VM/">VM</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Windowns-Service/">Windowns Service</a>
+                </li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows-相關/">Windows 相關</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/color-code/">color code</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/ejs/">ejs</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/pm2/">pm2</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/sqlite/">sqlite</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/web2py/">web2py</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/瀏覽器/">瀏覽器</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/線上工具/">線上工具</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/軟体應用相關/">軟体應用相關</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/軟工文件工具/">軟工文件工具</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/隨便寫寫/">隨便寫寫</a></li>
+              </ul>
+            </div>
+          </div>
+
+
+
+
+          <div class="widget-wrap">
+            <h3 class="widget-title">Tag Cloud</h3>
+            <div class="widget tagcloud">
+              <a href="/tags/AJAXControlToolkit/" style="font-size: 10px;">AJAXControlToolkit</a> <a
+                href="/tags/ASP-NET/" style="font-size: 17.14px;">ASP.NET</a> <a href="/tags/ActionScript/"
+                style="font-size: 12.86px;">ActionScript</a> <a href="/tags/Bot/" style="font-size: 10px;">Bot</a> <a
+                href="/tags/C/" style="font-size: 15px;">C#</a> <a href="/tags/CSS3/"
+                style="font-size: 16.43px;">CSS3</a> <a href="/tags/Command-line/" style="font-size: 14.29px;">Command
+                line</a> <a href="/tags/ConvertToPDF/" style="font-size: 10px;">ConvertToPDF</a> <a
+                href="/tags/Database/" style="font-size: 10px;">Database</a> <a href="/tags/Django/"
+                style="font-size: 14.29px;">Django</a> <a href="/tags/DotNet-Library/"
+                style="font-size: 12.86px;">DotNet Library</a> <a href="/tags/Email/" style="font-size: 10px;">Email</a>
+              <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/GitBook/"
+                style="font-size: 10px;">GitBook</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a
+                href="/tags/HTML/" style="font-size: 19.29px;">HTML</a> <a href="/tags/IE/"
+                style="font-size: 12.14px;">IE</a> <a href="/tags/IIS/" style="font-size: 11.43px;">IIS</a> <a
+                href="/tags/JSON/" style="font-size: 11.43px;">JSON</a> <a href="/tags/MP3/"
+                style="font-size: 10px;">MP3</a> <a href="/tags/MS-SQL/" style="font-size: 12.86px;">MS-SQL</a> <a
+                href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/Mac/"
+                style="font-size: 14.29px;">Mac</a> <a href="/tags/Nodejs/" style="font-size: 12.86px;">Nodejs</a> <a
+                href="/tags/Pycharm/" style="font-size: 11.43px;">Pycharm</a> <a href="/tags/Python/"
+                style="font-size: 15.71px;">Python</a> <a href="/tags/Reactjs/" style="font-size: 10px;">Reactjs</a> <a
+                href="/tags/SublimeText/" style="font-size: 11.43px;">SublimeText</a> <a href="/tags/TelegramBot/"
+                style="font-size: 10px;">TelegramBot</a> <a href="/tags/VM/" style="font-size: 10px;">VM</a> <a
+                href="/tags/Windowns-Service/" style="font-size: 10.71px;">Windowns Service</a> <a
+                href="/tags/Windows-相關/" style="font-size: 18.57px;">Windows 相關</a> <a href="/tags/blog/"
+                style="font-size: 10px;">blog</a> <a href="/tags/color-code/" style="font-size: 10px;">color code</a> <a
+                href="/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/tags/jQuery/"
+                style="font-size: 18.57px;">jQuery</a> <a href="/tags/javascript/"
+                style="font-size: 20px;">javascript</a> <a href="/tags/pm2/" style="font-size: 10.71px;">pm2</a> <a
+                href="/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/tags/vscode/"
+                style="font-size: 11.43px;">vscode</a> <a href="/tags/web2py/" style="font-size: 10.71px;">web2py</a> <a
+                href="/tags/瀏覽器/" style="font-size: 11.43px;">瀏覽器</a> <a href="/tags/線上工具/"
+                style="font-size: 13.57px;">線上工具</a> <a href="/tags/軟体應用相關/" style="font-size: 17.86px;">軟体應用相關</a> <a
+                href="/tags/軟工文件工具/" style="font-size: 10px;">軟工文件工具</a> <a href="/tags/隨便寫寫/"
+                style="font-size: 12.14px;">隨便寫寫</a>
+            </div>
+          </div>
+
+
+
+          <div class="widget-wrap">
+            <h3 class="widget-title">
+              Archives
+            </h3>
+            <div class="widget">
+              <!-- <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">十月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">三月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">二月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11/">十一月 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08/">八月 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">六月 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05/">五月 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02/">二月 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">一月 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11/">十一月 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10/">十月 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08/">八月 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">六月 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05/">五月 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">四月 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">三月 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">十一月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10/">十月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09/">九月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06/">六月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05/">五月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04/">四月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03/">三月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02/">二月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2003/03/">三月 2003</a></li></ul> -->
+              <!-- 20190304修改 -->
+              <ul class="archive-list">
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">2018-10</a><span
+                    class="archive-list-count">2</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">2018-06</a><span
+                    class="archive-list-count">1</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">2018-05</a><span
+                    class="archive-list-count">1</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">2017-08</a><span
+                    class="archive-list-count">1</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">2017-07</a><span
+                    class="archive-list-count">1</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">2017-05</a><span
+                    class="archive-list-count">1</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">2017-03</a><span
+                    class="archive-list-count">1</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">2016-08</a><span
+                    class="archive-list-count">1</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016-03</a><span
+                    class="archive-list-count">7</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015-10</a><span
+                    class="archive-list-count">4</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015-09</a><span
+                    class="archive-list-count">3</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015-08</a><span
+                    class="archive-list-count">3</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015-07</a><span
+                    class="archive-list-count">2</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015-03</a><span
+                    class="archive-list-count">2</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014-11</a><span
+                    class="archive-list-count">2</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014-01</a><span
+                    class="archive-list-count">1</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">2012-10</a><span
+                    class="archive-list-count">1</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">2012-04</a><span
+                    class="archive-list-count">2</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">2012-03</a><span
+                    class="archive-list-count">3</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">2012-02</a><span
+                    class="archive-list-count">2</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/11/">2011-11</a><span
+                    class="archive-list-count">1</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08/">2011-08</a><span
+                    class="archive-list-count">6</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">2011-06</a><span
+                    class="archive-list-count">1</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05/">2011-05</a><span
+                    class="archive-list-count">1</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/02/">2011-02</a><span
+                    class="archive-list-count">2</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">2011-01</a><span
+                    class="archive-list-count">3</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11/">2010-11</a><span
+                    class="archive-list-count">7</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10/">2010-10</a><span
+                    class="archive-list-count">2</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08/">2010-08</a><span
+                    class="archive-list-count">1</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">2010-06</a><span
+                    class="archive-list-count">5</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/05/">2010-05</a><span
+                    class="archive-list-count">2</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">2010-04</a><span
+                    class="archive-list-count">3</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">2010-03</a><span
+                    class="archive-list-count">4</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/11/">2009-11</a><span
+                    class="archive-list-count">2</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/10/">2009-10</a><span
+                    class="archive-list-count">10</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09/">2009-09</a><span
+                    class="archive-list-count">4</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06/">2009-06</a><span
+                    class="archive-list-count">1</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05/">2009-05</a><span
+                    class="archive-list-count">12</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/04/">2009-04</a><span
+                    class="archive-list-count">6</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03/">2009-03</a><span
+                    class="archive-list-count">18</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/02/">2009-02</a><span
+                    class="archive-list-count">15</span></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2003/03/">2003-03</a><span
+                    class="archive-list-count">1</span></li>
+              </ul>
+            </div>
+          </div>
+
+
+
+          <div class="widget-wrap">
+            <h3 class="widget-title">Recent Posts</h3>
+            <div class="widget">
+              <ul>
+
+                <li>
+                  <a href="/vscode-Bracket-Pair-Colorizer-有了彩色括號不再眼花惹/">vscode-Bracket Pair Colorizer-有了彩色括號不再眼花惹</a>
+                </li>
+
+                <li>
+                  <a href="/EJS常用標簽/">EJS常用標簽</a>
+                </li>
+
+                <li>
+                  <a href="/好用的線上產生HTML碼的彩色的程式碼-hilite-me-幹好繞口/">好用的線上產生HTML碼的彩色的程式碼-hilite.me, 幹好繞口</a>
+                </li>
+
+                <li>
+                  <a href="/pm2-App-name/">pm2, App name</a>
+                </li>
+
+                <li>
+                  <a href="/node-telegram-bot-api-建立你的telegram機器人/">node-telegram-bot-api, 建立你的telegram機器人</a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+
+
+        </aside>
+
       </div>
       <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 Bruce Huang<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+
+        <div class="outer">
+          <div id="footer-info" class="inner">
+            &copy; 2019 Bruce Huang<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+          </div>
+        </div>
+      </footer>
     </div>
     <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+      <a href="/" class="mobile-nav-link">Home</a>
+
+      <a href="/archives" class="mobile-nav-link">Archives</a>
+
+    </nav>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-<script src="/js/script.js"></script>
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+    <script src="/js/script.js"></script>
 
 
 
   </div>
 </body>
+
 </html>
+

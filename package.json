@@ -11,10 +11,13 @@
     "url": "git+https://github.com/cn27529/cn27529.github.io.git"
   },
   "keywords": [
-    "resume",
+    "bk",
     "blog",
+    "compass",
+    "cv",
     "luopan",
-    "cv"
+    "w3c",
+    "xispace"
   ],
   "author": "cn27529",
   "license": "ISC",
@@ -22,5 +25,8 @@
     "url": "https://github.com/cn27529/cn27529.github.io/issues"
   },
   "homepage": "https://github.com/cn27529/cn27529.github.io#readme",
-  "devDependencies": {}
+  "devDependencies": {},
+  "dependencies": {
+    "hexo": "^5.4.0"
+  }
 }

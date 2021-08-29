@@ -8,7 +8,7 @@ subtitle: 'Xispace'
 description: '析空間 | Xispace.app | 小朋友的程式 | 程式學習課程 ｜ 互動課程教學'
 keywords: 析空間,Xispace.app,小朋友的程式,程式學習課程,互動課程教學
 author: Bruce Huang
-language: en
+language: zh-tw
 timezone: ''
 
 # URL
@@ -97,7 +97,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: keep
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

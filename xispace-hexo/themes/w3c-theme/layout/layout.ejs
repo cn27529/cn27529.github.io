@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>析空間 | Xispace.app | 小朋友的程式 | 程式學習課程 ｜ 互動課程教學</title>
+<meta name="keywords" content="析空間,Xispace.app,小朋友的程式,程式學習課程,互動課程教學">
+<meta name="description"
+  content="析空間 Xispace.app | 互動式遊戲進行對小朋友的程式教學，沒有基礎也無仿，對電腦科學有興趣的小朋友們，都可以來體驗看看，我們對未來也規畫了不定期對做弱勢的或者徧鄉的族群們，能有免費的教學與旁聽的機會，以我們的力量回饋社會。這個商品，使用線上服務方式實施教學，適合對已經會基本電腦操作概念的學習對象。">
+<meta name="apple-mobile-web-app-title" content="析空間 | Xispace.app | 小朋友的程式 | 程式學習課程 ｜ 互動課程教學">
+<meta name="application-name" content="析空間 | Xispace.app | 小朋友的程式 | 程式學習課程 ｜ 互動課程教學">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil" />
+<style>
+  .w3-allerta {
+    font-family: "Allerta Stencil", sans-serif;
+  }
+
+  .mySlides {
+    display: none;
+  }
+
+  .big {
+    font-size: 30px;
+    margin: auto;
+  }
+</style>
+
+<head>
+  <!--adsbygoogle-->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4610521031759838"
+    crossorigin="anonymous"></script>
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KKZSQBV');</script>
+  <!-- End Google Tag Manager -->
+
+</head>
+
+<body class="w3-monospace">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKZSQBV" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Navbar -->
+  <div class="w3-top w3-allerta w3-large">
+    <div class="w3-bar w3-black w3-card">
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)"
+        onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+      <a href="#xisapce" class="w3-bar-item w3-button w3-padding-large w3-hide-small">析空間 Xispace</a>
+      <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
+      <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i
+          class="fa fa-search"></i></a>
+    </div>
+  </div>
+
+  <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+  <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top w3-allerta w3-large"
+    style="margin-top: 46px;">
+    <a href="#xisapce" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">析空間 Xispace</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contact</a>
+  </div>
+
+
+
+  <div class="w3-content" style="max-width: auto; margin-top: 55px;">
+    <%- body %>
+  </div>
+
+  <footer class="w3-container w3-black">
+    <p class="w3-center w3-small w3-allerta">
+      Copyright © 2021 Xispace.app All rights reserved.
+    </p>
+  </footer>
+
+  <script>
+    // Automatic Slideshow - change image every 4 seconds
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) { myIndex = 1 }
+      x[myIndex - 1].style.display = "block";
+      setTimeout(carousel, 5000);
+    }
+
+
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+
+  </script>
+</body>
+
+</html>

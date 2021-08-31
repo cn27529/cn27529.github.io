@@ -56,11 +56,15 @@
     <div class="w3-bar w3-black w3-card">
       <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)"
         onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-      <a href="#xisapce" class="w3-bar-item w3-button w3-padding-large w3-hide-small">析空間 Xispace</a>
-      <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
-      <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i
-          class="fa fa-search"></i></a>
+
+      <% for (let i in theme.menu) { %>
+        <a href="<%- url_for(theme.menu[i]) %>" class="w3-bar-item w3-button w3-padding-large">
+          <%= __(i) %>
+        </a>
+        <% } %>
+
+          <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i
+              class="fa fa-search"></i></a>
     </div>
   </div>
 
@@ -71,54 +75,20 @@
     <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contact</a>
   </div>
 
-  <% for (let i in theme.menu) { %>
-    <li class="menu-item">
-      <a href="<%- url_for(theme.menu[i]) %>">
-        <%= __(i.toLowerCase()).toUpperCase() %>
-      </a>
-    </li>
-    <% } %>
 
 
-      <div class="w3-content" style="max-width: auto; margin-top: 55px;">
-        <%- body %>
-      </div>
 
-      <footer class="w3-container w3-black">
-        <p class="w3-center w3-small w3-allerta">
-          Copyright © 2021 Xispace.app All rights reserved.
-        </p>
-      </footer>
+  <div class="w3-content" style="max-width: auto; margin-top: 46px;">
+    <%- body %>
+  </div>
 
-      <script>
-        // Automatic Slideshow - change image every 4 seconds
-        var myIndex = 0;
-        carousel();
-
-        function carousel() {
-          var i;
-          var x = document.getElementsByClassName("mySlides");
-          for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-          }
-          myIndex++;
-          if (myIndex > x.length) { myIndex = 1 }
-          x[myIndex - 1].style.display = "block";
-          setTimeout(carousel, 5000);
-        }
+  <footer class="w3-container w3-black">
+    <p class="w3-center w3-small w3-allerta">
+      Copyright © 2021 Xispace.app All rights reserved.
+    </p>
+  </footer>
 
 
-        // Used to toggle the menu on small screens when clicking on the menu button
-        function myFunction() {
-          var x = document.getElementById("navDemo");
-          if (x.className.indexOf("w3-show") == -1) {
-            x.className += " w3-show";
-          } else {
-            x.className = x.className.replace(" w3-show", "");
-          }
-        }
-
-      </script>
 </body>
 
 </html>

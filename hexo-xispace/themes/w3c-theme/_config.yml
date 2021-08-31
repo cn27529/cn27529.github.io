@@ -1,9 +1,10 @@
 # Header
 menu:
   Home: /
-  Archives: /archives
-  About: /about
-  CV: /cv
+  Xispace 析空間: /#xispace
+  Contact: /#contact
+  #About: /about
+  #CV: /cv
 rss: /atom.xml
 
 # Content

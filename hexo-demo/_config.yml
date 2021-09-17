@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://xispace.app
+url: http://example.com
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -97,16 +97,9 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-#theme: landscape
-#theme: w3c-theme
-theme: hexo-theme-doc
+theme: landscape
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
-
-admin:
-  username: admin
-  password_hash: $2a$10$CB5GJP8v7c17kH/LD1o.IeEfxl2hGRnGUtj3eRb.eu0zcAGRhDq1S
-  secret: 1qaz@WSX

@@ -3,7 +3,8 @@ menu:
   Home: /
   Xispace 析空間: /#xispace
   Contact: /#contact
-  #About: /about
+  About: /about
+  Mypage: /mypage
   #CV: /cv
 rss: /atom.xml
 

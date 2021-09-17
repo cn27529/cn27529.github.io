@@ -104,3 +104,8 @@ theme: w3c-theme
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+admin:
+  username: admin
+  password_hash: $2a$10$CB5GJP8v7c17kH/LD1o.IeEfxl2hGRnGUtj3eRb.eu0zcAGRhDq1S
+  secret: 1qaz@WSX

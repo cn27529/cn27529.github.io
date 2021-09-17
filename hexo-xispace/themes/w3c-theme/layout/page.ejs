@@ -1,12 +1,24 @@
 <!-- 分页(其他自定义页面) -->
-<h1>This is a customer page</h1>
+
 <%- partial('partial/head', {page:page, theme:theme}) %>
 
   <%- partial('partial/header', {page:page, theme:theme}) %>
-    <%= page.title %>
-      <%= page.type %>
 
-        <!-- 该文件是其他页面的集合，所以得判断啥情况引入啥文件 -->
-        <% if (is_page() && page.type==='about' ) { %>
-          <%- partial('partial/about') %>
-            <% } %>
+    <h1>
+      <%= page.title %>
+    </h1>
+
+
+    <%= page.type %>
+
+      <h1>
+        <%- page.content %>
+      </h1>
+
+      <!-- 该文件是其他页面的集合，所以得判断啥情况引入啥文件 -->
+      <% if (is_page() && page.type==='about' ) { %>
+        <%- partial('partial/about') %>
+          <% } %>
+            <% if (is_page() && page.type==='mypage' ) { %>
+              <%- partial('partial/mypage') %>
+                <% } %>

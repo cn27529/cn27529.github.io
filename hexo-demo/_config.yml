@@ -14,8 +14,12 @@ timezone: ''
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://sub.xispace.app
-permalink: :year/:month/:day/:title/
+#permalink: :year/:month/:day/:title/
+#permalink: :category/:hash/
+#permalink: :category/:title/
+permalink: :lang/:category/:title/
 permalink_defaults:
+  #lang: en
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
@@ -97,7 +101,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: mytheme
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -105,3 +109,17 @@ deploy:
   type: git
   repo: https://github.com/cn27529/hexo-demo.git
   branch: gh-pages
+
+# admin deploy設定，mydeploy.sh要變更權限chmod 777 mydeploy.sh
+admin:
+  deployCommand: './mydeploy.sh'
+
+#RSS订阅
+plugin:
+  - hexo-generator-feed
+#Feed Atom
+feed:
+type: atom
+path: atom.xml
+limit: 20
+rss: /atom.xml

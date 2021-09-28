@@ -34,10 +34,10 @@ const game = new Phaser.Game(config)
 function preload() {
 
   //this.load.setBaseURL('https://labs.phaser.io');
-  this.load.image('sky', 'assets/marry-bg3.png');
-  this.load.image('logo', 'assets/heart2.png');
-  this.load.image('red', 'assets/red.png');
-  this.load.image('ground', 'assets/platform.png');
+  this.load.image('sky', 'images/marry-bg3.png');
+  this.load.image('logo', 'images/heart2.png');
+  this.load.image('red', 'images/red.png');
+  this.load.image('ground', 'images/platform.png');
 
 }
 

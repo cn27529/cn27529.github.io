@@ -38,3 +38,7 @@ https://blog.xispace.app/feeds/posts/default?alt=rss&max-results=500
 ```bash
 hexo migrate rss 'https://blog.xispace.app/feeds/posts/default?alt=rss&max-results=10000'
 ```
+
+# deploy to
+
+deploy to blog-xispace repo on blog.xispace.app site

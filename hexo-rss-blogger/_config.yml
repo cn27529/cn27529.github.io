@@ -77,9 +77,28 @@ pagination_dir: page
 theme: landscape
 
 # Deployment
-## Docs: https://hexo.io/docs/deployment.html
+## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
+  type: git
+  repo: https://github.com/cn27529/sub-xispace.git
+  branch: gh-pages
+
+# admin deploy設定，mydeploy.sh要變更權限chmod 777 mydeploy.sh
+admin:
+  deployCommand: './mydeploy.sh'
+
+#RSS订阅
+plugin:
+  - hexo-generator-feed
+#Feed Atom
+feed:
+  # Generate both atom and rss2 feeds
   type:
+    - atom
+    - rss2
+  path:
+    - atom.xml
+    - rss2.xml
 
 # https://segmentfault.com/a/1190000007477815
 sitemap:

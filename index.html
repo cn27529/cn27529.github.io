@@ -40,6 +40,17 @@
       position: sticky;
       top: -1px;
     }
+
+    body {
+      background-image: url(https://images.unsplash.com/photo-1646725477829-5b6a2c46f430?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    #slidershow {
+      background-color: #0f0f0f;
+    }
   </style>
 
   <!--adsbygoogle-->
@@ -58,14 +69,14 @@
 
 </head>
 
-<body class="w3-monospace">
+<body class="w3-monospace w3-text-white">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKZSQBV" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- Navbar -->
-  <div class="w3-top w3-allerta w3-large" id="navBar">
+  <div class="w3-top w3-allerta w3-large" id="navBar" style="opacity: .7;">
     <div class="w3-bar w3-black w3-card">
       <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)"
         onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
@@ -79,31 +90,31 @@
 
   <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
   <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top w3-allerta w3-large"
-    style="margin-top: 46px;">
+    style="margin-top: 48px; opacity: .7;">
     <a href="#xisapce" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">析空間 Xispace</a>
     <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contact</a>
   </div>
 
   <!-- Page content -->
-  <div class="w3-content" style="max-width: auto;">
+  <div class="w3-content" style="max-width: auto; margin-top: 48px;">
 
     <!-- Slideshow Section -->
     <div id="slidershow">
       <div class="mySlides w3-display-container w3-animate-fading">
         <img src="./images/w3c/cloud_01_800x600.jpg" style="width: 100%;" />
-        <div class="w3-display-middle w3-padding w3-text-sand w3-black w3-xlarge">
+        <div class="w3-display-middle w3-padding w3-text-sand w3-black w3-large">
           程式學習課程</div>
       </div>
 
       <div class="mySlides w3-display-container w3-animate-fading">
         <img src="./images/w3c/w3c_html5.jpg" style="width: 100%;" />
-        <div class="w3-display-middle w3-padding w3-text-sand w3-black w3-xlarge">
+        <div class="w3-display-middle w3-padding w3-text-sand w3-black w3-large">
           程式學習課程</div>
       </div>
 
       <div class="mySlides w3-display-container w3-animate-fading">
         <img src="./images/w3c/w3c_html5_level.jpg" style="width: 100%;" />
-        <div class="w3-display-middle w3-padding w3-text-sand w3-black w3-xlarge">
+        <div class="w3-display-middle w3-padding w3-text-sand w3-black w3-large">
           程式學習課程</div>
       </div>
       <!--

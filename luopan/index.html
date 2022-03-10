@@ -12,7 +12,7 @@
 
     <script src="./js/jQueryRotate.js"></script>
     <script src="./js/luopan.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
     <!-- Tocas UI：CSS 與元件 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.css">
     <!-- Tocas JS：模塊與 JavaScript 函式 -->
@@ -87,9 +87,10 @@
     <div id="loader" style="display: none;"></div>
 
     <script>
+
         var luopan = new Luopan({
             ele_id: 'luopan',
-            src: './images/luopan-201904-now.png'
+            src: './images/luopan-201909-now.png'
         });
 
         var ui_reset = function (cb) {
@@ -122,7 +123,7 @@
             ele_id: 'tensvg',
             w_id: 'wline',
             h_id: 'hline',
-            color_code: colors[1],
+            color_code: colors[2],
             stroke_width: 1
         })
 
@@ -161,7 +162,7 @@
                 transform_rotate: 0,
                 loading: false,
                 show_line: true,
-                text_line: '隱藏',
+                text_line: '隱藏',
             },
             mounted: function () {
 
@@ -226,7 +227,7 @@
                     if (this.show_line) {
                         this.text_line = '顯示';
                     } else {
-                        this.text_line = '隱藏';
+                        this.text_line = '隱藏';
                     }
 
                     if (this.show_line) {

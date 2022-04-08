@@ -136,34 +136,39 @@
     <!-- Slideshow Section -->
     <div id="slidershow">
 
+      <!--
       <div class="mySlides w3-display-container w3-animate-fading">
         <img src="./images/bowl/slidershow.jpg" style="width: 100%;" />
-        <div class="w3-display-middle w3-padding w3-text-sand w3-black w3-xlarge">
+        <div class="w3-display-middle w3-padding w3-text-sand w3-black w3-xxlarge">
           缽音747</div>
       </div>
-
-      <div class="mySlides w3-display-container w3-animate-fading">
+-->
+      <div class="mySlides w3-display-container ">
         <img src="./images/bowl/slidershow2.jpg" style="width: 100%;" />
-        <div class="w3-display-middle w3-padding w3-text-sand w3-black w3-xlarge">
-          缽音747</div>
+        <div class="w3-display-middle w3-padding w3-text-sand w3-circle w3-small">
+          <img class="w3-circle" src="./images/logo.jpg" style="width:100%">
+        </div>
       </div>
 
-      <div class="mySlides w3-display-container w3-animate-fading">
+      <div class="mySlides w3-display-container ">
         <img src="./images/bowl/slidershow3.jpg" style="width: 100%;" />
-        <div class="w3-display-middle w3-padding w3-text-sand w3-black w3-xlarge">
-          缽音747</div>
+        <div class="w3-display-middle w3-padding w3-text-sand w3-circle w3-small">
+          <img class="w3-circle" src="./images/logo.jpg" style="width:100%">
+        </div>
       </div>
 
-      <div class="mySlides w3-display-container w3-animate-fading">
+      <div class="mySlides w3-display-container ">
         <img src="./images/bowl/slidershow4.jpg" style="width: 100%;" />
-        <div class="w3-display-middle w3-padding w3-text-sand w3-black w3-xlarge">
-          缽音747</div>
+        <div class="w3-display-middle w3-padding w3-text-sand w3-circle w3-small">
+          <img class="w3-circle" src="./images/logo.jpg" style="width:100%">
+        </div>
       </div>
 
-      <div class="mySlides w3-display-container w3-animate-fading">
+      <div class="mySlides w3-display-container ">
         <img src="./images/bowl/slidershow5.jpg" style="width: 100%;" />
-        <div class="w3-display-middle w3-padding w3-text-sand w3-black w3-large">
-          缽音747</div>
+        <div class="w3-display-middle w3-padding w3-text-sand w3-circle w3-small">
+          <img class="w3-circle" src="./images/logo.jpg" style="width:100%">
+        </div>
       </div>
 
     </div>
@@ -379,11 +384,23 @@
       for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";
       }
-      myIndex++;
-      if (myIndex > x.length) { myIndex = 1 }
-      x[myIndex - 1].style.display = "block";
-      setTimeout(carousel, 5000);
+      // myIndex++;
+      // if (myIndex > x.length) { myIndex = 1 }
+      // x[myIndex - 1].style.display = "block";
+      // setTimeout(carousel, 5000);
+
+      var slidershow = random_item(x);
+      slidershow.style.display = "block";
+
+
     }
+
+    function random_item(items) {
+
+      return items[Math.floor(Math.random() * items.length)];
+
+    }
+
 
 
     // Used to toggle the menu on small screens when clicking on the menu button

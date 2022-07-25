@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    
+
+        
+            <title>
+                
+                    WinXp 校調 - 讓電腦跑得比較快? |
+                        
+                            世界因你而進步
+            </title>
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+            <meta name="description" content="清除 WinXP Shared Folders--就是在「我的電腦」裡那個礙眼的「共用文件夾」 1.利用regedit來開啟註冊表編輯器 2.並刪掉以下的機碼： HKEY_LOCAL_MACHINE \ SOFTWARE \ Microsoft \ Windows \ CurrentVersion \ Explorer \ My Computer \ NameSpace \ DelegateFol">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WinXp 校調 - 讓電腦跑得比較快?">
+<meta property="og:url" content="https://blog.xispace.app/blog/2009/03/WinXp-%E6%A0%A1%E8%AA%BF-%E8%AE%93%E9%9B%BB%E8%85%A6%E8%B7%91%E5%BE%97%E6%AF%94%E8%BC%83%E5%BF%AB/index.html">
+<meta property="og:site_name" content="世界因你而進步">
+<meta property="og:description" content="清除 WinXP Shared Folders--就是在「我的電腦」裡那個礙眼的「共用文件夾」 1.利用regedit來開啟註冊表編輯器 2.並刪掉以下的機碼： HKEY_LOCAL_MACHINE \ SOFTWARE \ Microsoft \ Windows \ CurrentVersion \ Explorer \ My Computer \ NameSpace \ DelegateFol">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2009-03-21T16:15:00.000Z">
+<meta property="article:modified_time" content="2021-11-03T02:31:29.845Z">
+<meta property="article:author" content="cn27529">
+<meta property="article:tag" content="Windows 相關">
+<meta name="twitter:card" content="summary">
+                
+                    <link rel="alternate" href="/blog/atom.xml" title="世界因你而進步" type="application/atom+xml" />
+                    
+                        
+                            <link rel="icon" href="/favicon.png" />
+                            
+                                
+                                    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css" />
+                                    
+                                        
+<link rel="stylesheet" href="/blog/css/style.css">
+
+
+                                            <!--keywords-->
+                                            
+                                                    <meta name="keywords" content="析空間,Xispace.app,小朋友的程式,程式學習課程,互動課程教學," />
+                                                    
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">世界因你而進步</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.xispace.app/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-WinXp-校調-讓電腦跑得比較快" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2009/03/WinXp-%E6%A0%A1%E8%AA%BF-%E8%AE%93%E9%9B%BB%E8%85%A6%E8%B7%91%E5%BE%97%E6%AF%94%E8%BC%83%E5%BF%AB/" class="article-date">
+  <time datetime="2009-03-21T16:15:00.000Z" itemprop="datePublished">2009-03-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      WinXp 校調 - 讓電腦跑得比較快?
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>清除 WinXP Shared Folders–就是在「我的電腦」裡那個礙眼的「共用文件夾」<br>1.利用regedit來開啟註冊表編輯器<br>2.並刪掉以下的機碼：<br>HKEY_LOCAL_MACHINE \ SOFTWARE \ Microsoft \ Windows \ CurrentVersion \ Explorer \ My Computer \ NameSpace \ DelegateFolders \ {59031a47-3f72-44a7-89c5-5595fe6b30ee}  </p>
+<p>加速XP的開關機<br>1.開啟註冊表編輯器<br>2.找到HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control，<br>3.將WaitToKillServiceTimeout 設為：1000或更小。<br>4.找到HKEY_CURRENT_USER\Control Panel\Desktop，<br>5.將右邊視窗的 WaitToKillAppTimeout 改為 1000，<br>6.即關閉程序時僅等待1秒。<br>7.將HungAppTimeout 值改為：200，表示程序出錯時等待0.5秒。<br>8.打開註冊表 HKEY_CURRENT_USER\Control Panel\Desktop 鍵，<br>9.將 AutoEndTasks 值設為 1。 讓系統自動關閉停止回應的程式。  </p>
+<p>加快選單顯示速度<br>1.開啟註冊表編輯器，<br>2.找到 HKEY_CURRENT_USER\Control Panel\Desktop，<br>3.將其下的 MenuShowDelay 項改為：0，你的選單將會出乎意料地快。<br>===================================  </p>
+<p>XP減肥方法<br>1.刪除系統檔備份 ：sfc.exe /purgecache<br>2.刪除驅動備份：windows\driver cache\i386目錄下的Driver.cab文件 （73mb)<br>3.取消系統還原<br>4.刪除Help檔（減掉40多mb)<br>5.刪掉\WINDOWS\system32\dllcache(減去近300mb),這是備用的dll檔， 只要你已拷貝了安裝檔，完全可以這樣做。<br>6.把我的文件、IE的暫存檔案夾都轉到其他硬碟（分區）。<br>7.把虛擬記憶體也轉到其他硬碟。<br>8.將應用軟體裝在其他硬碟（這對重裝系統也有好處）。<br>9.刪除\windows\ime下不用的輸入法（日文，韓文，簡體中文輸入法，84.5MB）<br>10.如用ntfs裝xp,本身就節省硬碟。  </p>
+<p>XP檢查是否有啟用成功<br>開完機後可以試試在 執行列上打…<br>oobe/msoobe /a<br>如果出現…<br>Windows 產品啟用<br>Windows 已經啟用。請按[確定]結束。  </p>
+<p>真正檢查XP的版本<br>找尋電腦中windows/system32/NTOSKRNL.EXE 的這個檔–&gt;按右鍵–&gt;選內容  </p>
+<p>辨認真假中文版XP的方法<br>1.執行超級終端機.是否為中文介面及中文名稱抬頭<br>2.尋找dxdiag.exe並執行.看看directx診斷程式中的系統資訊<br>--&gt;看看系統資訊中的作業系統版本是否為5.1build2600<br>--&gt;看看系統資訊中的語言及區域設定是否都為中文<br>(如果是就沒問題囉)  </p>
+<p>XP要做開機磁片<br>在A槽–&gt;按右鍵–&gt;選格式化–&gt;選建立一個MS-DOS開機磁片  </p>
+<p>WinXP的ADSL撥接功能<br>方法:<br>控制台–&gt;網路連線–&gt;建立一個新連線–&gt;連線到網際網路<br>--&gt;手動設定我的連線<br>--&gt;使用需要使用者名稱和密碼的寬頻連線來連線<br>--&gt;ISP名稱(隨便填你想要的,如Hinet…)<br>--&gt;使用者名稱.密碼就填撥接帳號與密碼<br>--&gt;下面3選項看需要可選可不選(其實XP內建的防火牆功能不錯)–&gt;完成<br>P.S 如要開機就自動撥接上網的話,把連線ICON抓到啟動中,應該就可以囉  </p>
+<p>XP的網路芳鄰無法使用解決辦法(先確認網路都沒問題)<br>進入控制台–&gt;使用者帳戶–&gt;建立新的帳戶<br>--&gt;輸入那台電腦的開機帳號(電腦名稱)及密碼<br>--&gt;選擇”受限制的帳戶”–&gt;完成<br>這樣別人就可以登陸你的電腦裡囉  </p>
+<p>XP裡開啟DMA<br>關於DMA:<br>到裝置管理員裡選擇IDE ATA/ATAPI controllers<br>到Primary/Secondary IDE Channel裡面的進階設定<br>將所有的轉送模式都設定為使用DMA(如果可用的話)<br>系統就會自動打開DMA支援(在BIOS裡也應該要先設為支援DMA)  </p>
+<p>XP裡關閉光碟Autorun功能<br>打開光碟機的內容,將自動撥放裡所有的光碟格式都設為不要有任何動作<br>或<br>利用Group Policy (執行gpedit.msc)<br>到電腦設定–&gt;系統管理範本–&gt;系統<br>找到–&gt;關閉自動撥放<br>按右鍵選–&gt;內容,選擇已–&gt;啟用,<br>在下面那裡選–&gt;所有的磁碟機,<br>然後套用,重新開機,應該也可以,但是這個方法不能關閉音樂CD的自動撥放  </p>
+<p>XP的自動關機問題<br>如果不能自動關機的話<br>控制台–&gt;電源–&gt;顯示–&gt;螢幕保護程式–&gt;電源管理–&gt;APM打勾<br>這樣應該就可以了<br>如果還不行,應該是BIOS的問題  </p>
+<p>XP關閉系統休眠功能<br>因為休眠功能佔的硬碟空間蠻大的,<br>所以關閉比較好,<br>控制台–&gt;電源選項–&gt;休眠(不要打勾)  </p>
+<p>關閉視窗錯誤回報<br>控制台—-&gt;系統—-&gt;進階—-&gt;右下角—&gt;錯誤報告—-&gt;關閉  </p>
+<p>關閉XP安裝驅動程式往往因為數位簽署<br>控制台—–&gt;系統——&gt;硬體—–&gt;裝置管理員—–&gt;驅動程式簽署—-&gt;略過  </p>
+<p>確定XP是否真正破解<br>開始–&gt;&gt;執行–&gt;&gt;regedit<br>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion]<br>將 “RegDone” = 的數值，由 “0” 改成 “1”<br>如此才算完全”破解” ,這個動作很重要<br>很多奇怪的小毛病因此而解決<br>請大家務必檢查一下………..  </p>
+<p>檢查WinXP執行時候為什麼會停頓<br>開始–&gt;連線–&gt;顯示所有連線<br>按區域網路–&gt;按右鍵–&gt;選內容<br>點選一般下面–&gt;選Internet Protocol(TCP/IP)–&gt;按內容<br>使用下列的ip位址–&gt;第一個192.168.0.1–&gt;第二個打255.255.255.0<br>這樣就好了–&gt;以後開機就不會停頓了<br>(PS.有網路使用需求的不要亂改)</p>
+<p>Copyright © Bruce Huang All rights reserved.</p>
+<!-- more -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.xispace.app/blog/2009/03/WinXp-%E6%A0%A1%E8%AA%BF-%E8%AE%93%E9%9B%BB%E8%85%A6%E8%B7%91%E5%BE%97%E6%AF%94%E8%BC%83%E5%BF%AB/" data-id="cl60iwqdu004ncb0m32etcycp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Windows-%E7%9B%B8%E9%97%9C/" rel="tag">Windows 相關</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2009/04/My-food-blog-new/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          My food blog (new)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2009/03/%E6%AA%A2%E8%A6%96%E5%8E%9F%E5%A7%8B%E6%AA%94%EF%BC%8C%E5%8D%BB%E8%B7%91%E5%87%BA%E6%A1%8C%E9%9D%A2%E7%9A%84%E6%AA%94%E6%A1%88/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">檢視原始檔，卻跑出桌面的檔案</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ASP-NET/" rel="tag">ASP.NET</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ActionScript/" rel="tag">ActionScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Bot/" rel="tag">Bot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/C/" rel="tag">C#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/CSS3/" rel="tag">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Command-line/" rel="tag">Command line</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ConvertToPDF/" rel="tag">ConvertToPDF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Database/" rel="tag">Database</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Django/" rel="tag">Django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/DotNet-Library/" rel="tag">DotNet Library</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Email/" rel="tag">Email</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Express/" rel="tag">Express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/GitBook/" rel="tag">GitBook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/GitHub/" rel="tag">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Glances/" rel="tag">Glances</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/IE/" rel="tag">IE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/IIS/" rel="tag">IIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JSON/" rel="tag">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MP3/" rel="tag">MP3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MS-SQL/" rel="tag">MS-SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MVC/" rel="tag">MVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Mac/" rel="tag">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Nodejs/" rel="tag">Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Pycharm/" rel="tag">Pycharm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Reactjs/" rel="tag">Reactjs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/SublimeText/" rel="tag">SublimeText</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/TelegramBot/" rel="tag">TelegramBot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Ubuntu/" rel="tag">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/VM/" rel="tag">VM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/WebSocket/" rel="tag">WebSocket</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Windowns-Service/" rel="tag">Windowns Service</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Windows-%E7%9B%B8%E9%97%9C/" rel="tag">Windows 相關</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/color-code/" rel="tag">color code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ejs/" rel="tag">ejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/graylog/" rel="tag">graylog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/jQuery/" rel="tag">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/pm2/" rel="tag">pm2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/sqlite/" rel="tag">sqlite</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/vscode/" rel="tag">vscode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/web2py/" rel="tag">web2py</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%80%8F%E8%A6%BD%E5%99%A8/" rel="tag">瀏覽器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%B7%9A%E4%B8%8A%E5%B7%A5%E5%85%B7/" rel="tag">線上工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%BB%9F%E4%BD%93%E6%87%89%E7%94%A8%E7%9B%B8%E9%97%9C/" rel="tag">軟体應用相關</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%BB%9F%E5%B7%A5%E6%96%87%E4%BB%B6%E5%B7%A5%E5%85%B7/" rel="tag">軟工文件工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E9%9A%A8%E4%BE%BF%E5%AF%AB%E5%AF%AB/" rel="tag">隨便寫寫</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/ASP-NET/" style="font-size: 16.67px;">ASP.NET</a> <a href="/blog/tags/ActionScript/" style="font-size: 12.67px;">ActionScript</a> <a href="/blog/tags/Bot/" style="font-size: 10px;">Bot</a> <a href="/blog/tags/C/" style="font-size: 14.67px;">C#</a> <a href="/blog/tags/CSS3/" style="font-size: 16px;">CSS3</a> <a href="/blog/tags/Command-line/" style="font-size: 14px;">Command line</a> <a href="/blog/tags/ConvertToPDF/" style="font-size: 10px;">ConvertToPDF</a> <a href="/blog/tags/Database/" style="font-size: 10px;">Database</a> <a href="/blog/tags/Django/" style="font-size: 14px;">Django</a> <a href="/blog/tags/DotNet-Library/" style="font-size: 12.67px;">DotNet Library</a> <a href="/blog/tags/Email/" style="font-size: 10px;">Email</a> <a href="/blog/tags/Express/" style="font-size: 10px;">Express</a> <a href="/blog/tags/Git/" style="font-size: 10px;">Git</a> <a href="/blog/tags/GitBook/" style="font-size: 10px;">GitBook</a> <a href="/blog/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/blog/tags/Glances/" style="font-size: 10px;">Glances</a> <a href="/blog/tags/HTML/" style="font-size: 19.33px;">HTML</a> <a href="/blog/tags/IE/" style="font-size: 12px;">IE</a> <a href="/blog/tags/IIS/" style="font-size: 11.33px;">IIS</a> <a href="/blog/tags/JSON/" style="font-size: 11.33px;">JSON</a> <a href="/blog/tags/MP3/" style="font-size: 10px;">MP3</a> <a href="/blog/tags/MS-SQL/" style="font-size: 12.67px;">MS-SQL</a> <a href="/blog/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/blog/tags/Mac/" style="font-size: 14px;">Mac</a> <a href="/blog/tags/Nodejs/" style="font-size: 13.33px;">Nodejs</a> <a href="/blog/tags/Pycharm/" style="font-size: 11.33px;">Pycharm</a> <a href="/blog/tags/Python/" style="font-size: 15.33px;">Python</a> <a href="/blog/tags/Reactjs/" style="font-size: 10px;">Reactjs</a> <a href="/blog/tags/SublimeText/" style="font-size: 11.33px;">SublimeText</a> <a href="/blog/tags/TelegramBot/" style="font-size: 10px;">TelegramBot</a> <a href="/blog/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/blog/tags/VM/" style="font-size: 10px;">VM</a> <a href="/blog/tags/WebSocket/" style="font-size: 10px;">WebSocket</a> <a href="/blog/tags/Windowns-Service/" style="font-size: 10.67px;">Windowns Service</a> <a href="/blog/tags/Windows-%E7%9B%B8%E9%97%9C/" style="font-size: 18.67px;">Windows 相關</a> <a href="/blog/tags/blog/" style="font-size: 10px;">blog</a> <a href="/blog/tags/color-code/" style="font-size: 10px;">color code</a> <a href="/blog/tags/docker/" style="font-size: 10px;">docker</a> <a href="/blog/tags/ejs/" style="font-size: 10px;">ejs</a> <a href="/blog/tags/graylog/" style="font-size: 10px;">graylog</a> <a href="/blog/tags/jQuery/" style="font-size: 18px;">jQuery</a> <a href="/blog/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/blog/tags/pm2/" style="font-size: 10.67px;">pm2</a> <a href="/blog/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/blog/tags/vscode/" style="font-size: 11.33px;">vscode</a> <a href="/blog/tags/web2py/" style="font-size: 11.33px;">web2py</a> <a href="/blog/tags/%E7%80%8F%E8%A6%BD%E5%99%A8/" style="font-size: 11.33px;">瀏覽器</a> <a href="/blog/tags/%E7%B7%9A%E4%B8%8A%E5%B7%A5%E5%85%B7/" style="font-size: 13.33px;">線上工具</a> <a href="/blog/tags/%E8%BB%9F%E4%BD%93%E6%87%89%E7%94%A8%E7%9B%B8%E9%97%9C/" style="font-size: 17.33px;">軟体應用相關</a> <a href="/blog/tags/%E8%BB%9F%E5%B7%A5%E6%96%87%E4%BB%B6%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">軟工文件工具</a> <a href="/blog/tags/%E9%9A%A8%E4%BE%BF%E5%AF%AB%E5%AF%AB/" style="font-size: 12px;">隨便寫寫</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">
+      Archives
+    </h3>
+    <div class="widget">
+      <!-- <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/09/">九月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">八月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/03/">三月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">十一月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/01/">一月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/10/">十月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/04/">四月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/03/">三月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/02/">二月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2011/11/">十一月 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2011/08/">八月 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2011/06/">六月 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2011/05/">五月 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2011/02/">二月 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2011/01/">一月 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2010/11/">十一月 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2010/10/">十月 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2010/08/">八月 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2010/06/">六月 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2010/05/">五月 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2010/04/">四月 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2010/03/">三月 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2009/11/">十一月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2009/10/">十月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2009/09/">九月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2009/06/">六月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2009/05/">五月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2009/04/">四月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2009/03/">三月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2009/02/">二月 2009</a></li></ul> -->
+      <!-- 20190304修改 -->
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">2020-09</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">2020-08</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">2018-10</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">2018-06</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">2018-05</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/08/">2017-08</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">2017-07</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/05/">2017-05</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">2017-03</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">2016-08</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">2016-03</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">2015-10</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/09/">2015-09</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">2015-08</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">2015-07</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/03/">2015-03</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">2014-11</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/01/">2014-01</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/10/">2012-10</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/04/">2012-04</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/03/">2012-03</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/02/">2012-02</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2011/11/">2011-11</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2011/08/">2011-08</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2011/06/">2011-06</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2011/05/">2011-05</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2011/02/">2011-02</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2011/01/">2011-01</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2010/11/">2010-11</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2010/10/">2010-10</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2010/08/">2010-08</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2010/06/">2010-06</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2010/05/">2010-05</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2010/04/">2010-04</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2010/03/">2010-03</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2009/11/">2009-11</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2009/10/">2009-10</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2009/09/">2009-09</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2009/06/">2009-06</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2009/05/">2009-05</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2009/04/">2009-04</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2009/03/">2009-03</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2009/02/">2009-02</a><span class="archive-list-count">14</span></li></ul>
+    </div>
+  </div>
+  
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2020/09/WebSocket-Express%E8%AE%93%E5%89%8D%E5%BE%8C%E7%AB%AF%E4%B8%80%E5%AE%B6%E8%A6%AA/">WebSocket+Express讓前後端一家親</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/08/graylog-docker%E5%AE%89%E8%A3%85/">graylog-docker安装</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/08/Ubuntu-18-04-%E9%96%8B%E6%A9%9F%E8%87%AA%E5%8B%95%E5%9F%B7%E8%A1%8C-%E6%8C%87%E4%BB%A4-rc-local/">Ubuntu 18.04 開機後自動執行 rc.local</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/10/vscode-Bracket-Pair-Colorizer-%E6%9C%89%E4%BA%86%E5%BD%A9%E8%89%B2%E6%8B%AC%E8%99%9F%E4%B8%8D%E5%86%8D%E7%9C%BC%E8%8A%B1%E6%83%B9/">vscode-Bracket Pair Colorizer-有了彩色括號不再眼花惹</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/06/%E5%A5%BD%E7%94%A8%E7%9A%84%E7%B7%9A%E4%B8%8A%E7%94%A2%E7%94%9FHTML%E7%A2%BC%E7%9A%84%E5%BD%A9%E8%89%B2%E7%9A%84%E7%A8%8B%E5%BC%8F%E7%A2%BC-hilite-me-%E5%B9%B9%E5%A5%BD%E7%B9%9E%E5%8F%A3/">好用的線上產生HTML碼的彩色的程式碼-hilite.me, 幹好繞口</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+    
+                <div class="outer">
+                    <div id="footer-info" class="inner">
+                        &copy;
+                        2022
+                            cn27529&nbsp;
+                                Powered by
+                                    <a href="http://hexo.io/" target="_blank">Hexo</a>
+                    </div>
+                </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+
+  
+<script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -79,7 +79,7 @@
   
     <article id="post-你所意想不到的-Javascript-打開-javascript-黑盒子" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/%E4%BD%A0%E6%89%80%E6%84%8F%E6%83%B3%E4%B8%8D%E5%88%B0%E7%9A%84-Javascript-%E6%89%93%E9%96%8B-javascript-%E9%BB%91%E7%9B%92%E5%AD%90/" class="article-date">
+    <a href="/blog/2010/06/%E4%BD%A0%E6%89%80%E6%84%8F%E6%83%B3%E4%B8%8D%E5%88%B0%E7%9A%84-Javascript-%E6%89%93%E9%96%8B-javascript-%E9%BB%91%E7%9B%92%E5%AD%90/" class="article-date">
   <time datetime="2010-06-06T16:03:00.000Z" itemprop="datePublished">2010-06-07</time>
 </a>
     
@@ -91,7 +91,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/%E4%BD%A0%E6%89%80%E6%84%8F%E6%83%B3%E4%B8%8D%E5%88%B0%E7%9A%84-Javascript-%E6%89%93%E9%96%8B-javascript-%E9%BB%91%E7%9B%92%E5%AD%90/">你所意想不到的 Javascript , 打開 javascript 黑盒子</a>
+      <a class="article-title" href="/blog/2010/06/%E4%BD%A0%E6%89%80%E6%84%8F%E6%83%B3%E4%B8%8D%E5%88%B0%E7%9A%84-Javascript-%E6%89%93%E9%96%8B-javascript-%E9%BB%91%E7%9B%92%E5%AD%90/">你所意想不到的 Javascript , 打開 javascript 黑盒子</a>
     </h1>
   
 
@@ -102,13 +102,13 @@
         讓你明瞭看似簡單的 JavaScript，其實其核心語法功能強大。我將在這篇文章中說明 JavaScript 物件導向的特性，並說明如何透過這些特性，達到傳統程式語言 (C++/Java) 所難以完成的功能。<br /><br /><b>Everything is Object in JavaScript</b><br />開宗明義：在 JavaScript 中任何東西都是物件：變數是物件、函式是物件，常數也是物件。證明方式：<br /><br /><pre class="brush: js;">alert (typeof('abc'));<br />alert (typeof(123));<br />var ary = [123, "abc"];<br />alert (typeof(ary)); <br /><br /></pre><br />上面的 typeof 會顯示物件資料型態。得到結果分別是 string, number, object。<br /><br /><br /><b>Create Objects in JavaScript</b><br />既然任何東西都是物件，那建立物件的方法就多了。直接看個例子：<br /><br /><pre class="brush: js;">var main = new Object; // 建立新物件 <br />main.x = 123; // 設定物件成員變數(屬性)之一 <br />main["y"] = "XYZ"; // 設定物件成員變數(屬性)之二<br />alert(main["x"]); // 取得物件屬性並輸出<br />alert(main.y); <br /><br /></pre><br />可以看到在 JavaScript 中，main.x 與 main["x"] 這兩種語法是通用的。其實在其他語言中，這兩種表示法的語意並不相同。稍後再作說明。<br /><br /><br /><b>List All Members in an Object</b><br />這是 JavaScript 的必殺技，使用 JavaScript 的人務必要學會這個技巧。底下函式可以傳回一個物件的所有成員的字串表達式，包括物件中的屬性及方法。在物件導向程式設計中，這種技術叫 reflection。<br /><br /><pre class="brush: js;">function listMember(main) { <br />var s = "";<br />for( key in main ) // 使用 in 運算子列舉所有成員 <br />s += key + ": " + main[key] + "n"; <br />return s;<br />} <br /><br /></pre><br />範例碼中的 key 會對應到物件中的屬性名稱，如 "x" 或 "y"，而 main[key] 則對應到屬性值。<br /><br />說這項技巧是必殺技的原因是，你可以透過這項技巧，將物件封裝的黑箱打開來，看看裡面藏有什麼東西。我常用這項技巧來看看 <br /><br />IE 與 Mozilla 的 Dom 物件模型有何不同。試試看下面呼叫範例，就可以知道這項技巧的強大了：<br /><br /><pre class="brush: js;">var ary = [123, "abc"];<br />alert (listMember(ary));<br />alert (listMember(document.location)); <br /><br /></pre><br /><b>Construct Object with Initial Value</b><br />在建立物件的同時指定物件初始值，必須先透過 function 建立一個「原型物件」(或稱為constructor)，再透過 new 運算子建立新物件。例如以下程式碼會建立一個二維陣列的原型，再產生一個新的二維物件。<br /><br /><pre class="brush: js;">function Array2DVar(x,y) { // 定義二維陣列原型 <br />this.length = x; <br />this.x = x; // x 維度長度<br />this.y = y; // y 維度長度 <br />for(var i = 0; i < this.length; i++) // 初始各元素值為 null <br />this[i] = new Array(y); // this 代表物件本身 } <br />var a2dv = new Array2DVar(10, 10); // 建立新的 10*10 的二維陣列 <br />a2dv[1][3] = "ABC"; // 設定二維陣列元素值 <br />a2dv[2][6] = "XYZ"; <br />a2dv[9][9] = 1000; <br />alert( a2dv[1][3]); // 取得二維陣列元素值，並顯示出來 <br />alert( a2dv[2][6]); <br />alert( a2dv[9][9]); <br /><br /></pre><br /><br /><b>Initial Array Object</b> 在 JavaScript 中陣列也是物件 (其實近代多數語言中陣列也都是物件，只有像 C 或 Assembly 這類古老的語言才不把陣列看成物件)，因此也可以用 constructor 的語法來建構。當然 JavaScript 還提供了 [] 語法，以更方便建構陣列，範例如下：<br /><pre class="brush: js;">var a = new Array("abc", "xyz", 1000); <br />// constructor 語法，陣列標準語法 <br /><br /></pre><br />陣列的元素可以是簡單的資料、其他物件，或是函數。舉個例子來在陣列裡面放函式：<br /><br /><pre class="brush: js;">// 使用函式作為陣列元素<br />b = [ <br />function () { alert("這個好玩!") }, <br />function () { alert("再按一次離開!") }, <br />function () { alert("再來一次!") }, <br />function () { alert("最後一次!") } <br />]; <br /><br />for (var i = 0; i < b.length ; i++) b[i](); <br /><br /></pre><br />最後一個 for 迴圈是個有趣的應用。由於 b 陣列中現在存放的所有元素都是函式，因此我們可以對 b 的每個元素進行呼叫。 <br /><br /><br /><b>Object as Association Array</b><br />關連陣列 (Assocation Array) 又稱作 Map 或 Dictionary，是一種物件容器，其中可以放置許多的 key-value pair，以存取子物件。<br />在JavaScript 中，物件本身就可以作為關連陣列。以關連陣列的方式初始化物件的範例如下：<br /><br /><pre class="brush: js;">// 顯示 Athens<br />var obj1 = {"a" : "Athens" , "b" : "Belgrade", "c" : "Cairo"};<br />alert(obj1["a"]);<br /><br />// 使用函式作為物件屬性<br />var obj2 = { name: "Edward", showName: function() { alert(this.name); } }<br />// 顯示 Edward obj2.age = 23; 屬性可以動態加入<br />obj2.showName(); <br /><br /></pre><br />其中 obj1 儲存了三個子元素，其鍵 (key) 為 "a", "b" 與 "c"，而值 (value) "Athens", "Belgrade" 與 "Cairo"。 <br />obj2 中 showName 鍵所對應的值為 function，因此 obj2.showName() 即為函式呼叫。<br /><br /><br /><b>Object as Return Value</b><br />雖然 Javascript 的函式只能傳回一個變數，但您卻可以將傳回值設定為物件，達到傳回 1個以上變數值的效果<br /><br /><pre class="brush: js;">function a () { return [32, 17]; } <br />b = a();<br />alert( b ); // 或 alert(a()); <br /><br />function pixel () { return {"x": 32, "y":17}; } <br />point = pixel ();<br />alert (point.x + "n" + point.y); // 或 alert (pixel().x + "n" + pixel().y); <br /><br /></pre><br /><b>Delegation Function Object</b><br />函式也是物件，只是其中包含的是程式的邏輯。這項特性可拿來作為委任式的程式設計，亦即使用委任函式當作另一函式的參數：<br /><br /><pre class="brush: js;">function doloop(begin, end, func) { <br />  // 這個函式是個 iterator<br />  for (var i = begin; i < end; i++) { <br />  func(i); <br />  } <br />} <br /><br />function func1(i) { <br />  // 印出 ** n ** <br />  document.writeln("** " + i + " ** "); <br />} <br /><br />doloop(1, 10, func1); // 印出 1o 行 ** n ** <br /><br />doloop(20, 29, function(i) {<br />  document.writeln("## " + i + " ## "); <br /> }<br />);<br /><br /></pre><br /><b>Properties + Behaviors</b><br />古有明訓：程式 = 資料結構 + 演算法。而物件是建構程式的基本單位，自然的具有相同的性質。<br />物件除了有屬性 (property)，也可具有操作 (behavior)，也就是函式。<br />假如我們要使用一維陣列來模擬二維陣列，那麼就無法使用 ary[x][y] 這種表示法來設定或取得陣列成員。<br />不過我可以定義一個 set 方法來設定成員變數，而以 get方法來取得成員變數值。原型函式定義如下：<br /><br /><pre class="brush: js;">function Array2D(x,y)<br />{ <br /> // 以一維陣列模擬二維陣列的原型物件<br /> this.length = x * y; // 陣列總長<br /> this.x = x; // x 維度長度<br /> this.y = y; // y 維度長度<br /> for(var i = 0; i < this.length; i++) // 初始各元素值為 null <br /> this[i] = null; <br /> this.get = function(x,y)<br /> { <br />  // 成員函式：取得陣列第 [x,y]個元素值 <br />  return this[x*this.x + y]; <br /> } <br /> this.set = function(x,y,value)<br /> { <br />  // 成員函式：設定陣列第 [x,y] 個元素值 <br />  this[x*this.x + y] = value; <br /> } <br />} <br /><br />//我們接著來使用它： <br />var a2d = new Array2D(10, 10); // 建立新的「二維」陣列 <br />a2d.set(1, 3, "ABC"); // 設定「二維」陣列元素值 <br />a2d.set(2, 6, "XYZ"); <br />a2d.set(9, 9, 1000); <br />alert( a2d.get(1,3) ); // 取得「二維」陣列元素值，並顯示出來 <br />alert( a2d.get(2,6) ); <br />alert( a2d.get(9,9) ); <br /><br /></pre><br /><b>Member Function Outside of Constructor</b><br />我們也可以將物件成員函式寫於原型物件之外。<br />以下的Array2D物件與上一個範例中的 Array2物件有相同的作用，只不過這次是寫在原型物件之外。<br /><br /><pre class="brush: js;">function Array2D(x,y)<br />{ <br /> // 以一維陣列模擬二維陣列的原型物件 <br /> this.length = x * y; // 陣列總長<br /> this.x = x; // x 維度長度<br /> this.y = y; // y 維度長度<br /> for(var i = 0; i < this.length; i++) // 初始各元素值為 null <br /> this[i] = null; <br /> this.get = Array2DGet; <br /> // 用這種方式把成員函式掛進來 <br /> this.set = Array2DSet; <br />} <br /><br />function Array2DGet(x,y)<br />{ <br /> // 成員函式：取得陣列第 [x,y] 個元素值 <br /> return this[x*this.x + y]; <br />} <br /><br />function Array2DSet(x,y,value)<br />{ <br /> // 成員函式：設定陣列第 [x,y] 個元素值 <br /> this[x*this.x + y] = value; <br />} <br /><br /></pre><br /><b>Dynamic Object Function</b><br />這裡說明如何為一個已定義物件，動態的加上其他操作的方法。<br /><br />如果一物件已定義完成，而您也使用它來建立了新的物件，這時候您想為原型物件增加新的操作 (而不修改原型物件的原始碼)，<br />讓所有該物件的複本都能使用該操作，該如何達成呢？<br /><br />方法是使用物件的 prototype 屬性。以下這個例子，為 Array 這類 Object 在執行期加入一個 max 方法，<br />以取得陣列元素之最大值 (修改自微軟 jscript.chm之範例)：<br /><br /><pre class="brush: js;">function array_max()<br />{ <br />  // 定義求取 Array 最大值之函式<br />  var i, max = this[0];<br />  for (i = 1; i < this.length; i++)  {    if (max < this[i]) max = this[i];   } <br />  return max; <br />} <br /><br />Array.prototype.max = array_max; <br />// 在 Array 原型中加入 max 函式 上面的程式碼，首先建立一個 array_max 方法，以求取陣列之最大元素。<br />// 接著將這個方法設定給 Array 原型物件。 <br /><br />var x = new Array(1, 2, 3, 4, 5, 6); <br />// 透過 Array 建構子建立一陣列 <br /><br />//想求取 x 中某一元素之最大值 <br /><br />var y = x.max( ); // 取得 x 之最大元素 <br /><br /></pre><br /><b>Dynamic Mix in</b><br />假如物件 dynamic 有 mathod1, method2 兩個函式；而另一物件 main 有 methodA 及 methodB 兩個函式。<br />現在我想把 dynamic 的所有特性 (feature) 匯入到 main 中，我們可以在 main 中加上一個 imports 函式：<br /><br /><pre class="brush: js;">function main()<br />{  // main 之建構子 <br /> // ...<br /> this.imports = function (object) <br /> {<br />  if( typeof object =="object")<br />  for( value in object ) this[value] = object[value];<br /> }<br /> // ...<br />}<br /><br />var obj = new main();<br />main.imports(new dynamic()); // 匯入 dynamic 物件之所有功能 <br /><br /></pre><br />這個 imports 函式可以動態的為 main 加上另一物件的所有操作。<br />這種 Mix in 的功能可是 C++/Java 的 static type 語言所望塵莫及的。<br /><br /><br />原文自: http://crazyrushstar.blogspot.com/2008/08/java-script.html<div class="blogger-post-footer">Copyright © Bruce Huang All rights reserved.</div>
         
           <p class="article-more-link">
-            <a href="/blog/%E4%BD%A0%E6%89%80%E6%84%8F%E6%83%B3%E4%B8%8D%E5%88%B0%E7%9A%84-Javascript-%E6%89%93%E9%96%8B-javascript-%E9%BB%91%E7%9B%92%E5%AD%90/#more">Read More</a>
+            <a href="/blog/2010/06/%E4%BD%A0%E6%89%80%E6%84%8F%E6%83%B3%E4%B8%8D%E5%88%B0%E7%9A%84-Javascript-%E6%89%93%E9%96%8B-javascript-%E9%BB%91%E7%9B%92%E5%AD%90/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/blog/%E4%BD%A0%E6%89%80%E6%84%8F%E6%83%B3%E4%B8%8D%E5%88%B0%E7%9A%84-Javascript-%E6%89%93%E9%96%8B-javascript-%E9%BB%91%E7%9B%92%E5%AD%90/" data-id="cl60igf9a00ezhy0m3bfpdmpk" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/blog/2010/06/%E4%BD%A0%E6%89%80%E6%84%8F%E6%83%B3%E4%B8%8D%E5%88%B0%E7%9A%84-Javascript-%E6%89%93%E9%96%8B-javascript-%E9%BB%91%E7%9B%92%E5%AD%90/" data-id="cl60iwqhc00f0cb0m8n4g82fm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li></ul>
@@ -122,7 +122,7 @@
   
     <article id="post-匈牙利標記法定義的-ECMAScript-變數首碼" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/%E5%8C%88%E7%89%99%E5%88%A9%E6%A8%99%E8%A8%98%E6%B3%95%E5%AE%9A%E7%BE%A9%E7%9A%84-ECMAScript-%E8%AE%8A%E6%95%B8%E9%A6%96%E7%A2%BC/" class="article-date">
+    <a href="/blog/2010/06/%E5%8C%88%E7%89%99%E5%88%A9%E6%A8%99%E8%A8%98%E6%B3%95%E5%AE%9A%E7%BE%A9%E7%9A%84-ECMAScript-%E8%AE%8A%E6%95%B8%E9%A6%96%E7%A2%BC/" class="article-date">
   <time datetime="2010-06-03T15:02:00.000Z" itemprop="datePublished">2010-06-03</time>
 </a>
     
@@ -134,7 +134,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/%E5%8C%88%E7%89%99%E5%88%A9%E6%A8%99%E8%A8%98%E6%B3%95%E5%AE%9A%E7%BE%A9%E7%9A%84-ECMAScript-%E8%AE%8A%E6%95%B8%E9%A6%96%E7%A2%BC/">匈牙利標記法定義的 ECMAScript 變數首碼</a>
+      <a class="article-title" href="/blog/2010/06/%E5%8C%88%E7%89%99%E5%88%A9%E6%A8%99%E8%A8%98%E6%B3%95%E5%AE%9A%E7%BE%A9%E7%9A%84-ECMAScript-%E8%AE%8A%E6%95%B8%E9%A6%96%E7%A2%BC/">匈牙利標記法定義的 ECMAScript 變數首碼</a>
     </h1>
   
 
@@ -145,13 +145,13 @@
         程序員在撰寫源碼的過程中, 為了讓程式碼的清晰易懂, 在變數命名中介紹下列覺的可以當作參考的標記法, 來作為程序撰寫的幫助, 目的也是希望能夠減少了解程序運用的過程, 在以沒有其它工具輔助的環境下, 以純文字檔選寫 javascript 的腳本中, 建議以有規範的撰寫方式, 來達到程的一致性. 以Camel, Pascal, 匈牙利標記法, 此三種標記法由以下一一介紹... <br /><br />Camel標記法: <br />以首字小寫字母為開頭, 後續單詞皆以大寫字母開頭<br />var myEngName = "Bruce";<br /><br />Pascal標記法: <br />以首字大寫字母為開頭, 後續單詞皆以大寫字母開頭<br />var MyAge = 20;<br /><br />匈牙利標記法: <br />此標記法為以Pascal為基礎, 在變數名前加上一個識別字母<br />var sEngName = "Bruce";<br />----------------------------------<br />陣列型:              aEmailAddress<br />布林型:              bGirl<br />浮點型(數字):        fTax<br />函數型:              fnCountingDay<br />整數型(數字):        iAge<br />對向型:              oCar<br />規則運算式:          rePattern<br />字串型:              sEngName<br />變型(可以是任意類型): vSuper<br />----------------------------------<div class="blogger-post-footer">Copyright © Bruce Huang All rights reserved.</div>
         
           <p class="article-more-link">
-            <a href="/blog/%E5%8C%88%E7%89%99%E5%88%A9%E6%A8%99%E8%A8%98%E6%B3%95%E5%AE%9A%E7%BE%A9%E7%9A%84-ECMAScript-%E8%AE%8A%E6%95%B8%E9%A6%96%E7%A2%BC/#more">Read More</a>
+            <a href="/blog/2010/06/%E5%8C%88%E7%89%99%E5%88%A9%E6%A8%99%E8%A8%98%E6%B3%95%E5%AE%9A%E7%BE%A9%E7%9A%84-ECMAScript-%E8%AE%8A%E6%95%B8%E9%A6%96%E7%A2%BC/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/blog/%E5%8C%88%E7%89%99%E5%88%A9%E6%A8%99%E8%A8%98%E6%B3%95%E5%AE%9A%E7%BE%A9%E7%9A%84-ECMAScript-%E8%AE%8A%E6%95%B8%E9%A6%96%E7%A2%BC/" data-id="cl60igf6q0079hy0mb3iugaof" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/blog/2010/06/%E5%8C%88%E7%89%99%E5%88%A9%E6%A8%99%E8%A8%98%E6%B3%95%E5%AE%9A%E7%BE%A9%E7%9A%84-ECMAScript-%E8%AE%8A%E6%95%B8%E9%A6%96%E7%A2%BC/" data-id="cl60iwqf5007ecb0mcmks7z2v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li></ul>
@@ -165,7 +165,7 @@
   
     <article id="post-開始-執行指令大全" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/%E9%96%8B%E5%A7%8B-%E5%9F%B7%E8%A1%8C%E6%8C%87%E4%BB%A4%E5%A4%A7%E5%85%A8/" class="article-date">
+    <a href="/blog/2010/06/%E9%96%8B%E5%A7%8B-%E5%9F%B7%E8%A1%8C%E6%8C%87%E4%BB%A4%E5%A4%A7%E5%85%A8/" class="article-date">
   <time datetime="2010-06-01T02:32:00.000Z" itemprop="datePublished">2010-06-01</time>
 </a>
     
@@ -177,7 +177,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/%E9%96%8B%E5%A7%8B-%E5%9F%B7%E8%A1%8C%E6%8C%87%E4%BB%A4%E5%A4%A7%E5%85%A8/">開始-執行指令大全</a>
+      <a class="article-title" href="/blog/2010/06/%E9%96%8B%E5%A7%8B-%E5%9F%B7%E8%A1%8C%E6%8C%87%E4%BB%A4%E5%A4%A7%E5%85%A8/">開始-執行指令大全</a>
     </h1>
   
 
@@ -188,13 +188,13 @@
         gpedit.msc-----群組原則<br />sndrec32-------錄音機<br />Nslookup-------IP位址偵測器<br />explorer-------開啟檔案總管<br />logoff---------登出指令 tsshutdn-------60秒倒計時關機指令<br />lusrmgr.msc----本地機用戶和組<br />services.msc---本機服務設定<br />oobe/msoobe /a----檢查XP是否啟動<br />notepad--------開啟記事本<br />cleanmgr-------磁碟垃圾整理<br />net start messenger----開始信使服務<br />compmgmt.msc---電腦管理<br />net stop messenger-----停止信使服務<br />conf-----------啟動<br />netmeeting dvdplay--------DVD播放器 charmap--------啟動字元對應表<br />diskmgmt.msc---磁牒管理實用程序<br />calc-----------啟動電子計算器<br />dfrg.msc-------磁碟重組工具<br />chkdsk.exe-----Chkdsk磁牒檢查 devmgmt.msc--- 裝置管理員 drwtsn32------ 系統醫生<br />rononce -p ----15秒關機 dxdiag---------檢查DirectX資訊<br />regedt32-------註冊表編輯器 Msconfig.exe---系統配置實用程序<br />rsop.msc-------群組原則結果集<br />mem.exe--------顯示記憶體使用情況<br />regedit.exe----註冊表<br />winchat--------XP自帶區域網路聊天<br />progman--------程序管理器<br />winmsd---------系統資訊 perfmon.msc----電腦效能監測程序<br />winver---------檢查Windows版本<br />sfc /scannow-----掃瞄錯誤並復原<br />taskmgr-----工作管理器（2000／xp／-2003）<br />eventvwr.msc------------事件檢視器<br />secpol.msc----------------本機安全性設定<br />rsop.msc------------------原則的結果集<br />ntbackup----------------啟動制作備份還原嚮導<br />mstsc-----------遠端桌面<br />wmimgmt.msc----開啟windows管理體系結構WMI)<br />wupdmgr--------windows更新程序<br />wscript--------windows指令碼宿主設定<br />write----------寫字板<br />wiaacmgr-------掃瞄儀和照相機嚮導<br />winchat--------XP原有的區域網路聊天<br />mplayer2-------簡易<br />widnows media player mspaint--------畫圖板<br />mstsc----------遠端桌面連接<br />mplayer2-------媒體播放機<br />magnify--------放大鏡實用程序<br />mmc------------開啟控制台<br />mobsync--------同步指令<br />dfrg.msc-------磁碟重組程式<br />dcomcnfg-------開啟系統元件服務<br />ddeshare-------開啟DDE共享設定<br />dvdplay--------DVD播放器<br />nslookup-------網路管理的工具嚮導<br />ntbackup-------系統制作備份和還原<br />narrator-------螢幕「講述人」<br />ntmsmgr.msc----移動存儲管理器<br />ntmsoprq.msc---移動存儲管理員操作請求<br />netstat -an----(TC)指令檢查連接<br />syncapp--------新增一個公文包<br />sysedit--------系統配置編輯器<br />sigverif-------文件簽名驗證程序<br />shrpubw--------新增共用資料夾<br />secpol.msc-----本機安全原則<br />syskey---------系統加密，一旦加密就不能解開，保護windows xp系統的雙重密碼<br />Sndvol32-------音量控制程序<br />sfc.exe--------系統檔案檢查器<br />sfc /scannow---windows文件保護<br />tourstart------xp簡介（安裝完成後出現的漫遊xp程序）<br />taskmgr--------工作管理器<br />eventvwr-------事件檢視器<br />eudcedit-------造字程序<br />explorer-------開啟檔案總管<br />packager-------對像包裝程序<br />regsvr32 /u *.dll----停止dll文件執行<br />regsvr32 /u zipfldr.dll------取消ZIP支持<br />cmd.exe--------CMD命令提示字元 chkdsk.exe-----Chkdsk磁牒檢查<br />certmgr.msc----證書管理實用程序<br />calc-----------啟動計算器<br />cliconfg-------SQL SERVER 客戶端網路實用程序<br />Clipbrd--------剪貼板檢視器<br />netmeeting compmgmt.msc---電腦管理<br />ciadv.msc------索引服務程序<br />osk------------開啟螢幕小鍵盤<br />odbcad32-------ODBC資料來源管理器<br />iexpress-------木馬元件服務工具，系統原有的<br />fsmgmt.msc-----共用資料夾管理器<br />utilman--------協助工具管理器<br />Clipbrd--------剪貼板檢視器 packager-------對像包裝程序<br />sfc /scannow---windows文件保護<br /><br />引用: http://tw.myblog.yahoo.com/jw!PU8yTlSLHwIEnNXHIEl_YubW/article?mid=314&prev=436&next=215&l=f&fid=28<div class="blogger-post-footer">Copyright © Bruce Huang All rights reserved.</div>
         
           <p class="article-more-link">
-            <a href="/blog/%E9%96%8B%E5%A7%8B-%E5%9F%B7%E8%A1%8C%E6%8C%87%E4%BB%A4%E5%A4%A7%E5%85%A8/#more">Read More</a>
+            <a href="/blog/2010/06/%E9%96%8B%E5%A7%8B-%E5%9F%B7%E8%A1%8C%E6%8C%87%E4%BB%A4%E5%A4%A7%E5%85%A8/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/blog/%E9%96%8B%E5%A7%8B-%E5%9F%B7%E8%A1%8C%E6%8C%87%E4%BB%A4%E5%A4%A7%E5%85%A8/" data-id="cl60igf7s0092hy0marrp2ur6" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/blog/2010/06/%E9%96%8B%E5%A7%8B-%E5%9F%B7%E8%A1%8C%E6%8C%87%E4%BB%A4%E5%A4%A7%E5%85%A8/" data-id="cl60iwqfu0097cb0mfynf5me4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Windows-%E7%9B%B8%E9%97%9C/" rel="tag">Windows 相關</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E8%BB%9F%E4%BD%93%E6%87%89%E7%94%A8%E7%9B%B8%E9%97%9C/" rel="tag">軟体應用相關</a></li></ul>
@@ -208,7 +208,7 @@
   
     <article id="post-Windows日志的保護與偽造" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/Windows%E6%97%A5%E5%BF%97%E7%9A%84%E4%BF%9D%E8%AD%B7%E8%88%87%E5%81%BD%E9%80%A0/" class="article-date">
+    <a href="/blog/2010/05/Windows%E6%97%A5%E5%BF%97%E7%9A%84%E4%BF%9D%E8%AD%B7%E8%88%87%E5%81%BD%E9%80%A0/" class="article-date">
   <time datetime="2010-05-24T02:28:00.000Z" itemprop="datePublished">2010-05-24</time>
 </a>
     
@@ -220,7 +220,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/Windows%E6%97%A5%E5%BF%97%E7%9A%84%E4%BF%9D%E8%AD%B7%E8%88%87%E5%81%BD%E9%80%A0/">Windows日志的保護與偽造</a>
+      <a class="article-title" href="/blog/2010/05/Windows%E6%97%A5%E5%BF%97%E7%9A%84%E4%BF%9D%E8%AD%B7%E8%88%87%E5%81%BD%E9%80%A0/">Windows日志的保護與偽造</a>
     </h1>
   
 
@@ -231,13 +231,13 @@
         日志對於系統安全的作用是顯而易見的，無論是網路管理員還是黑客都非常重視日志，一個有經驗的管理員往往能夠迅速通過日志了解到系統的安全性能，而一個聰明的黑客往往會在入侵成市嶁陶t清除掉對自己不利的日志。下面我們就來討論一下日志的安全和創建問題。<br /><br /><strong>一.概述︰</strong><br />Windows 2000的系統日志文件有應用程序日志，安全日志、系統日志、DNS服務器日志等等，應用程序日志、安全日志、系統日志、DNS日志默認位置︰%systemroot%/system32/config，默認文件大小512KB。　　安全日志文件︰%systemroot%/system32/config/SecEvent.EVT 系統日志文件︰<span style="color: red;">%systemroot%/system32/config/SysEvent.EVT</span>&nbsp; 應用程序日志文件︰<span style="color: red;">%systemroot%/system32/config/AppEvent.EVT</span>&nbsp; 這些LOG文件在注冊表中的︰ HKEY_LOCAL_MACHINE/System/CurrentControlSet/Services/Eventlog有的管理員很可能將這些日志重定位。其中EVENTLOG下面有很多的子表，里面可查到以上日志的定位目錄。<br /><br /><strong>二.作為網路管理員︰</strong><br />1.日志的安全配置︰<br />默認的條件下，日志的大小為512KB大小，如果超出則會報錯，並且不會再記錄任何日志。所以首要任務是更改默認大小，具體方法︰注冊表中HKEY_LOCAL_MACHINE/System/CurrentControlSet/Services/Eventlog對應的每個日志如系統，安全，應用程序等均有一個maxsize子鍵，修改即可。　　下面給出一個來自微軟站點的一個腳本，利用VMI來設定日志最大25MB,並允酗擏茼萓磏郅14天前的日志︰　　該腳本利用的是WMI對象, WMI（Windows Management Instrumentation）技術是微軟提供的Windows下的系統管理工具。通過該工具可以在本地或者管理客戶端系統中幾乎一切的訊息。很多專業的網路管理工具都是基於WMI開發的。該工具在Win2000以及WinNT下是標準工具，在Win9X下是擴展安裝選項。所以以下的代碼在2000以上均可運行成央CstrComputer = "."Set objWMIService = GetObject（"winmgmts:" _& "{impersonationLevel=impersonate,（Security）}!//" & _strComputer & "/root/cimv2"） ''獲得VMI對象Set colLogFiles = objWMIService.ExecQuery _ （"Select * from Win32_NTEventLogFile"）For each objLogfile in colLogFilesstrLogFileName = objLogfile.NameSet wmiSWbemObject = GetObject _（"winmgmts:{impersonationLevel=Impersonate}!//./root/cimv2:" _& "Win32_NTEventlogFile.Name=''" & strLogFileName & "''"）wmiSWbemObject.MaxFileSize = 2500000000wmiSWbemObject.OverwriteOutdated = 14wmiSWbemObject.Put_ Next　　將上述腳本用記事本存盤為vbs為後綴的即可使用。　　另外需要說明的是代碼中的strComputer="."在Windows腳本中的含義相當於localhost,如果要在遠程主機上執行代碼，只需要把"."改動為主機名,當然首先得擁有對方主機的管理員權限並建立IPC連接.本文中的代碼所出現的strComputer均可作如此改動。<br /><br />2.日志的查詢與備份︰<br />一個優秀的管理員是應該養成備份日志的習慣，如果有條件的話還應該把日志轉存到備份機器上或直接轉儲到列印機上，在這裡推薦微軟的resourceKit工具箱中的dumpel.exe，他的常用方法︰　　dumpel -f filename -s //server -l log 　　-f filename 輸出日志的位置和文件名　　-s //server 輸出遠程電腦日志　　-l log log 可選的為system,security,application,可能還有別的如DNS等.　　如要把目標服務器server上的系統日志轉存為backupsystem.log可以用以下格式︰　　dumpel //server -l system -f backupsystem.log 　　再利用計劃任務可以實現定期備份系統日志。　　另外利用腳本編程的VMI對象也可以輕而易舉的實現日志備份︰　　下面給出備份application日志的代碼︰backuplog.vbsstrComputer = "."Set objWMIService = GetObject（"winmgmts:" _& "{impersonationLevel=impersonate,（Backup）}!//" & _strComputer & "/root/cimv2"） ''獲得 VMI對象Set colLogFiles = objWMIService.ExecQuery _（"Select * from Win32_NTEventLogFile where LogFileName=''Application''"） ''獲取日志對象中的應用程序日志For Each objLogfile in colLogFileserrBackupLog = objLogFile.BackupEventLog（"f:/application.evt"） ''將日志備份為f:/application.evtIf errBackupLog 0 Then Wscript.Echo "The Application event log could not be backed up."else Wscript.Echo "success backup log"End IfNext　　程序說明︰如果備份成弗N窗口提示︰"success backup log" 否則提示︰"The Application event log could not be backed up",此處備份的日志為application 備份位置為f:/application.evt,可以自行修改，此處備份的格式為evt的原始格式，用記事本打開則為亂碼，這一點他不如dumpel用得方便。<br /><br />引用自: http://computer-repair.hsinchu-web.info/doc/computer-repair/security/2010-04-22/8340.html<div class="blogger-post-footer">Copyright © Bruce Huang All rights reserved.</div>
         
           <p class="article-more-link">
-            <a href="/blog/Windows%E6%97%A5%E5%BF%97%E7%9A%84%E4%BF%9D%E8%AD%B7%E8%88%87%E5%81%BD%E9%80%A0/#more">Read More</a>
+            <a href="/blog/2010/05/Windows%E6%97%A5%E5%BF%97%E7%9A%84%E4%BF%9D%E8%AD%B7%E8%88%87%E5%81%BD%E9%80%A0/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/blog/Windows%E6%97%A5%E5%BF%97%E7%9A%84%E4%BF%9D%E8%AD%B7%E8%88%87%E5%81%BD%E9%80%A0/" data-id="cl60igf5m004shy0mdm070itt" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/blog/2010/05/Windows%E6%97%A5%E5%BF%97%E7%9A%84%E4%BF%9D%E8%AD%B7%E8%88%87%E5%81%BD%E9%80%A0/" data-id="cl60iwqe2004vcb0m1r5b4ith" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Windows-%E7%9B%B8%E9%97%9C/" rel="tag">Windows 相關</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E8%BB%9F%E4%BD%93%E6%87%89%E7%94%A8%E7%9B%B8%E9%97%9C/" rel="tag">軟体應用相關</a></li></ul>
@@ -251,7 +251,7 @@
   
     <article id="post-設定網頁快取" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/%E8%A8%AD%E5%AE%9A%E7%B6%B2%E9%A0%81%E5%BF%AB%E5%8F%96/" class="article-date">
+    <a href="/blog/2010/05/%E8%A8%AD%E5%AE%9A%E7%B6%B2%E9%A0%81%E5%BF%AB%E5%8F%96/" class="article-date">
   <time datetime="2010-05-04T16:53:00.000Z" itemprop="datePublished">2010-05-05</time>
 </a>
     
@@ -263,7 +263,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/%E8%A8%AD%E5%AE%9A%E7%B6%B2%E9%A0%81%E5%BF%AB%E5%8F%96/">設定網頁快取</a>
+      <a class="article-title" href="/blog/2010/05/%E8%A8%AD%E5%AE%9A%E7%B6%B2%E9%A0%81%E5%BF%AB%E5%8F%96/">設定網頁快取</a>
     </h1>
   
 
@@ -274,13 +274,13 @@
         有時候為了要達到網站效能, 例如某些資訊的display 項目, <br />不需要每次在網頁要求時都必須向資料庫索取時<br />(例如像: 新聞消息 or 產品訊息...等)<br />這些資訊都不是需要即時更新...可能十分鐘更新一次就足夠了<br />這時候就可以使用網頁快取的功能了<br />不但可以讓你的網頁執行的更快...不會伺服器的工作量...當然效能就可以變的更好<br /><br />以下是兩種設定網頁快取的方式:<br /><br /><br />以程式碼方式執行<br /><br />protected void Page_Load(object sender, EventArgs e)<br />{<br />&nbsp;&nbsp;&nbsp; //設定網頁快取時間, 為10秒, 表示此10秒內, 不會向伺服器要求網頁內容的資訊<br />&nbsp;&nbsp;&nbsp; Response.Cache.SetOmitVaryStar(true);<br />&nbsp;&nbsp;&nbsp; Response.Cache.SetExpires(DateTime.Now.AddSeconds(10));<br />}<br /><br /><br />以page 指示詞方式執行<br /><br />< %&nbsp; @ OutputCache Duration="10" VaryByParam="*" Location="ServerAndClient"&nbsp; % > <br /><br /><br />參考:<br /><a target="_blank" rel="noopener" href="http://blog.miniasp.com/post/2010/03/OutputCacheLocation-ServerAndClient-problem-fixed.aspx">http://blog.miniasp.com/post/2010/03/OutputCacheLocation-ServerAndClient-problem-fixed.aspx</a><br /><br /><a target="_blank" rel="noopener" href="http://msdn.microsoft.com/zh-tw/library/hdxfb6cy(VS.80).aspx">http://msdn.microsoft.com/zh-tw/library/hdxfb6cy(VS.80).aspx</a><br /><br /><a target="_blank" rel="noopener" href="http://topic.csdn.net/u/20090829/18/18e6fd10-2cec-4db4-80a1-19aea95bc119.html">http://topic.csdn.net/u/20090829/18/18e6fd10-2cec-4db4-80a1-19aea95bc119.html</a><br /><br /><a target="_blank" rel="noopener" href="http://support.microsoft.com/kb/323290/zh-tw">http://support.microsoft.com/kb/323290/zh-tw</a><div class="blogger-post-footer">Copyright © Bruce Huang All rights reserved.</div>
         
           <p class="article-more-link">
-            <a href="/blog/%E8%A8%AD%E5%AE%9A%E7%B6%B2%E9%A0%81%E5%BF%AB%E5%8F%96/#more">Read More</a>
+            <a href="/blog/2010/05/%E8%A8%AD%E5%AE%9A%E7%B6%B2%E9%A0%81%E5%BF%AB%E5%8F%96/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/blog/%E8%A8%AD%E5%AE%9A%E7%B6%B2%E9%A0%81%E5%BF%AB%E5%8F%96/" data-id="cl60igf7k008nhy0m8y0q2a99" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/blog/2010/05/%E8%A8%AD%E5%AE%9A%E7%B6%B2%E9%A0%81%E5%BF%AB%E5%8F%96/" data-id="cl60iwqfo008scb0mh5kw9p8j" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/ASP-NET/" rel="tag">ASP.NET</a></li></ul>
@@ -294,7 +294,7 @@
   
     <article id="post-MSN多重登入之免外掛" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/MSN%E5%A4%9A%E9%87%8D%E7%99%BB%E5%85%A5%E4%B9%8B%E5%85%8D%E5%A4%96%E6%8E%9B/" class="article-date">
+    <a href="/blog/2010/04/MSN%E5%A4%9A%E9%87%8D%E7%99%BB%E5%85%A5%E4%B9%8B%E5%85%8D%E5%A4%96%E6%8E%9B/" class="article-date">
   <time datetime="2010-04-18T02:45:00.000Z" itemprop="datePublished">2010-04-18</time>
 </a>
     
@@ -306,7 +306,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/MSN%E5%A4%9A%E9%87%8D%E7%99%BB%E5%85%A5%E4%B9%8B%E5%85%8D%E5%A4%96%E6%8E%9B/">MSN多重登入之免外掛</a>
+      <a class="article-title" href="/blog/2010/04/MSN%E5%A4%9A%E9%87%8D%E7%99%BB%E5%85%A5%E4%B9%8B%E5%85%8D%E5%A4%96%E6%8E%9B/">MSN多重登入之免外掛</a>
     </h1>
   
 
@@ -317,13 +317,13 @@
         可以同時擁有多個手機號碼一樣，在數位世界裡，我們也可以申請不只一個 MSN 帳號。對於事業做很大或者交遊廣闊的人來說，會希望擁有不同的 MSN 帳號來將家人、朋友、同事、事業夥伴分開來管理；在不同的時段裡登入適當的 MSN 帳號。雖然 MSN 允許使用者在不同電腦裡登入同一個帳號，但是卻沒有辦法在同一台電腦裡同時登入多個不同的帳號，所以網路上便有一些外掛，或是修改法可以打開 MSN「多重登入」的功能。<br /><br />這篇文章要介紹的方法是利用修改登錄檔的方式讓 MSN 可以多重登入，完全不靠外掛的幫忙。<br /><br /><br /><strong>在開始選單裡輸入 regedit，然後按下 Enter 便可以打開「登錄編輯程式」▼</strong><br />&nbsp;<a target="_blank" rel="noopener" href="http://blog.joaoko.net/wp-content/uploads/2010/04/MSNMultipleInstances.05.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://blog.joaoko.net/wp-content/uploads/2010/04/MSNMultipleInstances.05.png" wt="true" /></a><br /><br /><strong>在登錄編輯程式裡到以下路徑：</strong><br /><br />HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Live\Messenger<br /><br /><strong>在空白處按下右鍵，新增一個名為「MultipleInstances」的「DWORD」值 ▼</strong><br /><br /><div class="separator" style="clear: both; text-align: center;"><a target="_blank" rel="noopener" href="http://blog.joaoko.net/wp-content/uploads/2010/04/MSNMultipleInstances.02.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://blog.joaoko.net/wp-content/uploads/2010/04/MSNMultipleInstances.02.png" wt="true" /></a></div><br /><strong>在 MultipleInstances 項目上雙擊編輯數值，在「數值資料」輸入「1」；「底數」選擇「十六進位」，之後按下「確定」▼</strong><br /><br /><div class="separator" style="clear: both; text-align: center;"><a target="_blank" rel="noopener" href="http://blog.joaoko.net/wp-content/uploads/2010/04/MSNMultipleInstances.03.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://blog.joaoko.net/wp-content/uploads/2010/04/MSNMultipleInstances.03.png" wt="true" /></a></div><br />完成登錄編輯的變更。<br /><br /><strong>接下來, 我們就可以同時打開並登入「無限」個 MSN 了！當然，如果你的電腦撐得住的話 XD ▼</strong><br /><br /><div class="separator" style="clear: both; text-align: center;"><a target="_blank" rel="noopener" href="http://blog.joaoko.net/wp-content/uploads/2010/04/MSNMultipleInstances.04.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://blog.joaoko.net/wp-content/uploads/2010/04/MSNMultipleInstances.04.png" wt="true" /></a></div><div class="blogger-post-footer">Copyright © Bruce Huang All rights reserved.</div>
         
           <p class="article-more-link">
-            <a href="/blog/MSN%E5%A4%9A%E9%87%8D%E7%99%BB%E5%85%A5%E4%B9%8B%E5%85%8D%E5%A4%96%E6%8E%9B/#more">Read More</a>
+            <a href="/blog/2010/04/MSN%E5%A4%9A%E9%87%8D%E7%99%BB%E5%85%A5%E4%B9%8B%E5%85%8D%E5%A4%96%E6%8E%9B/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/blog/MSN%E5%A4%9A%E9%87%8D%E7%99%BB%E5%85%A5%E4%B9%8B%E5%85%8D%E5%A4%96%E6%8E%9B/" data-id="cl60igf4i002ohy0m6zmheh03" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/blog/2010/04/MSN%E5%A4%9A%E9%87%8D%E7%99%BB%E5%85%A5%E4%B9%8B%E5%85%8D%E5%A4%96%E6%8E%9B/" data-id="cl60iwqcv002qcb0m2j8p8kin" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Windows-%E7%9B%B8%E9%97%9C/" rel="tag">Windows 相關</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E8%BB%9F%E4%BD%93%E6%87%89%E7%94%A8%E7%9B%B8%E9%97%9C/" rel="tag">軟体應用相關</a></li></ul>
@@ -337,7 +337,7 @@
   
     <article id="post-PDF-XChange-Viewer-好用的PDF閱讀器" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/PDF-XChange-Viewer-%E5%A5%BD%E7%94%A8%E7%9A%84PDF%E9%96%B1%E8%AE%80%E5%99%A8/" class="article-date">
+    <a href="/blog/2010/04/PDF-XChange-Viewer-%E5%A5%BD%E7%94%A8%E7%9A%84PDF%E9%96%B1%E8%AE%80%E5%99%A8/" class="article-date">
   <time datetime="2010-04-06T04:54:00.000Z" itemprop="datePublished">2010-04-06</time>
 </a>
     
@@ -349,7 +349,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/PDF-XChange-Viewer-%E5%A5%BD%E7%94%A8%E7%9A%84PDF%E9%96%B1%E8%AE%80%E5%99%A8/">PDF-XChange Viewer 好用的PDF閱讀器</a>
+      <a class="article-title" href="/blog/2010/04/PDF-XChange-Viewer-%E5%A5%BD%E7%94%A8%E7%9A%84PDF%E9%96%B1%E8%AE%80%E5%99%A8/">PDF-XChange Viewer 好用的PDF閱讀器</a>
     </h1>
   
 
@@ -360,13 +360,13 @@
         <div class="separator" style="clear: both; text-align: center;"><a target="_blank" rel="noopener" href="http://4.bp.blogspot.com/_H5b1_vBT2Kw/S7q-f_9EB8I/AAAAAAAAA6g/qoYjgWyYcwA/s1600/normal_1212173219.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="300" nt="true" src="http://4.bp.blogspot.com/_H5b1_vBT2Kw/S7q-f_9EB8I/AAAAAAAAA6g/qoYjgWyYcwA/s400/normal_1212173219.jpg" width="400" /></a></div><br /><br />PDF-XChange Viewer是個相當不錯的PDF文件閱讀器，不但程式運作穩定、開啟PDF檔的速度也相當快，在閱讀大型檔案的時候，捲動、翻頁時也相當順暢。 <br /><br />目前提供免費版跟Pro付費版本，免費版的部份可以支援在PDF文件上留言、加註解，提供蓋印功能並可支援將PDF檔匯出成BMP、JPEG、TIFF與PNG等格式的圖檔，另外也可支援40/128 bit RC4與128/256 bit AES的加密機制，是個相當好用的PDF文件閱讀器。<br /><br />軟體名稱：PDF-XChange Viewer （免費版） <br />軟體版本：2.049 <br />軟體語言：繁體中文（內建多國語系） <br />軟體性質：免費軟體 <br />檔案大小：6.21MB <br />系統支援：Windows 98/2000/XP/2003/Vista/Win7 <br />官方網站：http://www.docu-track.co.uk/ <br />軟體下載：<a target="_blank" rel="noopener" href="http://www.docu-track.co.uk/PDFXVwer.exe">按這裡</a>、<a target="_blank" rel="noopener" href="http://www.docu-track.co.uk/PDFX_Vwr_Port.zip">免安裝版</a><div class="blogger-post-footer">Copyright © Bruce Huang All rights reserved.</div>
         
           <p class="article-more-link">
-            <a href="/blog/PDF-XChange-Viewer-%E5%A5%BD%E7%94%A8%E7%9A%84PDF%E9%96%B1%E8%AE%80%E5%99%A8/#more">Read More</a>
+            <a href="/blog/2010/04/PDF-XChange-Viewer-%E5%A5%BD%E7%94%A8%E7%9A%84PDF%E9%96%B1%E8%AE%80%E5%99%A8/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/blog/PDF-XChange-Viewer-%E5%A5%BD%E7%94%A8%E7%9A%84PDF%E9%96%B1%E8%AE%80%E5%99%A8/" data-id="cl60igf4r0035hy0m86a0ftc0" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/blog/2010/04/PDF-XChange-Viewer-%E5%A5%BD%E7%94%A8%E7%9A%84PDF%E9%96%B1%E8%AE%80%E5%99%A8/" data-id="cl60iwqd40037cb0mgiyf8i0m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Windows-%E7%9B%B8%E9%97%9C/" rel="tag">Windows 相關</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E8%BB%9F%E4%BD%93%E6%87%89%E7%94%A8%E7%9B%B8%E9%97%9C/" rel="tag">軟体應用相關</a></li></ul>
@@ -380,7 +380,7 @@
   
     <article id="post-html網頁所見即所得編輯程式Amaya-免費軟體" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/html%E7%B6%B2%E9%A0%81%E6%89%80%E8%A6%8B%E5%8D%B3%E6%89%80%E5%BE%97%E7%B7%A8%E8%BC%AF%E7%A8%8B%E5%BC%8FAmaya-%E5%85%8D%E8%B2%BB%E8%BB%9F%E9%AB%94/" class="article-date">
+    <a href="/blog/2010/04/html%E7%B6%B2%E9%A0%81%E6%89%80%E8%A6%8B%E5%8D%B3%E6%89%80%E5%BE%97%E7%B7%A8%E8%BC%AF%E7%A8%8B%E5%BC%8FAmaya-%E5%85%8D%E8%B2%BB%E8%BB%9F%E9%AB%94/" class="article-date">
   <time datetime="2010-04-06T02:39:00.000Z" itemprop="datePublished">2010-04-06</time>
 </a>
     
@@ -392,7 +392,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/html%E7%B6%B2%E9%A0%81%E6%89%80%E8%A6%8B%E5%8D%B3%E6%89%80%E5%BE%97%E7%B7%A8%E8%BC%AF%E7%A8%8B%E5%BC%8FAmaya-%E5%85%8D%E8%B2%BB%E8%BB%9F%E9%AB%94/">html網頁所見即所得編輯程式Amaya(免費軟體)</a>
+      <a class="article-title" href="/blog/2010/04/html%E7%B6%B2%E9%A0%81%E6%89%80%E8%A6%8B%E5%8D%B3%E6%89%80%E5%BE%97%E7%B7%A8%E8%BC%AF%E7%A8%8B%E5%BC%8FAmaya-%E5%85%8D%E8%B2%BB%E8%BB%9F%E9%AB%94/">html網頁所見即所得編輯程式Amaya(免費軟體)</a>
     </h1>
   
 
@@ -403,13 +403,13 @@
         <div class="separator" style="clear: both; text-align: center;"><a target="_blank" rel="noopener" href="http://i148.photobucket.com/albums/s26/h25282598/h25282598/1-8.png" imageanchor="1" style="cssfloat: left; margin-left: 1em; margin-right: 1em;"><img border="0" nt="true" src="http://i148.photobucket.com/albums/s26/h25282598/h25282598/1-8.png" /></a></div><br />屬於比較進階的網頁編輯程式，初學者比較不適用。需用複雜html多功能且有切基礎者, 比較適合, 這軟體較複雜, 不需這麼多功能者建議改用其他編輯器<br /><br />軟體特色： 多頁式同時瀏覽/編輯HTML, 像Word的可格式定義style/DTD,<br />支援UTF-8, (X)HTML, 數學式 MathML (.mml),SVG,加強式表格編輯與特殊符號,<br />長文件標籤可以樹狀表示, 單頁同時編輯兩文件互相比較(更新網頁時好用),<br />可以在文件內自己加註(annotation), W3C藉此把HTML推到一個新境界<br /><br />多年前的Mozilla為我們帶來了免費多平台的初階HTML所見即所得<br />編輯器, Nvu帶給我們多頁編輯的驚喜, 但是它們都已經消失而不再更新 (KOMPOZER<br />算有解決nvu的bug). 難道網頁編輯者只剩商業軟體可用嗎? 玩玩免費的Amaya, 幾乎<br />帶給我們與某些商業軟體功能相同水準, 強到將html的應用推到個人文件實作!<br /><br />【官方網站】http://www.w3.org/Amaya/<br /><br />【其他版本下載區】http://www.w3.org/Amaya/User/BinDist.html<br /><br />【此程式支援繁體中文】設定方法<br />上方工具列 [Edit]-->[Preferences]-->[Dialogue Language] 改<br />Traditional Chinese, 按Apply後, 關掉並重新啟動Amaya即可成為中文介面<div class="blogger-post-footer">Copyright © Bruce Huang All rights reserved.</div>
         
           <p class="article-more-link">
-            <a href="/blog/html%E7%B6%B2%E9%A0%81%E6%89%80%E8%A6%8B%E5%8D%B3%E6%89%80%E5%BE%97%E7%B7%A8%E8%BC%AF%E7%A8%8B%E5%BC%8FAmaya-%E5%85%8D%E8%B2%BB%E8%BB%9F%E9%AB%94/#more">Read More</a>
+            <a href="/blog/2010/04/html%E7%B6%B2%E9%A0%81%E6%89%80%E8%A6%8B%E5%8D%B3%E6%89%80%E5%BE%97%E7%B7%A8%E8%BC%AF%E7%A8%8B%E5%BC%8FAmaya-%E5%85%8D%E8%B2%BB%E8%BB%9F%E9%AB%94/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/blog/html%E7%B6%B2%E9%A0%81%E6%89%80%E8%A6%8B%E5%8D%B3%E6%89%80%E5%BE%97%E7%B7%A8%E8%BC%AF%E7%A8%8B%E5%BC%8FAmaya-%E5%85%8D%E8%B2%BB%E8%BB%9F%E9%AB%94/" data-id="cl60igf5t0057hy0m5kza5yz4" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/blog/2010/04/html%E7%B6%B2%E9%A0%81%E6%89%80%E8%A6%8B%E5%8D%B3%E6%89%80%E5%BE%97%E7%B7%A8%E8%BC%AF%E7%A8%8B%E5%BC%8FAmaya-%E5%85%8D%E8%B2%BB%E8%BB%9F%E9%AB%94/" data-id="cl60iwqe80059cb0m1wzp70tb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/HTML/" rel="tag">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Windows-%E7%9B%B8%E9%97%9C/" rel="tag">Windows 相關</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E8%BB%9F%E4%BD%93%E6%87%89%E7%94%A8%E7%9B%B8%E9%97%9C/" rel="tag">軟体應用相關</a></li></ul>
@@ -423,7 +423,7 @@
   
     <article id="post-jQuery取得JSON資料" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/jQuery%E5%8F%96%E5%BE%97JSON%E8%B3%87%E6%96%99/" class="article-date">
+    <a href="/blog/2010/03/jQuery%E5%8F%96%E5%BE%97JSON%E8%B3%87%E6%96%99/" class="article-date">
   <time datetime="2010-03-24T07:51:00.000Z" itemprop="datePublished">2010-03-24</time>
 </a>
     
@@ -435,7 +435,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/jQuery%E5%8F%96%E5%BE%97JSON%E8%B3%87%E6%96%99/">jQuery取得JSON資料</a>
+      <a class="article-title" href="/blog/2010/03/jQuery%E5%8F%96%E5%BE%97JSON%E8%B3%87%E6%96%99/">jQuery取得JSON資料</a>
     </h1>
   
 
@@ -446,13 +446,13 @@
         <a target="_blank" rel="noopener" href="http://blog.xuite.net/ahdaa/blog1/30797195">http://blog.xuite.net/ahdaa/blog1/30797195</a><div class="blogger-post-footer">Copyright © Bruce Huang All rights reserved.</div>
         
           <p class="article-more-link">
-            <a href="/blog/jQuery%E5%8F%96%E5%BE%97JSON%E8%B3%87%E6%96%99/#more">Read More</a>
+            <a href="/blog/2010/03/jQuery%E5%8F%96%E5%BE%97JSON%E8%B3%87%E6%96%99/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/blog/jQuery%E5%8F%96%E5%BE%97JSON%E8%B3%87%E6%96%99/" data-id="cl60igf5x005ghy0mgc7n4pte" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/blog/2010/03/jQuery%E5%8F%96%E5%BE%97JSON%E8%B3%87%E6%96%99/" data-id="cl60iwqeb005jcb0m93g5cl8e" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/jQuery/" rel="tag">jQuery</a></li></ul>
@@ -466,7 +466,7 @@
   
     <article id="post-jQuery-外掛特輯-Query-String-Object-GET參數的取得與設定" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/jQuery-%E5%A4%96%E6%8E%9B%E7%89%B9%E8%BC%AF-Query-String-Object-GET%E5%8F%83%E6%95%B8%E7%9A%84%E5%8F%96%E5%BE%97%E8%88%87%E8%A8%AD%E5%AE%9A/" class="article-date">
+    <a href="/blog/2010/03/jQuery-%E5%A4%96%E6%8E%9B%E7%89%B9%E8%BC%AF-Query-String-Object-GET%E5%8F%83%E6%95%B8%E7%9A%84%E5%8F%96%E5%BE%97%E8%88%87%E8%A8%AD%E5%AE%9A/" class="article-date">
   <time datetime="2010-03-24T07:46:00.000Z" itemprop="datePublished">2010-03-24</time>
 </a>
     
@@ -478,7 +478,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/jQuery-%E5%A4%96%E6%8E%9B%E7%89%B9%E8%BC%AF-Query-String-Object-GET%E5%8F%83%E6%95%B8%E7%9A%84%E5%8F%96%E5%BE%97%E8%88%87%E8%A8%AD%E5%AE%9A/">jQuery 外掛特輯 :Query String Object-GET參數的取得與設定</a>
+      <a class="article-title" href="/blog/2010/03/jQuery-%E5%A4%96%E6%8E%9B%E7%89%B9%E8%BC%AF-Query-String-Object-GET%E5%8F%83%E6%95%B8%E7%9A%84%E5%8F%96%E5%BE%97%E8%88%87%E8%A8%AD%E5%AE%9A/">jQuery 外掛特輯 :Query String Object-GET參數的取得與設定</a>
     </h1>
   
 
@@ -489,13 +489,13 @@
         Sever side程式語言通常都會有用來處理Query String的類別或方法，像是PHP可以透過$_GET['key']取得對應的值。而C#也可以用Request.QueryString["key"]的方式取得對應的值。 <br /><br /><br />但是在Client端的javascript卻沒有如此方便的方法可以使用，所幸在jQuery流行的現在，我們可以從網路上找到一些jQuery外掛可以方便的處理Query String。以下我找到了三個外掛，分別是： <br /><a target="_blank" rel="noopener" href="http://www.oakcitygraphics.com/jquery/jqURL/jqURLdemo.html?var1=1&var2=2&var3=3">jqURL</a> <br /><a target="_blank" rel="noopener" href="http://www.mathias-bank.de/2007/04/21/jquery-plugin-geturlparam-version-2/">getUrlParam</a> <br /><a target="_blank" rel="noopener" href="http://plugins.jquery.com/project/query-object">Query String Object</a> <br /><br />我選擇使用Query String Object，做為我的開發工具，因為從jQuery Plugin專案頁面上日期顯示，作者依然有持續在維護這個專案，最後一次release是在2009-10-16感覺似乎比較可靠(？)。 <br /><br />接下來我簡單說明一下如何使用這個外掛取得網址的GET參數。 <br /><br />如果現在有一串這樣的網址 <br />http://www.url.com/test.php?id=12&num=20&name=finalevil <br />你可以透過下列語法取得對應的GET參數 <br /><br />var str = $.query.get('id');<br /><br />如此一來，取得的數值存入str變數中，所以str變數的值即為12 <br /><br /><br />除了取得GET參數，此外掛當然也可以用來設定GET參數，否則只能取得不能設定未免也太遜了吧XD <br /><br />var newUrl = $.query.set("id", 22).set("num", "100").toString();<br /><br />這樣設定以後newUrl變數中的字串就是?id=22&num=100 <br />另外，你可以呼叫Remove方法，移除GET參數中的某個數值，像這樣： <br />如果現在有一串這樣的網址 http://www.url.com/test.php?id=12&num=20&name=finalevil <br /><br />var newUrl = $.query.REMOVE("id");<br /><br />&nbsp;呼叫REMOVE方法，移除參數id，這個時候的newUrl為 <br />?num=20&name=finalevil <br />以上簡單介紹了這個外掛最重要的三個方法，get、set、REMOVE，供大家參考。<br /><br /><br />來源文章 <a target="_blank" rel="noopener" href="http://blog.finalevil.com/2009/10/jquery08query-string-object.html">http://blog.finalevil.com/2009/10/jquery08query-string-object.html</a><div class="blogger-post-footer">Copyright © Bruce Huang All rights reserved.</div>
         
           <p class="article-more-link">
-            <a href="/blog/jQuery-%E5%A4%96%E6%8E%9B%E7%89%B9%E8%BC%AF-Query-String-Object-GET%E5%8F%83%E6%95%B8%E7%9A%84%E5%8F%96%E5%BE%97%E8%88%87%E8%A8%AD%E5%AE%9A/#more">Read More</a>
+            <a href="/blog/2010/03/jQuery-%E5%A4%96%E6%8E%9B%E7%89%B9%E8%BC%AF-Query-String-Object-GET%E5%8F%83%E6%95%B8%E7%9A%84%E5%8F%96%E5%BE%97%E8%88%87%E8%A8%AD%E5%AE%9A/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/blog/jQuery-%E5%A4%96%E6%8E%9B%E7%89%B9%E8%BC%AF-Query-String-Object-GET%E5%8F%83%E6%95%B8%E7%9A%84%E5%8F%96%E5%BE%97%E8%88%87%E8%A8%AD%E5%AE%9A/" data-id="cl60igf5x005ehy0m4k00bx0s" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/blog/2010/03/jQuery-%E5%A4%96%E6%8E%9B%E7%89%B9%E8%BC%AF-Query-String-Object-GET%E5%8F%83%E6%95%B8%E7%9A%84%E5%8F%96%E5%BE%97%E8%88%87%E8%A8%AD%E5%AE%9A/" data-id="cl60iwqeb005hcb0m2805fb2u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/jQuery/" rel="tag">jQuery</a></li></ul>
@@ -560,23 +560,23 @@
       <ul>
         
           <li>
-            <a href="/blog/WebSocket-Express%E8%AE%93%E5%89%8D%E5%BE%8C%E7%AB%AF%E4%B8%80%E5%AE%B6%E8%A6%AA/">WebSocket+Express讓前後端一家親</a>
+            <a href="/blog/2020/09/WebSocket-Express%E8%AE%93%E5%89%8D%E5%BE%8C%E7%AB%AF%E4%B8%80%E5%AE%B6%E8%A6%AA/">WebSocket+Express讓前後端一家親</a>
           </li>
         
           <li>
-            <a href="/blog/graylog-docker%E5%AE%89%E8%A3%85/">graylog-docker安装</a>
+            <a href="/blog/2020/08/graylog-docker%E5%AE%89%E8%A3%85/">graylog-docker安装</a>
           </li>
         
           <li>
-            <a href="/blog/Ubuntu-18-04-%E9%96%8B%E6%A9%9F%E8%87%AA%E5%8B%95%E5%9F%B7%E8%A1%8C-%E6%8C%87%E4%BB%A4-rc-local/">Ubuntu 18.04 開機後自動執行 rc.local</a>
+            <a href="/blog/2020/08/Ubuntu-18-04-%E9%96%8B%E6%A9%9F%E8%87%AA%E5%8B%95%E5%9F%B7%E8%A1%8C-%E6%8C%87%E4%BB%A4-rc-local/">Ubuntu 18.04 開機後自動執行 rc.local</a>
           </li>
         
           <li>
-            <a href="/blog/vscode-Bracket-Pair-Colorizer-%E6%9C%89%E4%BA%86%E5%BD%A9%E8%89%B2%E6%8B%AC%E8%99%9F%E4%B8%8D%E5%86%8D%E7%9C%BC%E8%8A%B1%E6%83%B9/">vscode-Bracket Pair Colorizer-有了彩色括號不再眼花惹</a>
+            <a href="/blog/2018/10/vscode-Bracket-Pair-Colorizer-%E6%9C%89%E4%BA%86%E5%BD%A9%E8%89%B2%E6%8B%AC%E8%99%9F%E4%B8%8D%E5%86%8D%E7%9C%BC%E8%8A%B1%E6%83%B9/">vscode-Bracket Pair Colorizer-有了彩色括號不再眼花惹</a>
           </li>
         
           <li>
-            <a href="/blog/%E5%A5%BD%E7%94%A8%E7%9A%84%E7%B7%9A%E4%B8%8A%E7%94%A2%E7%94%9FHTML%E7%A2%BC%E7%9A%84%E5%BD%A9%E8%89%B2%E7%9A%84%E7%A8%8B%E5%BC%8F%E7%A2%BC-hilite-me-%E5%B9%B9%E5%A5%BD%E7%B9%9E%E5%8F%A3/">好用的線上產生HTML碼的彩色的程式碼-hilite.me, 幹好繞口</a>
+            <a href="/blog/2018/06/%E5%A5%BD%E7%94%A8%E7%9A%84%E7%B7%9A%E4%B8%8A%E7%94%A2%E7%94%9FHTML%E7%A2%BC%E7%9A%84%E5%BD%A9%E8%89%B2%E7%9A%84%E7%A8%8B%E5%BC%8F%E7%A2%BC-hilite-me-%E5%B9%B9%E5%A5%BD%E7%B9%9E%E5%8F%A3/">好用的線上產生HTML碼的彩色的程式碼-hilite.me, 幹好繞口</a>
           </li>
         
       </ul>

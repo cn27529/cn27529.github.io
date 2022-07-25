@@ -79,7 +79,7 @@
   
     <article id="post-css學習之-margin-設置" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/css%E5%AD%B8%E7%BF%92%E4%B9%8B-margin-%E8%A8%AD%E7%BD%AE/" class="article-date">
+    <a href="/blog/2009/10/css%E5%AD%B8%E7%BF%92%E4%B9%8B-margin-%E8%A8%AD%E7%BD%AE/" class="article-date">
   <time datetime="2009-10-05T00:29:00.000Z" itemprop="datePublished">2009-10-05</time>
 </a>
     
@@ -91,7 +91,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/css%E5%AD%B8%E7%BF%92%E4%B9%8B-margin-%E8%A8%AD%E7%BD%AE/">css學習之 margin 設置</a>
+      <a class="article-title" href="/blog/2009/10/css%E5%AD%B8%E7%BF%92%E4%B9%8B-margin-%E8%A8%AD%E7%BD%AE/">css學習之 margin 設置</a>
     </h1>
   
 
@@ -102,13 +102,13 @@
         功能 : 設定文字和邊緣距離 ( 可設單位屬性 : 點pt、英寸in、公分cm、像素px、百分比% )<br />語法 : { MARGIN : AUTO︱( length )︱( percentage ) }<br /><br />這個性質一次設定上、下、左、右邊界與區塊外之元件間格距離。使用時應依序指定上、右、下、左，如margin:1px 2px 3px 4px;。亦可一次指定四邊，如margin:2px，則全部均設2px。<br /><br />1.<br />margin:1px 2px 3px 4px;<br /><br />2.<br />margin-top:1px;<br />margin-right:2px;<br />margin-tottom:3px;<br />margin-left:4px;<div class="blogger-post-footer">Copyright © Bruce Huang All rights reserved.</div>
         
           <p class="article-more-link">
-            <a href="/blog/css%E5%AD%B8%E7%BF%92%E4%B9%8B-margin-%E8%A8%AD%E7%BD%AE/#more">Read More</a>
+            <a href="/blog/2009/10/css%E5%AD%B8%E7%BF%92%E4%B9%8B-margin-%E8%A8%AD%E7%BD%AE/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/blog/css%E5%AD%B8%E7%BF%92%E4%B9%8B-margin-%E8%A8%AD%E7%BD%AE/" data-id="cl60igf5p004zhy0m7mq31fza" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/blog/2009/10/css%E5%AD%B8%E7%BF%92%E4%B9%8B-margin-%E8%A8%AD%E7%BD%AE/" data-id="cl60iwqe50052cb0mf1qw58do" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/CSS3/" rel="tag">CSS3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/HTML/" rel="tag">HTML</a></li></ul>
@@ -122,7 +122,7 @@
   
     <article id="post-jquery-document-ready-與-window-load" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/jquery-document-ready-%E8%88%87-window-load/" class="article-date">
+    <a href="/blog/2009/10/jquery-document-ready-%E8%88%87-window-load/" class="article-date">
   <time datetime="2009-10-04T16:27:00.000Z" itemprop="datePublished">2009-10-05</time>
 </a>
     
@@ -134,7 +134,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/jquery-document-ready-%E8%88%87-window-load/">jquery $(document).ready 與 window.load</a>
+      <a class="article-title" href="/blog/2009/10/jquery-document-ready-%E8%88%87-window-load/">jquery $(document).ready 與 window.load</a>
     </h1>
   
 
@@ -145,13 +145,13 @@
         之前一直覺得$(document).ready和window.onload事件是一樣的，前陣子才豁然驚覺原來兩者是不一樣的。這真是令我汗顏Orz，以下我將兩者的差異做了一個比較表格來進行說明：<br /><style><!--#table1 th {background-color: #999000;color: #ffffff;text-align:center;border: 1px;}--></style><br /><table id="table1" border="1" cellspacing="0" cellpadding="0"><tbody><tr><th width="70"></th><th>window.onload</th><th>$(document).ready</th></tr><tr><td width="70">事件</td><td>javascript原生事件</td><td>模擬 W3C DOM 標準的 DOMContentLoaded 事件</td></tr><tr><td width="70">觸發時機</td><td>整個網頁下載完成後觸發。 因此如果網頁中包含圖檔，則事件觸發的時間會比較晚。</td><td>全部的DOM元素下載完成後觸發。 因為不需等待圖檔載入完成，因此事件觸發的時間較早。</td></tr><tr><td width="70">複寫</td><td>前一次設定給window.onload的函式會被後一次所設定的函式覆蓋。</td><td>不會覆蓋，前一次跟後一次所設定的函式都會被執行。</td></tr></tbody></table><br /><p></p><p>複寫的部份僅用文字說明有些難以表達，直接用一個簡短的程式說明無疑是比較簡單的方式！範例1使用window.onload，範例2使用document ready的方式，說明兩者的不同。</p><br /><pre class="brush: js;"><br />window.onload=function() { alert('alert1'); };<br />window.onload=function() { alert('alert2'); };<br /><br /></pre><br /><p>在範例1使用window.onload的方式，當整個頁面載入完畢(包含圖片)，則僅會執行第二個alert，這是因為後面那個function覆蓋了前面的function。</p><br /><pre class="brush: js;"><br />$(document).ready(function() { alert('alert1'); });<br />$(document).ready(function() { alert('alert2'); });<br /><br /></pre><br /><p>同樣的狀況，在使用document ready時卻有不同的結果。在範例2，當DOM元素載入完畢，兩個alert都會被執行，function不會被覆蓋。 列表中最重要的差異點其實是觸發時機，請大家多多注意唷。這實在是一個很容易遺漏的小細節^^ </p><p></p><p>原文自 : <a target="_blank" href="http://blog.finalevil.com/2009/09/jquerydocumentreadyonload.html">http://blog.finalevil.com/2009/09/jquerydocumentreadyonload.html</a></p><div class="blogger-post-footer">Copyright © Bruce Huang All rights reserved.</div>
         
           <p class="article-more-link">
-            <a href="/blog/jquery-document-ready-%E8%88%87-window-load/#more">Read More</a>
+            <a href="/blog/2009/10/jquery-document-ready-%E8%88%87-window-load/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/blog/jquery-document-ready-%E8%88%87-window-load/" data-id="cl60igf680063hy0m0jqb4h4x" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/blog/2009/10/jquery-document-ready-%E8%88%87-window-load/" data-id="cl60iwqep0068cb0m36t0flbk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/jQuery/" rel="tag">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li></ul>
@@ -165,7 +165,7 @@
   
     <article id="post-CSS-學習路之-img-src-設置" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/CSS-%E5%AD%B8%E7%BF%92%E8%B7%AF%E4%B9%8B-img-src-%E8%A8%AD%E7%BD%AE/" class="article-date">
+    <a href="/blog/2009/10/CSS-%E5%AD%B8%E7%BF%92%E8%B7%AF%E4%B9%8B-img-src-%E8%A8%AD%E7%BD%AE/" class="article-date">
   <time datetime="2009-10-04T15:40:00.000Z" itemprop="datePublished">2009-10-04</time>
 </a>
     
@@ -177,7 +177,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/CSS-%E5%AD%B8%E7%BF%92%E8%B7%AF%E4%B9%8B-img-src-%E8%A8%AD%E7%BD%AE/">CSS 學習路之 img src 設置</a>
+      <a class="article-title" href="/blog/2009/10/CSS-%E5%AD%B8%E7%BF%92%E8%B7%AF%E4%B9%8B-img-src-%E8%A8%AD%E7%BD%AE/">CSS 學習路之 img src 設置</a>
     </h1>
   
 
@@ -188,13 +188,13 @@
         前幾天試驗一個css img 的配置時, 發覺 img 連結圖示除了以 src 配置之外, 是否也可以使用css 來配置呢, 當然也是可以使用js來達到統一設定, 因為js是在client端處理所以需要消耗client的資源, 說起來也不是那麼各師其職的, 為了不讓client的工作量變多, 上網拜了G神後找到了 img src 的 css 配置方式.<br /><br />1.一般(傳統)的配置方式<br />&ltimg src="yourPath/yourImg.jpg" /><br /><br />2.css配置方式<br />&ltimg class="yourImg" /><br /><br />&lt style><br />img&nbsp;&nbsp;.yourImg{<br />&nbsp;&nbsp;text:expression(src="yourPath/yourImg.jpg");<br />}<br />&lt/style><br /><br />套用css樣式後源碼也乾淨許多, 所以第2種配置方式較佳.哈哈哈~<div class="blogger-post-footer">Copyright © Bruce Huang All rights reserved.</div>
         
           <p class="article-more-link">
-            <a href="/blog/CSS-%E5%AD%B8%E7%BF%92%E8%B7%AF%E4%B9%8B-img-src-%E8%A8%AD%E7%BD%AE/#more">Read More</a>
+            <a href="/blog/2009/10/CSS-%E5%AD%B8%E7%BF%92%E8%B7%AF%E4%B9%8B-img-src-%E8%A8%AD%E7%BD%AE/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/blog/CSS-%E5%AD%B8%E7%BF%92%E8%B7%AF%E4%B9%8B-img-src-%E8%A8%AD%E7%BD%AE/" data-id="cl60igf3b000mhy0mb5k9hisj" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/blog/2009/10/CSS-%E5%AD%B8%E7%BF%92%E8%B7%AF%E4%B9%8B-img-src-%E8%A8%AD%E7%BD%AE/" data-id="cl60iwqbq000mcb0m7lod68w0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/CSS3/" rel="tag">CSS3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/HTML/" rel="tag">HTML</a></li></ul>
@@ -208,7 +208,7 @@
   
     <article id="post-CSS-學習路之-padding-設置" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/CSS-%E5%AD%B8%E7%BF%92%E8%B7%AF%E4%B9%8B-padding-%E8%A8%AD%E7%BD%AE/" class="article-date">
+    <a href="/blog/2009/10/CSS-%E5%AD%B8%E7%BF%92%E8%B7%AF%E4%B9%8B-padding-%E8%A8%AD%E7%BD%AE/" class="article-date">
   <time datetime="2009-10-04T14:51:00.000Z" itemprop="datePublished">2009-10-04</time>
 </a>
     
@@ -220,7 +220,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/CSS-%E5%AD%B8%E7%BF%92%E8%B7%AF%E4%B9%8B-padding-%E8%A8%AD%E7%BD%AE/">CSS 學習路之 padding 設置</a>
+      <a class="article-title" href="/blog/2009/10/CSS-%E5%AD%B8%E7%BF%92%E8%B7%AF%E4%B9%8B-padding-%E8%A8%AD%E7%BD%AE/">CSS 學習路之 padding 設置</a>
     </h1>
   
 
@@ -231,13 +231,13 @@
         功能 : 設定元件和邊緣距離 ( 可設單位屬性 : 點pt、英寸in、公分cm、像素px、百分比% ) <br />語法 :  { PADDING : ( length )︱( percentage ) } <br />這個性質一次設定上、下、左、右邊界的間格距離。使用時應依序指定上、右、下、左，如padding:3px 2px 5px 1px。亦可一次指定四邊，如padding:2px，則全部均設2px。<br /><br />css padding 的設置非常好用, 可以很簡單的控制你需要的控件項目所需要的邊界位置,<br />padding 的類型分為以下2種.<br /><br />1.<br />padding: 1px 2px 3px 4px;<br /><br />2.<br />padding-top: 1px;<br />padding-right: 2px;<br />padding-tottom: 3px;<br />padding-left: 4px;<br /><br />兩種效果都相同, 可依据當下需要來配置. 簡單的配置後再也不需要那些<em><u>垃圾的</u></em> <br /> 標簽與(空格)標簽了...哈哈哈<div class="blogger-post-footer">Copyright © Bruce Huang All rights reserved.</div>
         
           <p class="article-more-link">
-            <a href="/blog/CSS-%E5%AD%B8%E7%BF%92%E8%B7%AF%E4%B9%8B-padding-%E8%A8%AD%E7%BD%AE/#more">Read More</a>
+            <a href="/blog/2009/10/CSS-%E5%AD%B8%E7%BF%92%E8%B7%AF%E4%B9%8B-padding-%E8%A8%AD%E7%BD%AE/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/blog/CSS-%E5%AD%B8%E7%BF%92%E8%B7%AF%E4%B9%8B-padding-%E8%A8%AD%E7%BD%AE/" data-id="cl60igf3d000phy0mao3h1071" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/blog/2009/10/CSS-%E5%AD%B8%E7%BF%92%E8%B7%AF%E4%B9%8B-padding-%E8%A8%AD%E7%BD%AE/" data-id="cl60iwqbt000pcb0ma3hw3acd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/CSS3/" rel="tag">CSS3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/HTML/" rel="tag">HTML</a></li></ul>
@@ -251,7 +251,7 @@
   
     <article id="post-ASP-NET-Popup-Control-訊息通知控件" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/ASP-NET-Popup-Control-%E8%A8%8A%E6%81%AF%E9%80%9A%E7%9F%A5%E6%8E%A7%E4%BB%B6/" class="article-date">
+    <a href="/blog/2009/09/ASP-NET-Popup-Control-%E8%A8%8A%E6%81%AF%E9%80%9A%E7%9F%A5%E6%8E%A7%E4%BB%B6/" class="article-date">
   <time datetime="2009-09-27T16:08:00.000Z" itemprop="datePublished">2009-09-28</time>
 </a>
     
@@ -263,7 +263,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/ASP-NET-Popup-Control-%E8%A8%8A%E6%81%AF%E9%80%9A%E7%9F%A5%E6%8E%A7%E4%BB%B6/">ASP.NET Popup Control 訊息通知控件</a>
+      <a class="article-title" href="/blog/2009/09/ASP-NET-Popup-Control-%E8%A8%8A%E6%81%AF%E9%80%9A%E7%9F%A5%E6%8E%A7%E4%BB%B6/">ASP.NET Popup Control 訊息通知控件</a>
     </h1>
   
 
@@ -274,13 +274,13 @@
         Highly customizable JavaScript popup control for web page wrapped in ASP.NET custom control.<br /><br />引自 : <a href="http://www.codeproject.com/KB/custom-controls/asppopup.aspx" target="_blank">http://www.codeproject.com/KB/custom-controls/asppopup.aspx</a><div class="blogger-post-footer">Copyright © Bruce Huang All rights reserved.</div>
         
           <p class="article-more-link">
-            <a href="/blog/ASP-NET-Popup-Control-%E8%A8%8A%E6%81%AF%E9%80%9A%E7%9F%A5%E6%8E%A7%E4%BB%B6/#more">Read More</a>
+            <a href="/blog/2009/09/ASP-NET-Popup-Control-%E8%A8%8A%E6%81%AF%E9%80%9A%E7%9F%A5%E6%8E%A7%E4%BB%B6/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/blog/ASP-NET-Popup-Control-%E8%A8%8A%E6%81%AF%E9%80%9A%E7%9F%A5%E6%8E%A7%E4%BB%B6/" data-id="cl60igf2x0007hy0mcrbrc732" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/blog/2009/09/ASP-NET-Popup-Control-%E8%A8%8A%E6%81%AF%E9%80%9A%E7%9F%A5%E6%8E%A7%E4%BB%B6/" data-id="cl60iwqbh0008cb0mbwb94232" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/ASP-NET/" rel="tag">ASP.NET</a></li></ul>
@@ -294,7 +294,7 @@
   
     <article id="post-MsnMessageBox-MSN-訊息通知控制項" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/MsnMessageBox-MSN-%E8%A8%8A%E6%81%AF%E9%80%9A%E7%9F%A5%E6%8E%A7%E5%88%B6%E9%A0%85/" class="article-date">
+    <a href="/blog/2009/09/MsnMessageBox-MSN-%E8%A8%8A%E6%81%AF%E9%80%9A%E7%9F%A5%E6%8E%A7%E5%88%B6%E9%A0%85/" class="article-date">
   <time datetime="2009-09-27T15:13:00.000Z" itemprop="datePublished">2009-09-27</time>
 </a>
     
@@ -306,7 +306,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/MsnMessageBox-MSN-%E8%A8%8A%E6%81%AF%E9%80%9A%E7%9F%A5%E6%8E%A7%E5%88%B6%E9%A0%85/">MsnMessageBox MSN 訊息通知控制項</a>
+      <a class="article-title" href="/blog/2009/09/MsnMessageBox-MSN-%E8%A8%8A%E6%81%AF%E9%80%9A%E7%9F%A5%E6%8E%A7%E5%88%B6%E9%A0%85/">MsnMessageBox MSN 訊息通知控制項</a>
     </h1>
   
 
@@ -317,13 +317,13 @@
         這也不是捨麼新的技術，將網路上<a target="_blank" rel="noopener" href="http://www.codeproject.com/KB/custom-controls/asppopup.aspx">Tomas Petricek</a> 發佈於CodeProject 的控制項做些修改。因為本人用起來覺得有點綁手綁腳的不太順手 = = 。 MSN訊息通知控制項，有以下特點。1. 使用簡單(就這樣!! 大力給他用下去啦.......)。<br />使用方式: 這是標準的asp.net控制項所以可以將bin資料夾的 <a target="_blank" rel="noopener" href="http://msdn.microsoft.com/zh-tw/library/ms165355(VS.80).aspx">DLL加入工具箱</a> 。<br /><br />詳細應用於下方連結<br />引自 : <a href="http://www.dotblogs.com.tw/02047788a/archive/2009/01/12/6757.aspx" target="_blank">http://www.dotblogs.com.tw/02047788a/archive/2009/01/12/6757.aspx</a><div class="blogger-post-footer">Copyright © Bruce Huang All rights reserved.</div>
         
           <p class="article-more-link">
-            <a href="/blog/MsnMessageBox-MSN-%E8%A8%8A%E6%81%AF%E9%80%9A%E7%9F%A5%E6%8E%A7%E5%88%B6%E9%A0%85/#more">Read More</a>
+            <a href="/blog/2009/09/MsnMessageBox-MSN-%E8%A8%8A%E6%81%AF%E9%80%9A%E7%9F%A5%E6%8E%A7%E5%88%B6%E9%A0%85/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/blog/MsnMessageBox-MSN-%E8%A8%8A%E6%81%AF%E9%80%9A%E7%9F%A5%E6%8E%A7%E5%88%B6%E9%A0%85/" data-id="cl60igf4l002vhy0mccuuejnz" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/blog/2009/09/MsnMessageBox-MSN-%E8%A8%8A%E6%81%AF%E9%80%9A%E7%9F%A5%E6%8E%A7%E5%88%B6%E9%A0%85/" data-id="cl60iwqcy002vcb0m5074d6d1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/ASP-NET/" rel="tag">ASP.NET</a></li></ul>
@@ -337,7 +337,7 @@
   
     <article id="post-字型變化標簽" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/%E5%AD%97%E5%9E%8B%E8%AE%8A%E5%8C%96%E6%A8%99%E7%B0%BD/" class="article-date">
+    <a href="/blog/2009/09/%E5%AD%97%E5%9E%8B%E8%AE%8A%E5%8C%96%E6%A8%99%E7%B0%BD/" class="article-date">
   <time datetime="2009-09-25T07:46:00.000Z" itemprop="datePublished">2009-09-25</time>
 </a>
     
@@ -349,7 +349,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/%E5%AD%97%E5%9E%8B%E8%AE%8A%E5%8C%96%E6%A8%99%E7%B0%BD/">字型變化標簽</a>
+      <a class="article-title" href="/blog/2009/09/%E5%AD%97%E5%9E%8B%E8%AE%8A%E5%8C%96%E6%A8%99%E7%B0%BD/">字型變化標簽</a>
     </h1>
   
 
@@ -360,13 +360,13 @@
         <style><!--#table1 th {background-color: #999000;color: #ffffff;text-align:center;border: 1px;}--></style><table id="table1" border="1" cellspacing="0" cellpadding="0"><tr>  <th align="left">  <p><b>標簽(tag)</b></p>  </th>  <th align="left">  <p><b>效果(result)</b></p>  </th> </tr> <tr>  <td>  <p><ABBR>字型變化</ABBR></p>  </td>  <td>  <p><abbr>字型變化</abbr></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">HTML 4.0 指令，你的瀏覽程式可能不支援。</span></p>  </td> </tr> <tr>  <td>  <p><ACRONYM>字型變化</ACRONYM></p>  </td>  <td>  <p><acronym>字型變化</acronym></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">HTML 4.0 指令，你的瀏覽程式可能不支援。</span></p>  </td> </tr> <tr>  <td>  <p><ADDRESS>字型變化</ADDRESS></p>  </td>  <td>  <p></p>  <address>   字型變化</address>  <p></p>  </td> </tr> <tr>  <td>  <p><B>字型變化</B></p>  </td>  <td>  <p><b>字型變化</b></p>  </td> </tr> <tr>  <td>  <p><BASEFONT COLOR="red">字型變化</BASEFONT></p>  </td>  <td>  <p>  <basefont style="COLOR: red"></basefont>  字型變化</basefont></p>  </td> </tr> <tr>  <td>  <p><BDO DIR="rtl">字型變化</BDO></p>  </td>  <td>  <p><bdo dir="rtl">字型變化</bdo></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">HTML 4.0 指令，你的瀏覽程式可能不支援。DIR 控制文字方向，RTL表示由右至左，LTR表示由左至右。</span></p>  </td> </tr> <tr>  <td>  <p><BIG>字型變化</BIG></p>  </td>  <td>  <p><big>字型變化</big></p>  </td> </tr> <tr>  <td>  <p><BLINK>字型變化</BLINK></p>  </td>  <td>  <p><blink>字型變化</blink></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">只有Netscape支援。</span></p>  </td> </tr> <tr>  <td>  <p><BLOCKQUOTE>字型變化</BLOCKQUOTE></p>  </td>  <td>  <p></p>  <blockquote>   字型變化</blockquote>  <p></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">其效果類似左右兩邊同時縮格。</span></p>  </td> </tr> <tr>  <td>  <p><CITE>字型變化</CITE></p>  </td>  <td>  <p><cite>字型變化</cite></p>  </td> </tr> <tr>  <td>  <p><CODE>字型變化</CODE></p>  </td>  <td>  <p><code>字型變化</code></p>  </td> </tr> <tr>  <td>  <p><COMMENT>字型變化</COMMENT></p>  </td>  <td>  <p><comment>字型變化</comment></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">在支援本指令的瀏覽程式上，被COMMENT指令包含的文字將不會被顯示，其效果如同   <nobr><!--</nobr> 和 <nobr>--> </nobr>指令。</span></p>  </td> </tr> <tr>  <td>  <p><DEL>字型變化</DEL></p>  </td>  <td>  <p><del>字型變化</del></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">HTML 4.0 指令，你的瀏覽程式可能不支援。"DEL"為刪除("DELeted")的英文縮寫。</span></p>  </td> </tr> <tr>  <td>  <p><DFN>字型變化</DFN></p>  </td>  <td>  <p><dfn>字型變化</dfn></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">"DFN"為定義("DEFinition")的英文縮寫。</span></p>  </td> </tr> <tr>  <td>  <p><DIV>字型變化</DIV></p>  </td>  <td>  <p></p>  字型變化   <p></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">"DIV"為區隔("DIVision")的英文縮寫。</span></p>  </td> </tr> <tr>  <td>  <p><EM>字型變化</EM></p>  </td>  <td>  <p><em>字型變化</em></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">"EM"為強調("EMphasis")的英文縮寫。</span></p>  </td> </tr> <tr>  <td>  <p><FONT COLOR="red">字型變化</FONT></p>  </td>  <td>  <p><span style="color:#ff0000;">字型變化</span></p>  </td> </tr> <tr>  <td>  <p><FONT SIZE="+1">字型變化</FONT></p>  </td>  <td>  <p><span style="font-size:78%;">字型變化</span></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">請參考<a target="_blank" rel="noopener" href="http://www.blogger.com/Basic4.html">新手入門：第四單元</a>。</span></p>  </td> </tr> <tr>  <td>  <p><FONT FACE="arial">字型變化</FONT></p>  </td>  <td>  <p><span style="font-family:arial;">字型變化</span></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">請參考<a target="_blank" rel="noopener" href="http://www.blogger.com/Basic4.html">新手入門：第四單元</a>。</span></p>  </td> </tr> <tr>  <td>  <p><H#>字型變化</H#></p>  </td>  <td>  <p></p>  <h4>字型變化</h4>  <p></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">此指令共分6級，上例為H4。請參考<a target="_blank" rel="noopener" href="http://www.blogger.com/Basic4.html">新手入門：第四單元</a>。</span></p>  </td> </tr> <tr>  <td>  <p><I>字型變化</I></p>  </td>  <td>  <p><i>字型變化</i></p>  </td> </tr> <tr>  <td>  <p><INS>字型變化</INS></p>  </td>  <td>  <p><ins>字型變化</ins></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">HTML 4.0 指令，你的瀏覽程式可能不支援。"INS"為插入("INSerted")的英文縮寫。以加畫底線的方式顯示插入的文字。</span></p>  </td> </tr> <tr>  <td>  <p><KBD>字型變化</KBD></p>  </td>  <td>  <p><kbd>字型變化</kbd></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">"KBD"為鍵盤("KeyBoarD")的英文縮寫。"KBD" stands for   "Keyboard".</span></p>  </td> </tr> <tr>  <td>  <p><LISTING>字型變化</LISTING></p>  </td>  <td>  <p><listing>字型變化</listing></p>  <p></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">過時的指令。為 <PRE> 指令所取代。</span></p>  </td> </tr> <tr>  <td>  <p><MARQUEE>字型變化</MARQUEE></p>  </td>  <td>  <p>  <marquee>字型變化</marquee></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">只有Internet Explorer支援。</span></p>  </td> </tr> <tr>  <td>  <p><MULTICOL>字型變化</MULTICOL></p>  </td>  <td>  <p>無範例</p>  </td> </tr> <tr>  <td>  <p><NOBR>字型變化</NOBR></p>  </td>  <td>  <p><nobr>字型變化</nobr></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">"NOBR"為強迫不分行("NO BReak")的英文縮寫。如果文句在行末，它會整個小段跳至下一行。</span></p>  </td> </tr> <tr>  <td>  <p><PLAINTEXT>字型變化</PLAINTEXT></p>  </td>  <td>  <p></p>  <pre>字型變化</pre>  <p></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">過時的指令。為 <PRE> 指令所取代。</span></p>  </td> </tr> <tr>  <td>  <p><PRE>字型變化</PRE></p>  </td>  <td>  <p></p>  <pre>字型變化</pre>  <p></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">PRE指令不設定字型變化，所有在內的文字都原樣出現在網頁上。</span></p>  </td> </tr> <tr>  <td>  <p><Q>字型變化</Q></p>  </td>  <td>  <p><q>字型變化</q></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">HTML 4.0 指令，你的瀏覽程式可能不支援。用來取代BLOCKQUOTE指令。效果相同於SPAN指令。</span></p>  </td> </tr> <tr>  <td>  <p><S>字型變化</S></p>  </td>  <td>  <p><s>字型變化</s></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">"S"為刪除("Strike-through")的英文縮寫。</span></p>  </td> </tr> <tr>  <td>  <p><SAMP>字型變化</SAMP></p>  </td>  <td>  <p><samp>字型變化</samp></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">"SAMP"為範例("Sample")的英文縮寫。</span></p>  </td> </tr> <tr>  <td>  <p><SMALL>字型變化</SMALL></p>  </td>  <td>  <p><small>字型變化</small></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">字型變小。</span></p>  </td> </tr> <tr>  <td>  <p><SPAN>字型變化</SPAN></p>  </td>  <td>  <p><span title="How about this?!?!">字型變化</span></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">SPAN指令類似DIV指令。</span></p>  </td> </tr> <tr>  <td>  <p><STRONG>字型變化</STRONG></p>  </td>  <td>  <p><strong>字型變化</strong></p>  </td> </tr> <tr>  <td>  <p>字型<SUB>變化</SUB></p>  </td>  <td>  <p>字型<sub>變化</sub></p>  </td> </tr> <tr>  <td>  <p>字型<SUP>變化</SUP></p>  </td>  <td>  <p>字型<sup>變化</sup></p>  </td> </tr> <tr>  <td>  <p><TT>字型變化</TT></p>  </td>  <td>  <p><tt>字型變化</tt></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">"TT"為打字機("Typewriter Text")的英文縮寫。</span></p>  </td> </tr> <tr>  <td>  <p><U>字型變化</U></p>  </td>  <td>  <p><u>字型變化</u></p>  </td> </tr> <tr>  <td>  <p><VAR>字型變化</VAR></p>  </td>  <td>  <p><var>字型變化</var></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">"VAR"為變數("Variable")的英文縮寫。</span></p>  </td> </tr> <tr>  <td>  <p><NOBR>字型<WBR>變化</NOBR></p>  </td>  <td>  <p><nobr>字型<wbr>變化</nobr></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">WBR指令允許在NOBR指令中的文句換行。</span></p>  </td> </tr> <tr>  <td>  <p><XMP>字型變化</XMP></p>  </td>  <td>  <p><xmp>字型變化</xmp></p>  <p></p>  </td> </tr> <tr>  <td colspan="2">  <p><span style="color:#666666;">過時的指令</span></p>  </td> </tr></table><div class="blogger-post-footer">Copyright © Bruce Huang All rights reserved.</div>
         
           <p class="article-more-link">
-            <a href="/blog/%E5%AD%97%E5%9E%8B%E8%AE%8A%E5%8C%96%E6%A8%99%E7%B0%BD/#more">Read More</a>
+            <a href="/blog/2009/09/%E5%AD%97%E5%9E%8B%E8%AE%8A%E5%8C%96%E6%A8%99%E7%B0%BD/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/blog/%E5%AD%97%E5%9E%8B%E8%AE%8A%E5%8C%96%E6%A8%99%E7%B0%BD/" data-id="cl60igf72007qhy0mcwf9abad" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/blog/2009/09/%E5%AD%97%E5%9E%8B%E8%AE%8A%E5%8C%96%E6%A8%99%E7%B0%BD/" data-id="cl60iwqfb007vcb0m7bn1ewso" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/CSS3/" rel="tag">CSS3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/HTML/" rel="tag">HTML</a></li></ul>
@@ -380,7 +380,7 @@
   
     <article id="post-DOS-DIR的學習" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/DOS-DIR%E7%9A%84%E5%AD%B8%E7%BF%92/" class="article-date">
+    <a href="/blog/2009/09/DOS-DIR%E7%9A%84%E5%AD%B8%E7%BF%92/" class="article-date">
   <time datetime="2009-09-18T03:53:00.000Z" itemprop="datePublished">2009-09-18</time>
 </a>
     
@@ -392,7 +392,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/DOS-DIR%E7%9A%84%E5%AD%B8%E7%BF%92/">DOS.DIR的學習</a>
+      <a class="article-title" href="/blog/2009/09/DOS-DIR%E7%9A%84%E5%AD%B8%E7%BF%92/">DOS.DIR的學習</a>
     </h1>
   
 
@@ -403,13 +403,13 @@
         在執行模式下鍵入 cmd 進入 DOS 工作環境<br /><br />C:\dir d:\yourFolderName1\yourFolderName2<br />列出你目前指定位置的全部檔案<br /><br />C:\dir d:\yourFolderName1\yourFolderName2\*.txt > dir.txt<br />列出你目前指定位置的全部 .txt 檔案 , 輸出至 dir.txt<br /><br />C:\dir /b/s d:\yourFolderName1\yourFolderName2\*.txt > dir.b.s.txt<br />列出你目前指定位置的全部 .txt 檔案 , 輸出至 dir.b.s.txt<div class="blogger-post-footer">Copyright © Bruce Huang All rights reserved.</div>
         
           <p class="article-more-link">
-            <a href="/blog/DOS-DIR%E7%9A%84%E5%AD%B8%E7%BF%92/#more">Read More</a>
+            <a href="/blog/2009/09/DOS-DIR%E7%9A%84%E5%AD%B8%E7%BF%92/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/blog/DOS-DIR%E7%9A%84%E5%AD%B8%E7%BF%92/" data-id="cl60igf3g000uhy0m5ll0f8eo" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/blog/2009/09/DOS-DIR%E7%9A%84%E5%AD%B8%E7%BF%92/" data-id="cl60iwqbv000ucb0m5l53g4r8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Command-line/" rel="tag">Command line</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Windows-%E7%9B%B8%E9%97%9C/" rel="tag">Windows 相關</a></li></ul>
@@ -423,7 +423,7 @@
   
     <article id="post-window-screen-物件" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/window-screen-%E7%89%A9%E4%BB%B6/" class="article-date">
+    <a href="/blog/2009/06/window-screen-%E7%89%A9%E4%BB%B6/" class="article-date">
   <time datetime="2009-06-04T05:51:00.000Z" itemprop="datePublished">2009-06-04</time>
 </a>
     
@@ -435,7 +435,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/window-screen-%E7%89%A9%E4%BB%B6/">window.screen 物件</a>
+      <a class="article-title" href="/blog/2009/06/window-screen-%E7%89%A9%E4%BB%B6/">window.screen 物件</a>
     </h1>
   
 
@@ -446,13 +446,13 @@
         javascript 可以藉由 window.screen 物件取得螢幕的大小。可以用的屬性如下：<br /><br />window.screen.width<br />window.screen.height<br />window.screen.colorDepth<br />window.screen.availWidth<br />window.screen.availHeight <br /><br />因此可以藉此測知使用者電腦的解析度，進而進行調整。<div class="blogger-post-footer">Copyright © Bruce Huang All rights reserved.</div>
         
           <p class="article-more-link">
-            <a href="/blog/window-screen-%E7%89%A9%E4%BB%B6/#more">Read More</a>
+            <a href="/blog/2009/06/window-screen-%E7%89%A9%E4%BB%B6/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/blog/window-screen-%E7%89%A9%E4%BB%B6/" data-id="cl60igf6f006phy0mav0kf5pt" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/blog/2009/06/window-screen-%E7%89%A9%E4%BB%B6/" data-id="cl60iwqey006ucb0m6kqo4by8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/HTML/" rel="tag">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li></ul>
@@ -466,7 +466,7 @@
   
     <article id="post-安裝-SQL-Serrver-2005-出現效能監視器計數器需求-錯誤" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/%E5%AE%89%E8%A3%9D-SQL-Serrver-2005-%E5%87%BA%E7%8F%BE%E6%95%88%E8%83%BD%E7%9B%A3%E8%A6%96%E5%99%A8%E8%A8%88%E6%95%B8%E5%99%A8%E9%9C%80%E6%B1%82-%E9%8C%AF%E8%AA%A4/" class="article-date">
+    <a href="/blog/2009/05/%E5%AE%89%E8%A3%9D-SQL-Serrver-2005-%E5%87%BA%E7%8F%BE%E6%95%88%E8%83%BD%E7%9B%A3%E8%A6%96%E5%99%A8%E8%A8%88%E6%95%B8%E5%99%A8%E9%9C%80%E6%B1%82-%E9%8C%AF%E8%AA%A4/" class="article-date">
   <time datetime="2009-05-27T03:09:00.000Z" itemprop="datePublished">2009-05-27</time>
 </a>
     
@@ -478,7 +478,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/%E5%AE%89%E8%A3%9D-SQL-Serrver-2005-%E5%87%BA%E7%8F%BE%E6%95%88%E8%83%BD%E7%9B%A3%E8%A6%96%E5%99%A8%E8%A8%88%E6%95%B8%E5%99%A8%E9%9C%80%E6%B1%82-%E9%8C%AF%E8%AA%A4/">安裝 SQL Serrver 2005 出現效能監視器計數器需求 (錯誤)</a>
+      <a class="article-title" href="/blog/2009/05/%E5%AE%89%E8%A3%9D-SQL-Serrver-2005-%E5%87%BA%E7%8F%BE%E6%95%88%E8%83%BD%E7%9B%A3%E8%A6%96%E5%99%A8%E8%A8%88%E6%95%B8%E5%99%A8%E9%9C%80%E6%B1%82-%E9%8C%AF%E8%AA%A4/">安裝 SQL Serrver 2005 出現效能監視器計數器需求 (錯誤)</a>
     </h1>
   
 
@@ -489,13 +489,13 @@
         請依照下列步驟進行設定：<br />1.依序按一下「開始」和「執行」，在「開啟」中輸入 regedit，然後按一下「確定」按鈕。<br /><br />2.在「登錄編輯器」，找到下列機碼：<br />HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Perflib<br />您會發現如下這兩個機碼名稱與機碼值（您的機碼值可能跟我的不一樣，那沒有關係）：<br />Last Counter=00001dd2 (7634)<br />LastHelp=00001dd3 (7635)<br /><br />3.接著將展開「004」該節點，在右邊窗格中的 Counter 機碼上，用滑鼠連按兩次來察看其最大值是多少（如圖所示），將捲軸拉到最下面，以本圖為例，最大值為 7635。<br /><br />4.回到步驟 2 中，確認 Last Help 值 (7635) 必須符合上個步驟 Perflib\009 中的 Help 機碼的最大值 7635。<br />若不符何時，請修改步驟 2 中的 Last Counter 值和 Last Help 值，修改方式如下：<br />a.以滑鼠右鍵按一下右邊窗格中的 Last Help ，連按兩下滑鼠左鍵，接著按一下 底數 下面的 ○ 十進位(D)，在 數值資料 文字方塊中，鍵入設定值 7635 （此數值請依照您實際的環境鍵入），然後按一下 [確定]。<br />b.以滑鼠右鍵按一下右邊窗格中的 Last Counter ，連按兩下滑鼠左鍵，接著按一下 底數 下面的 ○ 十進位(D)，在 數值資料 文字方塊中，鍵入設定值 7634 （此數值請依照您實際的環境鍵入），然後按一下 [確定]。<br />c.關閉 [登錄編輯器]。<br /><br />5.重新執行 SQL Server 安裝程式。<br />http://forums.microsoft.com/MSDN-CHT/ShowPost.aspx?PostID=679903&SiteID=14<br />這樣就不用在重慣了，之前同學還叫我連xp也重灌呢<div class="blogger-post-footer">Copyright © Bruce Huang All rights reserved.</div>
         
           <p class="article-more-link">
-            <a href="/blog/%E5%AE%89%E8%A3%9D-SQL-Serrver-2005-%E5%87%BA%E7%8F%BE%E6%95%88%E8%83%BD%E7%9B%A3%E8%A6%96%E5%99%A8%E8%A8%88%E6%95%B8%E5%99%A8%E9%9C%80%E6%B1%82-%E9%8C%AF%E8%AA%A4/#more">Read More</a>
+            <a href="/blog/2009/05/%E5%AE%89%E8%A3%9D-SQL-Serrver-2005-%E5%87%BA%E7%8F%BE%E6%95%88%E8%83%BD%E7%9B%A3%E8%A6%96%E5%99%A8%E8%A8%88%E6%95%B8%E5%99%A8%E9%9C%80%E6%B1%82-%E9%8C%AF%E8%AA%A4/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.xispace.app/blog/%E5%AE%89%E8%A3%9D-SQL-Serrver-2005-%E5%87%BA%E7%8F%BE%E6%95%88%E8%83%BD%E7%9B%A3%E8%A6%96%E5%99%A8%E8%A8%88%E6%95%B8%E5%99%A8%E9%9C%80%E6%B1%82-%E9%8C%AF%E8%AA%A4/" data-id="cl60igf73007thy0me4zsfz02" class="article-share-link">Share</a>
+      <a data-url="https://blog.xispace.app/blog/2009/05/%E5%AE%89%E8%A3%9D-SQL-Serrver-2005-%E5%87%BA%E7%8F%BE%E6%95%88%E8%83%BD%E7%9B%A3%E8%A6%96%E5%99%A8%E8%A8%88%E6%95%B8%E5%99%A8%E9%9C%80%E6%B1%82-%E9%8C%AF%E8%AA%A4/" data-id="cl60iwqfc007ycb0m9iao2b1g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/MS-SQL/" rel="tag">MS-SQL</a></li></ul>
@@ -560,23 +560,23 @@
       <ul>
         
           <li>
-            <a href="/blog/WebSocket-Express%E8%AE%93%E5%89%8D%E5%BE%8C%E7%AB%AF%E4%B8%80%E5%AE%B6%E8%A6%AA/">WebSocket+Express讓前後端一家親</a>
+            <a href="/blog/2020/09/WebSocket-Express%E8%AE%93%E5%89%8D%E5%BE%8C%E7%AB%AF%E4%B8%80%E5%AE%B6%E8%A6%AA/">WebSocket+Express讓前後端一家親</a>
           </li>
         
           <li>
-            <a href="/blog/graylog-docker%E5%AE%89%E8%A3%85/">graylog-docker安装</a>
+            <a href="/blog/2020/08/graylog-docker%E5%AE%89%E8%A3%85/">graylog-docker安装</a>
           </li>
         
           <li>
-            <a href="/blog/Ubuntu-18-04-%E9%96%8B%E6%A9%9F%E8%87%AA%E5%8B%95%E5%9F%B7%E8%A1%8C-%E6%8C%87%E4%BB%A4-rc-local/">Ubuntu 18.04 開機後自動執行 rc.local</a>
+            <a href="/blog/2020/08/Ubuntu-18-04-%E9%96%8B%E6%A9%9F%E8%87%AA%E5%8B%95%E5%9F%B7%E8%A1%8C-%E6%8C%87%E4%BB%A4-rc-local/">Ubuntu 18.04 開機後自動執行 rc.local</a>
           </li>
         
           <li>
-            <a href="/blog/vscode-Bracket-Pair-Colorizer-%E6%9C%89%E4%BA%86%E5%BD%A9%E8%89%B2%E6%8B%AC%E8%99%9F%E4%B8%8D%E5%86%8D%E7%9C%BC%E8%8A%B1%E6%83%B9/">vscode-Bracket Pair Colorizer-有了彩色括號不再眼花惹</a>
+            <a href="/blog/2018/10/vscode-Bracket-Pair-Colorizer-%E6%9C%89%E4%BA%86%E5%BD%A9%E8%89%B2%E6%8B%AC%E8%99%9F%E4%B8%8D%E5%86%8D%E7%9C%BC%E8%8A%B1%E6%83%B9/">vscode-Bracket Pair Colorizer-有了彩色括號不再眼花惹</a>
           </li>
         
           <li>
-            <a href="/blog/%E5%A5%BD%E7%94%A8%E7%9A%84%E7%B7%9A%E4%B8%8A%E7%94%A2%E7%94%9FHTML%E7%A2%BC%E7%9A%84%E5%BD%A9%E8%89%B2%E7%9A%84%E7%A8%8B%E5%BC%8F%E7%A2%BC-hilite-me-%E5%B9%B9%E5%A5%BD%E7%B9%9E%E5%8F%A3/">好用的線上產生HTML碼的彩色的程式碼-hilite.me, 幹好繞口</a>
+            <a href="/blog/2018/06/%E5%A5%BD%E7%94%A8%E7%9A%84%E7%B7%9A%E4%B8%8A%E7%94%A2%E7%94%9FHTML%E7%A2%BC%E7%9A%84%E5%BD%A9%E8%89%B2%E7%9A%84%E7%A8%8B%E5%BC%8F%E7%A2%BC-hilite-me-%E5%B9%B9%E5%A5%BD%E7%B9%9E%E5%8F%A3/">好用的線上產生HTML碼的彩色的程式碼-hilite.me, 幹好繞口</a>
           </li>
         
       </ul>

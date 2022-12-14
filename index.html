@@ -28,6 +28,13 @@
         body {
             font-size: 20px;
             line-height: 1.7;
+            /*禁止選取文字*/
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
         
         .w3-allerta {
@@ -270,8 +277,8 @@
                     <span class="big">頌缽</span>也稱為敲缽，是一種器具敲擊的過程，它所發出的音頻和大自然本身的頻率產生共鳴。頌缽讓躁動不安的分子逐漸沈穩，失眠狀態以平衡，堆積的壓力與傷痛隨之釋放消散，憂鬱的情緒得到按撫，當體内的能量能够和諧流動，自癒能力亦將被喚醒。
                 </p>
                 <p class="imageintext">
-                    <img class="w3-hide-small w3-round-large w3-card-1" src="./images/bowl/mybowl2c.jpg" alt="" style="max-width: 30%; float: left; margin-right: 13px; padding:2px;">
-                    <img class="w3-hide-medium w3-hide-large w3-card-1" src="./images/bowl/mybowl2c.jpg" alt="" style="max-width: 100%; padding:0px;">
+                    <img class="w3-hide-small w3-round-large w3-card-1" src="./images/bowl/mybowl9.jpg" alt="" style="max-width: 30%; float: left; margin-right: 13px; padding:2px;">
+                    <img class="w3-hide-medium w3-hide-large w3-card-1" src="./images/bowl/mybowl9.jpg" alt="" style="max-width: 100%; padding:0px;">
                 </p>
                 <p class="w3-justify">
                     <span class="big">頌缽</span>（敲缽）淨化身心靈，頌缽直接與身體的七個脈輪進行溝通，幫助打開糾結或阻塞的脈輪以及疼痛不適的部位組織，同時釋放酸性緊绷肌肉，譲躁動不安的分子逐漸深静穩定，引動深層迅速的放鬆，創造輕鬆的感覺。
@@ -345,7 +352,7 @@
                 </p>
 
                 <p class="w3-justify">
-                    <span class="big">這是</span>一個有系統性的頌缽調理與敲擊的過程，從身體的正面、背面、側面、十二經絡（任督與臟腑）、七個脈輪，分別逐一的進行。
+                    <span class="big">這是</span>一個有系統性的頌缽調理與敲擊的過程，從身體的正面、背面、側面、十二經絡（任脈督脈與臟腑）、七個脈輪，分別逐一的進行。
                 </p>
 
                 <p class="imageintext">
@@ -640,6 +647,47 @@
         }(document, 'script', 'facebook-jssdk'));
     </script>
     <!-- fb-messenger    -->
+
+
+    <script>
+        //https://wonderland.coderbridge.io/2021/12/30/js-disable-right-mouse-button/
+        //鎖右鍵、禁止使用 Ctrl 键、禁止使用 Shift 键、禁止使用 Alt 键
+        function iEsc() {
+            return false;
+        }
+
+        function iRec() {
+            return true;
+        }
+
+        function DisableKeys() {
+            if (event.ctrlKey || event.shiftKey || event.altKey) {
+                window.event.returnValue = false;
+                iEsc();
+            }
+        }
+
+        document.ondragstart = iEsc;
+        document.onkeydown = DisableKeys;
+        document.oncontextmenu = iEsc;
+
+        if (typeof document.onselectstart != "undefined") document.onselectstart = iEsc;
+        else {
+            document.onmousedown = iEsc;
+            document.onmouseup = iRec;
+        }
+
+        function DisableRightClick(e) {
+            if (window.Event) {
+                if (e.which == 2 || e.which == 3) iEsc();
+            } else
+            if (event.button == 2 || event.button == 3) {
+                event.cancelBubble = true
+                event.returnValue = false;
+                iEsc();
+            }
+        }
+    </script>
 </body>
 
 </html>

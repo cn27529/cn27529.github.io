@@ -113,7 +113,19 @@
         })(window, document, 'script', 'dataLayer', 'GTM-KKZSQBV');
     </script>
     <!-- End Google Tag Manager -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.6.15/sweetalert2.all.min.js" integrity="sha512-SFaxUL267Y1wH3eelsqXwDXir/ebciCMRmmqlbwnSKhQH8hmnqIbUm8FKiYWQ+8jcnagOColZIaQuhdZYUhcPg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        function show_linebank() {
+            //Swal.fire('Any fool can use a computer')
+            let url_origin = window.location.origin
+            let width = window.innerWidth
+            Swal.fire({
+                imageUrl: url_origin + '/images/linebanktop.jpg',
+                //imageHeight: 1500,
+                imageAlt: 'Show LINE Bank',
+            })
+        }
+    </script>
 </head>
 
 <body class="w3-monospace w3-2021-inkwell">
@@ -554,7 +566,7 @@
                 <div class="w3-col l3 m6 s12 w3-center w3-margin-bottom">
                     <i class="fa fa-bank w3-xlarge"></i>
                     <br />
-                    <a target="_blank" href="javascript:;">
+                    <a href="javascript:show_linebank();">
                         <img src="./images/linebank.jpg" alt="" style="max-width: 60%;">
                     </a>
                 </div>

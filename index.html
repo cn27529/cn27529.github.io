@@ -745,6 +745,11 @@
             }
         }
     </script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js"; import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js"; const firebaseConfig = { apiKey: "AIzaSyBgXKl6hYkm-K7tTuOwU-Vosj2XvaJDGj8",
+        authDomain: "xispace.firebaseapp.com", projectId: "xispace", storageBucket: "xispace.appspot.com", messagingSenderId: "839395447140", appId: "1:839395447140:web:755533aa23c2ee81d76a71", measurementId: "G-WFWZBQS9M2" }; const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
 </body>
 
 </html>

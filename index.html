@@ -29,14 +29,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2021.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro">
-    <!--
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    -->
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.6.15/sweetalert2.all.min.js"></script>
+
     <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
         html {
             scroll-behavior: smooth;
         }
@@ -109,11 +108,12 @@
             text-align: center;
         }
     </style>
-    <script src="https://www.w3schools.com/lib/w3.js"></script>
-    <!--adsbygoogle-->
+
+    <!--adsbygoogle 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4610521031759838"
         crossorigin="anonymous"></script>
-    <!-- Google Tag Manager -->
+    -->
+    <!-- Google Tag Manager 
     <script>
         (function (w, d, s, l, i) {
             w[l] = w[l] || [];
@@ -130,8 +130,8 @@
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-KKZSQBV');
     </script>
-    <!-- End Google Tag Manager -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.6.15/sweetalert2.all.min.js"></script>
+    -->
+    <!-- end Google Tag Manager -->
     <script>
         function show_linebank() {
             //Swal.fire('Any fool can use a computer')
@@ -147,9 +147,10 @@
 </head>
 
 <body class="w3-monospace w3-2021-inkwell">
-    <!-- Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) 
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKZSQBV" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
+            -->
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- navbar -->
@@ -511,7 +512,7 @@
 
 
 
-        <!-- Section -->
+        <!-- bowlmeditate Section -->
         <div class="section_bg w3-2021-willow" id="bowlmeditate">
 
             <div class="w3-container w3-content w3-center w3-padding-16" style="max-width: auto;" id="">
@@ -547,9 +548,9 @@
             </div>
         </div>
 
-        <!-- end Section -->
+        <!-- end bowlmeditate Section -->
 
-        <!-- Section -->
+        <!-- tiktok Section 
 
         <div class="section_bg w3-white" id="tiktok">
 
@@ -568,9 +569,8 @@
                 </p>
             </div>
         </div>
-
-
-        <!-- end Section-->
+        -->
+        <!-- end tiktok Section-->
 
         <!--
       https://images.unsplash.com/photo-1538024333176-f25f63f873ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2572&q=80
@@ -695,7 +695,7 @@
 
     <footer class="w3-container w3-black">
         <p class="w3-center w3-small w3-allerta">
-            Copyright © 2022 析空間|缽音空間缽音員|xispace.app All rights reserved.
+            Copyright © 2023 析空間|缽音空間|缽音員|xispace.app All rights reserved.
         </p>
     </footer>
 
@@ -740,21 +740,15 @@
         }
     </script>
 
-    <!-- fb-messenger    -->
-    <!-- Messenger 洽談外掛程式 Code -->
+    <!-- fb-messenger 洽談外掛程式 Code 
     <div id="fb-root"></div>
-
-    <!-- Your 洽談外掛程式 code -->
     <div id="fb-customer-chat" class="fb-customerchat">
     </div>
-
     <script>
         var chatbox = document.getElementById('fb-customer-chat');
         chatbox.setAttribute("page_id", "101764715693331");
         chatbox.setAttribute("attribution", "biz_inbox");
     </script>
-
-    <!-- Your SDK code -->
     <script>
         window.fbAsyncInit = function () {
             FB.init({
@@ -772,7 +766,8 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-    <!-- fb-messenger    -->
+    -->
+    <!-- end fb-messenger 洽談外掛程式 Code -->
 
 
     <script>
@@ -814,6 +809,7 @@
                 }
         }
     </script>
+    <!--
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js"; import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js"; const firebaseConfig = {
             apiKey: "AIzaSyBgXKl6hYkm-K7tTuOwU-Vosj2XvaJDGj8",
@@ -821,6 +817,7 @@
         }; const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
     </script>
+    -->
 </body>
 
 </html>

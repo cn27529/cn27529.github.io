@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        /* 全局样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://source.unsplash.com/1920x1080/?nature');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        /* 页面容器 */
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* 头像样式 */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile-img-bg {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #808080;
+            margin: 0 auto;
+        }
+
+        /* 社交链接样式 */
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-link {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* 手机模式样式 */
+        @media (max-width: 768px) {
+            .social-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="profile-img-bg">
+            <img src="team1.jpg" alt="Team 1" class="profile-img">
+        </div>
+        <h1>About Me</h1>
+        <p>向我展示使用CSS3及javascript来創建具有RWD（响应式网页设计）效果的响应式网页，展示一个响应式的"about me"页面。</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/yourprofile" class="social-link">LinkedIn</a>
+            <a href="https://www.twitter.com/yourprofile" class="social-link">Twitter</a>
+            <a href="https://www.github.com/yourprofile" class="social-link">GitHub</a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript代码，用于轮播头像图片
+        const images = ['team1.jpg', 'team2.jpg', 'team3.jpg'];
+        let currentIndex = 0;
+
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            const imgElement = document.querySelector('.profile-img');
+            imgElement.style.opacity = 0; // 图片淡出
+            setTimeout(() => {
+                imgElement.src = images[currentIndex];
+                imgElement.style.opacity = 1; // 图片淡入
+            }, 1000);
+        }
+
+        setInterval(changeImage, 5000); // 5秒切换一次头像
+    </script>
+</body>
+
+</html>

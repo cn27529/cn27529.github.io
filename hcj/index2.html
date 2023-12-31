@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hcj01</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <div class="profile-image-bg">
+                <img src="myCat.jpg" alt="Team 1" id="profile-image" class="profile-image">
+            </div>
+            <div class="profile-name">
+                <h1 id="en_name"></h1>
+                <h2 id="tw_name"></h2>
+            </div>
+            <div class="profile-desc" id="profile_desc">
+            </div>
+            <div class="profile-social">
+                <ul class="profile-items">
+                    <li><a target="_blank" id="lineme" href="#">
+                            <i class="fab fa-line fa-2x" style="color: #06c755"></i>
+                        </a></li>
+                    <li><a target="_blank" id="facebook" href="#">
+                            <i class="fab fa-facebook fa-2x" style="color: #3b5998"></i>
+                        </a>
+                    <li><a target="_blank" id="instagram" href="#">
+                            <i class="fab fa-instagram fa-2x" style="color: #d6249f"></i>
+                        </a></li>
+                    <li><a id="tel_phone" href="#">
+                            <i class="fas fa-phone-square fa-2x" style="color: #ff0000"></i>
+                        </a></li>
+                    <li><a target="_blank" id="mailto" href="#">
+                            <i class="fa-solid fa-envelope fa-2x"></i>
+                        </a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    .container {
+        border: 5px solid #9bf80c;
+        padding-top: 100px;
+        background-image: url(beach00.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+
+    .profile-card {
+        margin: 0 auto;
+        border: 0px solid #9bf80c;
+        width: 350px;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 1rem;
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.6);
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 480px;
+
+    }
+
+    .profile-image {
+        width: 11em;
+        height: 11em;
+        object-fit: cover;
+        border-radius: 1rem;
+        transform: scale(1, 1);
+        transition: all 12s ease-out;
+    }
+
+    /*
+    https://codepen.io/bok770/pen/gKQjOy
+    */
+    .profile-image:hover {
+        transform: scale(1.2, 1.2);
+    }
+
+    .profile-image-bg {
+        position: absolute;
+        width: 11em;
+        height: 11em;
+        border-radius: 1rem;
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.4);
+        top: -30px;
+        left: 0;
+        right: 0;
+        border: 1px solid #808080;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .profile-name {
+        border: 0px solid #898989;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        top: 130px;
+    }
+
+    .profile-name h2 {
+        font-size: 1.5em;
+        color: #666666;
+        text-shadow: #808080 0.1em 0.1em 0.2em;
+    }
+
+    .profile-desc {
+        border: 0px solid #898989;
+        text-align: left;
+        width: 60%;
+        margin: 0 auto;
+        color: #666666;
+        font-size: 0.9rem;
+        position: relative;
+        top: 150px;
+    }
+
+    .profile-items {
+        list-style-type: none;
+        text-align: center;
+        margin: 0 auto;
+        padding: 0;
+        border: 0px solid #898989;
+        margin-top: 8%;
+        width: 100%;
+        position: relative;
+        top: 150px;
+    }
+
+    .profile-items li {
+        display: inline-block;
+        border: 0px solid #898989;
+        padding: 5px 5px 5px 5px;
+    }
+
+    .profile-items i:hover {
+        transform: scale(1.5);
+        transition: .5s;
+    }
+
+    .profile-items i {
+        font-size: 2.5em;
+    }
+
+    @media screen and (max-width: 430px) {
+
+        .container {
+            border: 0px solid #898989;
+            padding-top: 100px;
+            background-image: url(beach06.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+
+        .profile-card {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            padding: 0rem;
+            box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 0rem;
+            /* min-height: 500px; */
+            height: 395px;
+            position: absolute;
+            top: 270px;
+
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+        }
+
+        .profile-image {
+            width: 11em;
+            height: 11em;
+            object-fit: cover;
+            border-radius: 6rem;
+        }
+
+        .profile-image-bg {
+            position: absolute;
+            top: -220px;
+            border-radius: 6rem;
+            width: 11em;
+            height: 11em;
+            box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.4);
+            left: 0;
+            right: 0;
+            border: 1px solid #808080;
+            margin: 0 auto;
+        }
+
+        .profile-name {
+            border: 0px solid #898989;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            top: 40px;
+
+        }
+
+        .profile-name h2 {
+            font-size: 1.5em;
+            color: #666666;
+            text-shadow: #808080 0.1em 0.1em 0.2em;
+
+        }
+
+        .profile-desc {
+            top: 70px;
+
+        }
+
+        .profile-items {
+            list-style-type: none;
+            text-align: center;
+            margin: 0 auto;
+            padding: 0;
+            border: 0px solid #898989;
+            position: relative;
+            top: 100px;
+        }
+
+        .profile-items i {
+            font-size: 3em;
+        }
+
+
+
+
+    }
+</style>
+<script>
+
+    const profile = {
+        en_name: 'Bruce Huang',
+        tw_name: '黃洧析',
+        profile_desc: '大家好，我叫布魯獅。我是一位很酷的人有很多才藝，會跳火圈、討罐罐、愛睡覺，以下是我的社群連結。歡迎跟我做朋友！',
+        lineme: '#',
+        facebook: '#',
+        instagram: '#',
+        tel_phone: 'tel:0800080090',
+        mailto: 'mailto:hcj@gmail.com?subject=The Mailto from our Website&body=',
+    }
+
+    let en = document.querySelector('#en_name')
+    let tw = document.querySelector('#tw_name')
+    let profile_desc = document.querySelector('#profile_desc')
+    let lineme = document.querySelector('#lineme')
+    let facebook = document.querySelector('#facebook')
+    let instagram = document.querySelector('#instagram')
+    let tel_phone = document.querySelector('#tel_phone')
+    let mailto = document.querySelector('#mailto')
+
+    en.innerText = profile.en_name
+    tw.innerText = profile.tw_name
+    profile_desc.innerText = profile.profile_desc
+    lineme.href = profile.lineme
+    facebook.href = profile.facebook
+    instagram.href = profile.instagram
+    tel_phone.href = profile.tel_phone
+    mailto.href = profile.mailto
+
+
+    // JavaScript代码，用于轮播头像图片
+    const images = ['Cat3.jpg', 'Cat4.jpg', 'Cat2.jpg'];
+    let currentIndex = 0;
+
+    function changeImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        const imgElement = document.querySelector('#profile-image');
+        imgElement.style.opacity = 0; // 图片淡出
+        imgElement.style.display = "none";
+        setTimeout(() => {
+            imgElement.style.display = "";
+            imgElement.src = images[currentIndex];
+            imgElement.style.opacity = 1; // 图片淡入
+        }, 1000);
+    }
+
+    setInterval(changeImage, 5000); // 5秒切换一次头像
+
+    //TODO:
+    //mark here do something
+    //FIXME:
+    //mark here do something
+    function my_function() {
+        let aa = 'aa'
+        let result = aa != undefined
+        console.log(result)
+    }
+
+</script>
+
+</html>

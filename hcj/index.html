@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hcj01</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <div id="profile-image" class="profile-image">
+            </div>
+            <div class="profile-name">
+                <h1>Bruce Huang
+                </h1>
+                <h2>黃洧析</h2>
+            </div>
+            <div class="profile-desc">
+                大家好，我叫布魯獅。我是一位很酷的人有很多才藝，會跳火圈、討罐罐、愛睡覺，以下是我的社群連結。歡迎跟我做朋友！
+            </div>
+            <div class="profile-list">
+                <ul class="profile-items">
+                    <li><a target="_blank" href="https://line.me/ti/p/nhINT5nCZK">
+                            <i class="fab fa-line fa-2x" style="color: #06c755"></i>
+                        </a></li>
+                    <li><a href="#">
+                            <i class="fab fa-facebook fa-2x" style="color: #3b5998"></i>
+                        </a>
+                    </li>
+                    <li><a href="#">
+                            <i class="fab fa-instagram fa-2x" style="color: #d6249f"></i>
+                        </a></li>
+                    <li><a href="tel:0800080090">
+                            <i class="fas fa-phone-square fa-2x" style="color: #ff0000"></i>
+                        </a></li>
+                    <li><a target="_blank" href="mailto:hcj@gmail.com?subject=The Mailto from our Website&body=">
+                            <i class="fa-solid fa-envelope fa-2x"></i>
+                        </a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</body>
+<style>
+    body {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        border: 0px solid gray;
+    }
+
+    .container {
+        border: 0px solid #898989;
+        padding-top: 100px;
+        background-image: url(beach02.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+
+    .profile-card {
+        margin: 0 auto;
+        border: 0px solid #565656;
+        width: 300px;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 1rem;
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.6);
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 450px;
+    }
+
+    .profile-image {
+        position: absolute;
+        background-image: url(myCat.jpg);
+        width: 11em;
+        height: 11em;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 1rem;
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.4);
+        top: -30px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+
+    }
+
+    .profile-name {
+        border: 0px solid #898989;
+        text-align: center;
+        width: 70%;
+        margin: 0 auto;
+        position: relative;
+        top: 130px;
+    }
+
+    .profile-name h2 {
+        font-size: 1.5em;
+        color: #666666;
+        text-shadow: #808080 0.1em 0.1em 0.2em;
+    }
+
+    .profile-desc {
+        border: 0px solid #898989;
+        text-align: left;
+        width: 70%;
+        margin: 0 auto;
+        color: #666666;
+        font-size: 0.9rem;
+        position: relative;
+        top: 130px;
+    }
+
+    .profile-items {
+        list-style-type: none;
+        text-align: center;
+        margin: 0 auto;
+        padding: 0;
+        border: 0px solid #898989;
+        margin-top: 8%;
+        width: 100%;
+        position: relative;
+        top: 130px;
+    }
+
+    .profile-items li {
+        display: inline-block;
+        border: 0px solid #898989;
+        padding: 5px 5px 5px 5px;
+    }
+
+    .profile-items i:hover {
+        transform: scale(1.5);
+        transition: .5s;
+    }
+
+    .profile-items i {
+        font-size: 3em;
+    }
+
+
+
+    @media screen and (max-width: 430px) {
+
+        .container {
+            border: 0px solid #898989;
+            padding-top: 250px;
+            background-image: url(beach02.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .profile-card {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            padding: 0rem;
+            box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 0rem;
+            /* min-height: 500px; */
+            height: 380px;
+            position: absolute;
+            top: 270px;
+        }
+
+        .profile-image {
+            position: absolute;
+            top: -220px;
+            border-radius: 6rem;
+            background-image: url(myPhoto.jpg);
+            width: 11rem;
+            height: 11rem;
+            background-position: center;
+            background-size: cover;
+            box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.9);
+            margin: auto;
+        }
+
+        .profile-name {
+            position: relative;
+            top: 0px;
+        }
+
+        .profile-desc {
+            position: relative;
+            top: 0px;
+        }
+
+        .profile-items {
+            position: relative;
+            top: 0px;
+        }
+
+        .profile-items i {
+            font-size: 3em;
+        }
+
+
+
+    }
+</style>
+<script>
+
+
+    //TODO:
+    //mark here do something
+    //FIXME:
+    //mark here do something
+    function my_function() {
+        let aa = 'aa'
+        let result = aa != undefined
+        console.log(result)
+    }
+
+
+
+
+</script>
+
+</html>

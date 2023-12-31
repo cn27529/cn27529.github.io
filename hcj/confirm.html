@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation Prompt Example</title>
+    <style>
+        /* CSS样式用于隐藏确认视窗 */
+        .confirmation-popup {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.6);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 触发确认视窗的按钮 -->
+    <button onclick="showConfirmationPopup()">显示确认视窗</button>
+
+    <!-- 确认视窗内容 -->
+    <div class="confirmation-popup" id="confirmationPopup">
+        <div class="popup-content">
+            <p>您确定要执行此操作吗？</p>
+            <button onclick="confirmAction()">确定</button>
+            <button onclick="closeConfirmationPopup()">取消</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript函数用于显示和关闭确认视窗
+        function showConfirmationPopup() {
+            document.getElementById("confirmationPopup").style.display = "block";
+        }
+
+        function closeConfirmationPopup() {
+            document.getElementById("confirmationPopup").style.display = "none";
+        }
+
+        function confirmAction() {
+            // 在这里执行确认后的操作
+            alert("操作已确认！");
+            closeConfirmationPopup(); // 关闭确认视窗
+        }
+    </script>
+</body>
+
+</html>

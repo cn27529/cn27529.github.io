@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        /* 自定义CSS样式 */
+        body {
+            background-image: url('https://source.unsplash.com/1920x1080/?airspace');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .profile-container {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: gray;
+            padding: 50px;
+            height: 90vh;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+
+        }
+
+        .about-me {
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+        }
+
+        .social-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            /* display: block;
+            margin-bottom: 10px; */
+            color: white;
+            padding: 15px;
+        }
+
+        /* 响应式样式 */
+        @media (max-width: 600px) {
+            .social-links a {
+                /* display: inline-block; */
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="w3-container profile-container">
+        <img id="profile-image" src="" alt="My Profile Picture" class="profile-img">
+        <div class="about-me">
+            <h2>About Me</h2>
+            <p>我是一个热爱前端开发的工程师。我喜欢创建美观且具有响应性的网页。欢迎来到我的个人页面，了解更多关于我和我的工作。</p>
+        </div>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/yourprofile">LinkedIn</a>
+            <a href="https://www.twitter.com/yourprofile">Twitter</a>
+            <a href="https://www.github.com/yourprofile">GitHub</a>
+        </div>
+    </div>
+
+    <script>
+        //// JavaScript部分：随机选择头像图片
+        // const profileImages = [
+        //     'team1.jpg',
+        //     'team2.jpg',
+        //     'team3.jpg'
+        // ];
+        // const randomIndex = Math.floor(Math.random() * profileImages.length);
+        // const selectedProfileImage = profileImages[randomIndex];
+        // const profileImageElement = document.getElementById('profile-image');
+        // profileImageElement.src = selectedProfileImage;
+
+
+        // JavaScript代码用于轮播头像图片
+        const profileImages = ['team1.jpg', 'team2.jpg', 'team3.jpg'];
+        let currentIndex = 0;
+
+        function changeProfileImage() {
+            currentIndex = (currentIndex + 1) % profileImages.length;
+            const profileImage = document.querySelector('.profile-image');
+            profileImage.src = profileImages[currentIndex];
+        }
+
+        setInterval(changeProfileImage, 5000); // 每5秒切换一次头像
+    </script>
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

@@ -6,16 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hcj01</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!--網頁預覽縮圖-->
+    <meta property="og:image" content="https://yurl.pro/bh/Cat3.jpg">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="436">
+    <meta property="og:image:height" content="228">
+    <meta property="og:title" content="Social media profile">
+    <meta property="og:description" content="Hello this is My social media profile page">
 </head>
 
 <body>
     <div class="container">
         <div class="profile-card">
             <div class="profile-image-bg">
-                <img src="myCat.jpg" alt="Team 1" id="profile-image" class="profile-image">
+                <img src="no.jpg" alt="" id="profile-image" class="profile-image">
             </div>
             <div class="profile-name">
                 <h1 id="en_name"></h1>
@@ -275,7 +281,7 @@
     //將資料顯示在頁面
     //FIXME:
     //mark here do something
-    function setData() {
+    function set_data() {
         let en = document.querySelector('#en_name')
         let tw = document.querySelector('#tw_name')
         let profile_desc = document.querySelector('#profile_desc')
@@ -299,14 +305,15 @@
     //可以動態更換大頭貼圖片
     //FIXME:
     //mark here do something
-    function runProfileImage() {
+    function run_profile_image() {
         // JavaScript代码，用于轮播头像图片
         const images = ['Cat3.jpg', 'Cat4.jpg', 'Cat2.jpg'];
         let currentIndex = 0;
+        const imgElement = document.querySelector('#profile-image');
+        imgElement.src = 'Cat3.jpg'; //預設圖片
 
-        function changeImage() {
+        function change_image() {
             currentIndex = (currentIndex + 1) % images.length;
-            const imgElement = document.querySelector('#profile-image');
             imgElement.style.opacity = 0; // 图片淡出
             imgElement.style.display = "none";
             setTimeout(() => {
@@ -315,23 +322,21 @@
                 imgElement.style.opacity = 1; // 图片淡入
             }, 1000);
         }
-        setInterval(changeImage, 5000); // 5秒切换一次头像
+        setInterval(change_image, 5000); // 5秒切换一次头像
     }
-
-    setData()
-    runProfileImage()
-
-
 
     //TODO:
-    //mark here do something
+    //初始化資料
     //FIXME:
     //mark here do something
-    function my_function() {
-        let aa = 'aa'
-        let result = aa != undefined
-        console.log(result)
+    function init_data() {
+        console.log('display and data binding on html')
+        set_data()
+        run_profile_image()
+        console.log('done')
     }
+
+    init_data()
 
 </script>
 

@@ -27,6 +27,6 @@
   "homepage": "https://github.com/cn27529/cn27529.github.io#readme",
   "devDependencies": {},
   "dependencies": {
-    "hexo": "^5.4.0"
+    "hexo": "^7.2.0"
   }
 }

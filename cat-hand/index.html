@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>簡約貓手掌 - Zdog 示範</title>
+  <style>
+    body {
+      background: #fff0e6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .zdog-canvas {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      cursor: none;
+    }
+
+    
+
+  </style>
+</head>
+<body>
+  <canvas class="zdog-canvas" width="240" height="240"></canvas>
+
+  <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
+
+  <script>
+    let illo = new Zdog.Illustration({
+      element: '.zdog-canvas',
+      zoom: 2,
+      dragRotate: true,
+    });
+
+    // 掌心（大圓形）
+    new Zdog.Ellipse({
+      addTo: illo,
+      diameter: 40,
+      stroke: 12,
+      color: '#e27d60',
+      translate: { y: 10 },
+    });
+
+    // 五個腳墊（小圓形）
+    const pads = [
+      { x: -15, y: -5 },
+      //{ x: -6, y: -15 },
+      { x: 0, y: -18 },
+      //{ x: 6, y: -15 },
+      { x: 15, y: -5 },
+    ];
+
+    pads.forEach(pos => {
+      new Zdog.Ellipse({
+        addTo: illo,
+        diameter: 12,
+        stroke: 8,
+        color: '#f8b500',
+        translate: pos,
+      });
+    });
+
+    // 動畫循環
+    function animate() {
+      //illo.rotate.y += 0.03;
+      illo.updateRenderGraph();
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+</body>
+</html>

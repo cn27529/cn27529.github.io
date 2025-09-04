@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>井字圈叉遊戲</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-300  p-4 bg-image bg-cover bg-center bg-no-repeat h-screen" style="background-image: url(background-image.jpg)">
+    
+  <h1 class="text-3xl font-bold mb-4">井字圈叉遊戲</h1>
+
+  <div id="board" class="grid grid-cols-3 gap-2 mb-4">
+    <!-- 9 個按鈕 -->
+    <button class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
+    <button class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
+    <button class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
+    <button class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
+    <button class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
+    <button class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
+    <button class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
+    <button class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
+    <button class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
+  </div>
+
+  <p id="status" class="mb-4 text-lg">請按開始遊戲</p>
+
+  <div class="space-x-4">
+    <button id="startBtn" class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600">開始</button>
+    <button id="resetBtn" class="hidden px-4 py-2 bg-red-500 text-white rounded-lg shadow hover:bg-red-600">清空</button>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+      <h2 id="modalMessage" class="text-xl font-bold mb-4"></h2>
+      <button id="closeModal" class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600">確定</button>
+    </div>
+  </div>
+
+  <script>
+    const cells = document.querySelectorAll('.cell');
+    const statusText = document.getElementById('status');
+    const startBtn = document.getElementById('startBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const modal = document.getElementById('modal');
+    const modalMessage = document.getElementById('modalMessage');
+    const closeModal = document.getElementById('closeModal');
+
+    let board = Array(9).fill(null);
+    let isUserTurn = true;
+    let gameActive = false;
+
+    const winningPatterns = [
+      [0,1,2],[3,4,5],[6,7,8],
+      [0,3,6],[1,4,7],[2,5,8],
+      [0,4,8],[2,4,6]
+    ];
+
+    function checkWinner(newBoard) {
+      for (let pattern of winningPatterns) {
+        const [a,b,c] = pattern;
+        if (newBoard[a] && newBoard[a] === newBoard[b] && newBoard[a] === newBoard[c]) {
+          return newBoard[a];
+        }
+      }
+      return null;
+    }
+
+    function systemMove(newBoard) {
+      const available = newBoard.map((v,i)=> v===null?i:null).filter(v=>v!==null);
+      if (available.length === 0) return newBoard;
+      const randomIndex = available[Math.floor(Math.random()*available.length)];
+      newBoard[randomIndex] = "O";
+      cells[randomIndex].textContent = "O";
+      return newBoard;
+    }
+
+    function handleClick(index) {
+      if (!gameActive || !isUserTurn || board[index]) return;
+
+      // 玩家下子，先鎖住玩家回合
+      isUserTurn = false;
+      statusText.textContent = "系統回合";
+      board[index] = "X";
+      cells[index].textContent = "X";
+
+      let winner = checkWinner(board);
+      if (winner) {
+        showModal(`玩家 (${winner}) 獲勝!`);
+        endGame();
+        return;
+      }
+
+      if (!board.includes(null)) {
+        showModal("平手!");
+        endGame();
+        return;
+      }
+
+      // 系統下子（模擬思考延遲）
+      setTimeout(() => {
+        board = systemMove([...board]);
+
+        winner = checkWinner(board);
+        if (winner) {
+          showModal(`系統 (${winner}) 獲勝!`);
+          endGame();
+          return;
+        }
+
+        if (!board.includes(null)) {
+          showModal("平手!");
+          endGame();
+          return;
+        }
+
+        isUserTurn = true;
+        statusText.textContent = "玩家回合";
+      }, 250);
+    }
+
+    function startGame() {
+      // 先清空並初始化盤面
+      resetGame();
+      board = Array(9).fill(null);
+      gameActive = true;
+
+      const userStarts = Math.random() > 0.5;
+
+      if (userStarts) {
+        // 玩家先手：允許玩家點擊
+        isUserTurn = true;
+        statusText.textContent = "玩家先手";
+      } else {
+        // 系統先手：在系統下子期間鎖住玩家輸入
+        isUserTurn = false;
+        statusText.textContent = "系統先手...";
+
+        // 給 UI 一點時間更新，再由系統下子並檢查結果
+        setTimeout(() => {
+          board = systemMove([...board]);
+
+          const winner = checkWinner(board);
+          if (winner) {
+            showModal(`系統 (${winner}) 獲勝!`);
+            endGame();
+            return;
+          }
+
+          if (!board.includes(null)) {
+            showModal("平手!");
+            endGame();
+            return;
+          }
+
+          // 系統下完後，輪到玩家
+          isUserTurn = true;
+          statusText.textContent = "輪到玩家";
+        }, 300);
+      }
+    }
+
+    function resetGame() {
+      board = Array(9).fill(null);
+      cells.forEach(cell => cell.textContent = "");
+      gameActive = false;
+      isUserTurn = true;
+      statusText.textContent = "請按開始遊戲";
+    }
+
+    function endGame() {
+      gameActive = false;
+    }
+
+    function showModal(message) {
+      modalMessage.textContent = message;
+      modal.classList.remove('hidden');
+    }
+
+    closeModal.addEventListener('click', () => {
+      modal.classList.add('hidden');
+      resetGame();
+    });
+
+    cells.forEach((cell,index)=>{
+      cell.addEventListener('click', ()=>handleClick(index));
+    });
+
+    startBtn.addEventListener('click', startGame);
+    resetBtn.addEventListener('click', resetGame);
+  </script>
+</body>
+</html>

@@ -1,216 +1,83 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>井字圈叉遊戲</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-
+  
 </head>
-
-<body
-  class="flex flex-col items-center justify-center min-h-screen bg-gray-300  p-4 bg-image bg-cover bg-center bg-no-repeat h-screen"
-  style="background-image: url(background-image.jpg)">
-
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-300  p-4 bg-image bg-cover bg-center bg-no-repeat h-screen" style="background-image: url(background-image.jpg)">
+    
   <h1 class="text-3xl font-bold mb-4">井字圈叉遊戲</h1>
 
   <div id="board" class="grid grid-cols-3 gap-2 mb-4">
     <!-- 9 個按鈕 -->
-    <button
-      class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
-    <button
-      class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
-    <button
-      class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
-    <button
-      class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
-    <button
-      class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
-    <button
-      class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
-    <button
-      class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
-    <button
-      class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
-    <button
-      class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
+    <button class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
+    <button class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
+    <button class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
+    <button class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
+    <button class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
+    <button class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
+    <button class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
+    <button class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
+    <button class="cell w-20 h-20 flex items-center justify-center text-2xl font-bold bg-white border rounded-lg shadow"></button>
   </div>
 
   <p id="status" class="mb-4 text-lg">請按開始遊戲</p>
 
   <div class="space-x-4">
-    <button id="startBtn" class="px-4 py-2 bg-green-600 text-white rounded-lg shadow hover:bg-green-400">開始</button>
+    <button id="startBtn" class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600">開始</button>
     <button id="resetBtn" class="hidden px-4 py-2 bg-red-500 text-white rounded-lg shadow hover:bg-red-600">清空</button>
   </div>
 
   <!-- Modal -->
-  <div id="modal" tabindex="-1" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+  <div id="modal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
     <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-      <i class="text-green-500 text-4xl fas fa-check-circle"></i>
-      <h2 id="modalMessage" class="text-xl font-bold mb-4 ">獲勝或平手
-      </h2>
-      <button id="closeModal" class="px-4 py-2 bg-red-600 text-white rounded-lg shadow hover:bg-red-400">確定</button>
+      <h2 id="modalMessage" class="text-xl font-bold mb-4"></h2>
+      <button id="closeModal" class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600">確定</button>
     </div>
   </div>
 
   <script>
-    // 遊戲狀態變數
-    // 儲存棋盤上所有的格子元素
     const cells = document.querySelectorAll('.cell');
     const statusText = document.getElementById('status');
     const startBtn = document.getElementById('startBtn');
     const resetBtn = document.getElementById('resetBtn');
-    // 訊息的窗口、窗口中顯示的訊息、關閉窗口
     const modal = document.getElementById('modal');
     const modalMessage = document.getElementById('modalMessage');
     const closeModal = document.getElementById('closeModal');
 
-    // 遊戲資料結構
     let board = Array(9).fill(null);
-    // 表示是否是玩家的回合
     let isUserTurn = true;
-    // 表示遊戲是否正在進行中
     let gameActive = false;
 
-    /* 勝利模式
-    這個數組包含了 8 個元素，每個元素是一個數組，代表著棋盤上的一個勝利模式。
-    每個勝利模式都由三個數字組成，代表著棋盤上三個連續的格子。例如，第一個勝利模式 [0, 1, 2] 代表著棋盤上左上角的三個格子。
-    這些勝利模式可以分為兩類：
-    橫向勝利模式： [0, 1, 2], [3, 4, 5], [6, 7, 8]
-    直向勝利模式： [0, 3, 6], [1, 4, 7], [2, 5, 8]
-    對角線勝利模式： [0, 4, 8], [2, 4, 6]
-    */
     const winningPatterns = [
-      [0, 1, 2], [3, 4, 5], [6, 7, 8],
-      [0, 3, 6], [1, 4, 7], [2, 5, 8],
-      [0, 4, 8], [2, 4, 6]
+      [0,1,2],[3,4,5],[6,7,8],
+      [0,3,6],[1,4,7],[2,5,8],
+      [0,4,8],[2,4,6]
     ];
 
-    // 檢查勝利函式
     function checkWinner(newBoard) {
       for (let pattern of winningPatterns) {
-        const [a, b, c] = pattern;
-        // 檢查是否有勝利
+        const [a,b,c] = pattern;
         if (newBoard[a] && newBoard[a] === newBoard[b] && newBoard[a] === newBoard[c]) {
           return newBoard[a];
         }
       }
-      // 沒有勝利，返回 null
       return null;
     }
 
-    // 系統下棋函式
     function systemMove(newBoard) {
-      // 系統隨機下子
-      return getRandomBoard(newBoard);
-    }
-
-    //可以依據 board 變數內容來判斷最有可能獲勝的位置來建立 newBoard。
-    function systemBestMove(newBoard) {
-
-      const bestMove = getBestMove(newBoard);
-
-      if (bestMove !== null) {
-        newBoard[bestMove] = 'O';
-        cells[bestMove].textContent = "O";
-      } else {
-        return getRandomBoard(newBoard); //系統隨機下子
-      }
-      return newBoard;
-    }
-
-    //系統隨機下子
-    function getRandomBoard(newBoard) {
-      // 取得可下棋的位置
-      const available = newBoard.map((v, i) => v === null ? i : null).filter(v => v !== null);
-      // 選擇一個隨機位置下棋
+      const available = newBoard.map((v,i)=> v===null?i:null).filter(v=>v!==null);
       if (available.length === 0) return newBoard;
-      const randomIndex = available[Math.floor(Math.random() * available.length)];
+      const randomIndex = available[Math.floor(Math.random()*available.length)];
       newBoard[randomIndex] = "O";
       cells[randomIndex].textContent = "O";
       return newBoard;
     }
 
-
-
-    /**
-* 根據 board 變數內容來判斷最有可能阻止玩家獲勝的位置。
-* 
-* @param {array} board - 當前的棋盤狀態。
-* @returns {number} 最有可能阻止玩家獲勝的位置索引，或者 null 如果沒有找到最佳位置。
-*/
-    function getBestMove(board) {
-      const winningPatterns = [
-        [0, 1, 2], [3, 4, 5], [6, 7, 8],
-        [0, 3, 6], [1, 4, 7], [2, 5, 8],
-        [0, 4, 8], [2, 4, 6]
-      ];
-
-      let bestMove = null;
-
-      // 迭代棋盤上的每個位置
-      for (let i = 0; i < board.length; i++) {
-        // 如果該位置是空的
-        if (board[i] === null) {
-          // 創建一個新的棋盤狀態，假設玩家在該位置下棋
-          const newBoard = [...board];
-          newBoard[i] = 'X';
-
-          // 評估新的棋盤狀態
-          const score = evaluateBoard(newBoard, winningPatterns, 'X');
-
-          // 如果玩家在該位置下棋會贏，則系統在該位置下棋
-          if (score === -1) {
-            bestMove = i;
-            break;
-          }
-        }
-      }
-
-      // 如果沒有找到最佳位置，則隨機選擇一個位置
-      if (bestMove === null) {
-        const available = board.map((v, i) => v === null ? i : null).filter(v => v !== null);
-        bestMove = available[Math.floor(Math.random() * available.length)];
-      }
-
-      // 返回最佳位置
-      return bestMove;
-    }
-
-
-
-    /**
-* 評估棋盤狀態。
-* 
-* @param {array} board - 當前的棋盤狀態。
-* @param {array} winningPatterns - 勝利模式。
-* @param {string} player - 玩家標誌（'X' 或 'O'）。
-* @returns {number} 分數，-1 表示玩家贏，1 表示系統贏，0 表示平局。
-*/
-    function evaluateBoard(board, winningPatterns, player) {
-      let score = 0;
-
-      // 迭代勝利模式
-      for (const pattern of winningPatterns) {
-        const [a, b, c] = pattern;
-        // 如果玩家在該模式中獲勝
-        if (board[a] === board[b] && board[b] === board[c] && board[a] === player) {
-          // 增加分數
-          score = -1;
-        }
-      }
-
-      // 返回分數
-      return score;
-    }
-
-
-
-    // 玩家下棋函式
     function handleClick(index) {
-      // 檢查是否是玩家回合
       if (!gameActive || !isUserTurn || board[index]) return;
 
       // 玩家下子，先鎖住玩家回合
@@ -218,7 +85,7 @@
       statusText.textContent = "系統回合";
       board[index] = "X";
       cells[index].textContent = "X";
-      // 檢查是否有勝利
+
       let winner = checkWinner(board);
       if (winner) {
         showModal(`玩家 (${winner}) 獲勝!`);
@@ -226,28 +93,24 @@
         return;
       }
 
-      // 檢查是否平手
       if (!board.includes(null)) {
         showModal("平手!");
         endGame();
         return;
       }
 
+      // 系統下子（模擬思考延遲）
       setTimeout(() => {
-
-        // 系統下子
         board = systemMove([...board]);
-        // 檢查是否有勝利
+
         winner = checkWinner(board);
         if (winner) {
-          // 顯示勝利訊息
           showModal(`系統 (${winner}) 獲勝!`);
           endGame();
           return;
         }
 
         if (!board.includes(null)) {
-          // 顯示平手訊息
           showModal("平手!");
           endGame();
           return;
@@ -255,19 +118,15 @@
 
         isUserTurn = true;
         statusText.textContent = "玩家回合";
-
       }, 250);
-
-
     }
 
-    // 初始化遊戲狀態、決定誰先手等
     function startGame() {
       // 先清空並初始化盤面
       resetGame();
       board = Array(9).fill(null);
       gameActive = true;
-      // 決定誰先手
+
       const userStarts = Math.random() > 0.5;
 
       if (userStarts) {
@@ -303,7 +162,6 @@
       }
     }
 
-    // 重置遊戲狀態
     function resetGame() {
       board = Array(9).fill(null);
       cells.forEach(cell => cell.textContent = "");
@@ -312,7 +170,6 @@
       statusText.textContent = "請按開始遊戲";
     }
 
-    // 結束遊戲
     function endGame() {
       gameActive = false;
     }
@@ -327,13 +184,12 @@
       resetGame();
     });
 
-    cells.forEach((cell, index) => {
-      cell.addEventListener('click', () => handleClick(index));
+    cells.forEach((cell,index)=>{
+      cell.addEventListener('click', ()=>handleClick(index));
     });
 
     startBtn.addEventListener('click', startGame);
     resetBtn.addEventListener('click', resetGame);
   </script>
 </body>
-
 </html>

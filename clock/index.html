@@ -69,13 +69,24 @@
                 </g>
 
                 <!-- 太極圖 -->
-                <g id="taiji" transform="translate(200 200) rotate(180)">
+                <g id="taiji" transform="translate(200 200) rotate(0)">
+
+                    <!-- 外圓（黑底） -->
                     <circle cx="0" cy="0" r="50" fill="black" stroke="black" stroke-width="0" class="taiji-circle" />
+                    <!-- 白色半圓 -->
                     <path d="M 0 -50 A 50 50 0 0 0 0 50 A 25 25 0 0 1 0 0 A 25 25 0 0 0 0 -50 Z" fill="white" />
-                    <circle cx="0" cy="-25" r="25" fill="black" />
-                    <circle cx="0" cy="25" r="25" fill="white" />
-                    <circle cx="0" cy="-25" r="6.25" fill="white" />
-                    <circle cx="0" cy="25" r="6.25" fill="black" />
+
+                    <!-- 白色小圓 -->
+                    <circle cx="0" cy="25" r="-25" fill="white" />
+
+                    <!-- 黑色小圓 -->
+                    <circle cx="0" cy="25" r="25" fill="black" />
+
+                    <!-- 黑點 -->
+                    <circle cx="0" cy="-25" r="6" fill="black" />
+
+                    <!-- 白點 -->
+                    <circle cx="0" cy="25" r="6" fill="white" />
                     <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="360 0 0"
                         to="0 0 0" dur="0s" repeatCount="indefinite" additive="sum" />
                 </g>

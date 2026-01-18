@@ -165,7 +165,7 @@ const ClockController = (function () {
 
     for (let i = 0; i < 12; i++) {
       const tickClasses = ["tick", "tick-12"];
-      if (isCurrentHour(i)) tickClasses.push("tick-hour-highlight");
+      if (isCurrentHour(i)) tickClasses.push("tick-hour");
 
       const path = document.createElementNS(
         "http://www.w3.org/2000/svg",
@@ -262,7 +262,7 @@ const ClockController = (function () {
 
     document.getElementById("currentTime").textContent = `目前時間 ${timeStr}`;
     document.getElementById("ganzhiTime").textContent =
-      `${dizhiHour}時辰 ${startHour}-${endHour}`;
+      `${dizhiHour}時時辰 ${startHour}點-${endHour}點`;
   }
 
   function updateTime() {

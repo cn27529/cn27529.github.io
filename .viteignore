@@ -1,0 +1,19 @@
+# 忽略這些檔案，不進行打包
+node_modules/
+dist/
+.git/
+.vscode/
+*.log
+.DS_Store
+Thumbs.db
+
+# 忽略備份檔案
+*.bak*
+*-bak*
+backup/
+
+# 忽略特定開發檔案
+vite.config.js
+postbuild.js
+package.json
+package-lock.json

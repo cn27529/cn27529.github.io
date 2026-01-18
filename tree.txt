@@ -1,0 +1,542 @@
+./
+├── CNAME
+├── README.md
+├── _config.yml
+├── ads.txt
+├── bowl
+│   ├── css
+│   │   ├── font-awesome.min.css
+│   │   └── w3.css
+│   ├── images
+│   │   ├── bowl
+│   │   ├── bowls.jpg
+│   │   ├── easywallet.jpg
+│   │   ├── lightball.jpg
+│   │   ├── lightball2.jpg
+│   │   ├── lightball3.jpg
+│   │   ├── lightball4.jpg
+│   │   ├── lightball5.jpg
+│   │   ├── lightball6.jpg
+│   │   ├── lightball7.jpg
+│   │   ├── lightball9.jpg
+│   │   ├── linebank.jpg
+│   │   ├── linebanktop.jpg
+│   │   ├── linebanktop.png
+│   │   ├── logo.png
+│   │   ├── logo3.jpg
+│   │   ├── logo5.jpg
+│   │   ├── myMosaicLogo.png
+│   │   ├── myOwnLogo.png
+│   │   ├── paypalme.jpg
+│   │   ├── singingbowls.jpg
+│   │   ├── singingbowls10.jpg
+│   │   ├── singingbowls11.jpg
+│   │   ├── singingbowls12.jpg
+│   │   ├── singingbowls13.jpg
+│   │   ├── singingbowls14.jpg
+│   │   ├── singingbowls15.jpg
+│   │   ├── singingbowls16.jpg
+│   │   ├── singingbowls17.jpg
+│   │   ├── singingbowls2.jpg
+│   │   ├── singingbowls3.jpg
+│   │   ├── singingbowls3a.jpg
+│   │   ├── singingbowls4.jpg
+│   │   ├── singingbowls5.jpg
+│   │   ├── singingbowls6.jpg
+│   │   ├── singingbowls7.jpg
+│   │   ├── singingbowls8.jpg
+│   │   ├── singingbowls9.jpg
+│   │   ├── slidershow.jpg
+│   │   ├── slidershow2.jpg
+│   │   ├── slidershow3.jpg
+│   │   ├── slidershow4.jpg
+│   │   ├── slidershow5.jpg
+│   │   ├── w3c
+│   │   ├── wearefamilybank.jpg
+│   │   ├── xispace-logo0.png
+│   │   ├── xispace-logo1.jpg
+│   │   ├── xispace-logo2.jpg
+│   │   ├── 中信bank.jpg
+│   │   └── 十二經絡養生時間表.jpg
+│   ├── index bak20220801.html
+│   ├── index bak202309.html
+│   ├── index-bak20220417.html
+│   ├── index-vue.html
+│   └── index.html
+├── bowldata.js
+├── bowltarning.html
+├── cat-hand
+│   └── index.html
+├── clock
+│   ├── README.md
+│   ├── index.html
+│   ├── script.js
+│   └── style.css
+├── compass
+│   ├── compass.html
+│   ├── hammer.js
+│   ├── iamnotarobot.html
+│   ├── index.html
+│   ├── index.js
+│   └── raphael.js
+├── css
+│   ├── fontawesome
+│   │   ├── 4.7.0
+│   │   └── 6.2.1
+│   └── w3css
+│       ├── 4
+│       └── w3-colors-2021.css
+├── customers.js
+├── cv
+│   ├── README.md
+│   ├── images
+│   │   ├── cv-photo0.jpg
+│   │   ├── cv-photo10.jpg
+│   │   ├── cv-photo10a.jpg
+│   │   ├── cv-photo10b.jpg
+│   │   ├── cv-photo11.jpg
+│   │   ├── cv-photo11a.jpg
+│   │   ├── cv-photo12.jpg
+│   │   ├── cv-photo13.jpg
+│   │   ├── cv-photo8.jpg
+│   │   └── line-myqrcode.jpg
+│   └── index.html
+├── docs
+│   ├── demo-first-page.mp4
+│   ├── terminal-ffmpeg.mp4
+│   └── terminal-ping.mp4
+├── fysh-game-gemini
+│   └── index.html
+├── hcj
+│   ├── Cat2.jpg
+│   ├── Cat3.jpg
+│   ├── Cat4.jpg
+│   ├── README.md
+│   ├── beach01.jpg
+│   ├── beach02.jpg
+│   ├── beach03.jpg
+│   ├── beach04.jpg
+│   ├── beach05.jpg
+│   ├── beach06.jpg
+│   ├── beach07.jpg
+│   ├── beach08.jpg
+│   ├── beach09.jpg
+│   ├── beach10.jpg
+│   ├── beach11.jpg
+│   ├── beach12.jpg
+│   ├── beach13.jpg
+│   ├── beach14.jpg
+│   ├── beach15.jpg
+│   ├── beach16.jpg
+│   ├── beach17.jpg
+│   ├── chatgpt.html
+│   ├── citycafe.html
+│   ├── confirm.html
+│   ├── index.html
+│   ├── index2.html
+│   ├── index3.html
+│   ├── myCat.jpg
+│   ├── myPhoto.jpg
+│   ├── ocean00.jpg
+│   ├── ocean02.jpg
+│   ├── ocean03.jpg
+│   ├── ocean04.jpg
+│   ├── ocean05.jpg
+│   ├── ocean06.jpg
+│   ├── ocean07.jpg
+│   ├── ocean08.jpg
+│   ├── scrolled.html
+│   ├── sw2.html
+│   ├── team1.jpg
+│   ├── team2.jpg
+│   ├── team3.jpg
+│   └── w3css.html
+├── images
+│   ├── bowl
+│   │   ├── Padmasambhava.jpg
+│   │   ├── aboutme.jpg
+│   │   ├── aboutme.png
+│   │   ├── aboutme2.jpg
+│   │   ├── aboutme3.jpg
+│   │   ├── aboutme3.png
+│   │   ├── aboutme4.jpg
+│   │   ├── aboutme5.jpg
+│   │   ├── aboutme6.jpg
+│   │   ├── bowlall.png
+│   │   ├── bowlall0.png
+│   │   ├── bowlall2.png
+│   │   ├── bowlall3.png
+│   │   ├── bowlall4.png
+│   │   ├── bowlall5.png
+│   │   ├── bowlall6.png
+│   │   ├── bowlbody0.jpg
+│   │   ├── bowlbody0.png
+│   │   ├── bowlbody1.jpg
+│   │   ├── bowlbody1.png
+│   │   ├── bowlbody1203.jpg
+│   │   ├── bowlbody2.jpg
+│   │   ├── bowlbody2212.jpg
+│   │   ├── bowlbody2301.jpg
+│   │   ├── bowlbody2a.jpg
+│   │   ├── bowlbody4.jpg
+│   │   ├── bowlbody5.jpg
+│   │   ├── bowlbody6.jpg
+│   │   ├── bowlbody7.jpg
+│   │   ├── bowlbody8.jpg
+│   │   ├── bowlbody9.jpg
+│   │   ├── bowltarning1.jpg
+│   │   ├── bowltarning1.png
+│   │   ├── bowltarning2.jpg
+│   │   ├── bowltarning2.png
+│   │   ├── bowltarning3.jpg
+│   │   ├── bowltarning3.png
+│   │   ├── bowltarning4.jpg
+│   │   ├── bowltarning4.png
+│   │   ├── bowltarning5.jpg
+│   │   ├── bowltarning5.png
+│   │   ├── chakras.jpg
+│   │   ├── chakras2.jpg
+│   │   ├── chakras2.png
+│   │   ├── chakras3.jpg
+│   │   ├── chakras3.png
+│   │   ├── chakras4.jpg
+│   │   ├── chakras5.jpg
+│   │   ├── fb-bowl-qrcode.jpg
+│   │   ├── fb-bowl-qrcode.png
+│   │   ├── fb-messenger.jpg
+│   │   ├── fb-small.png
+│   │   ├── ig-bowl-qrcode.jpg
+│   │   ├── ig-bowl-qrcode2.jpg
+│   │   ├── ig-small.png
+│   │   ├── lineqrcode.jpg
+│   │   ├── lineqrcode.png
+│   │   ├── logo.jpg
+│   │   ├── lotus.jpg
+│   │   ├── lotus2.jpg
+│   │   ├── lotus3.jpg
+│   │   ├── lotus4.jpg
+│   │   ├── lotus5.jpg
+│   │   ├── meditate.jpg
+│   │   ├── meditate2.jpg
+│   │   ├── meditate3.jpg
+│   │   ├── meditate4.jpg
+│   │   ├── meditate5.jpg
+│   │   ├── meditate6.jpg
+│   │   ├── meditate7.jpg
+│   │   ├── meditate9.jpg
+│   │   ├── mybowl.jpg
+│   │   ├── mybowl10.jpg
+│   │   ├── mybowl2a.jpg
+│   │   ├── mybowl2c.jpg
+│   │   ├── mybowl2d.jpg
+│   │   ├── mybowl2e.jpg
+│   │   ├── mybowl2f.jpg
+│   │   ├── mybowl2f1.jpg
+│   │   ├── mybowl5.jpg
+│   │   ├── mybowl6.jpg
+│   │   ├── mybowl8.jpg
+│   │   ├── mybowl9.jpg
+│   │   ├── mybowl9a.jpg
+│   │   ├── mybowlmeditate.jpg
+│   │   ├── singingbowls15拷貝.jpg
+│   │   ├── slidershow.jpg
+│   │   ├── slidershow10.jpg
+│   │   ├── slidershow11.jpg
+│   │   ├── slidershow12.jpg
+│   │   ├── slidershow13.jpg
+│   │   ├── slidershow14.jpg
+│   │   ├── slidershow3.jpg
+│   │   ├── slidershow4.jpg
+│   │   ├── slidershow5.jpg
+│   │   ├── slidershow6.jpg
+│   │   ├── slidershow7.jpg
+│   │   ├── slidershow8.jpg
+│   │   ├── slidershow9.jpg
+│   │   ├── telemessages.jpg
+│   │   ├── telemessages2.jpg
+│   │   ├── telemessages2.png
+│   │   ├── telephone.jpg
+│   │   ├── telephone2.jpg
+│   │   ├── telephone3.jpg
+│   │   ├── tiktok-small.png
+│   │   ├── tiktok_bowl_qrcode.png
+│   │   ├── wather.jpg
+│   │   ├── wather2.jpg
+│   │   ├── wather3.jpg
+│   │   ├── wather4.jpg
+│   │   ├── wather5.jpg
+│   │   ├── watherbowl.jpg
+│   │   ├── watherbowl2.jpg
+│   │   └── watherbowl3.jpg
+│   ├── bowls.jpg
+│   ├── easywallet.jpg
+│   ├── lightball.jpg
+│   ├── lightball2.jpg
+│   ├── lightball3.jpg
+│   ├── lightball4.jpg
+│   ├── lightball5.jpg
+│   ├── lightball6.jpg
+│   ├── lightball7.jpg
+│   ├── lightball9.jpg
+│   ├── linebank.jpg
+│   ├── linebanktop.jpg
+│   ├── linebanktop.png
+│   ├── logo.png
+│   ├── logo3.jpg
+│   ├── logo5.jpg
+│   ├── myMosaicLogo.png
+│   ├── myOwnLogo.png
+│   ├── paypalme.jpg
+│   ├── singingbowls.jpg
+│   ├── singingbowls10.jpg
+│   ├── singingbowls11.jpg
+│   ├── singingbowls12.jpg
+│   ├── singingbowls13.jpg
+│   ├── singingbowls14.jpg
+│   ├── singingbowls15.jpg
+│   ├── singingbowls16.jpg
+│   ├── singingbowls17.jpg
+│   ├── singingbowls2.jpg
+│   ├── singingbowls3.jpg
+│   ├── singingbowls3a.jpg
+│   ├── singingbowls4.jpg
+│   ├── singingbowls5.jpg
+│   ├── singingbowls6.jpg
+│   ├── singingbowls7.jpg
+│   ├── singingbowls8.jpg
+│   ├── singingbowls9.jpg
+│   ├── slidershow.jpg
+│   ├── slidershow2.jpg
+│   ├── slidershow3.jpg
+│   ├── slidershow4.jpg
+│   ├── slidershow5.jpg
+│   ├── w3c
+│   │   ├── HTML.jpg
+│   │   ├── HtmlCssJavascript-desktop.jpg
+│   │   ├── HtmlCssJavascript-橫.png
+│   │   ├── HtmlCssJavascript-橫小.png
+│   │   ├── HtmlCssJavascript.jpeg
+│   │   ├── HtmlCssJavascript.png
+│   │   ├── HtmlCssJavascript2.png
+│   │   ├── HtmlCssJavascript3.png
+│   │   ├── HtmlCssJavascript4.jpg
+│   │   ├── HtmlCssJavascript4.png
+│   │   ├── HtmlCssJavascript5.png
+│   │   ├── QuizizzSampleSpreadsheet.xlsx
+│   │   ├── _swal.fire-您按了OK.txt
+│   │   ├── cloud_01.jpg
+│   │   ├── cloud_0101.jpg
+│   │   ├── cloud_01_800x600.jpg
+│   │   ├── jQuery Quiz.docx
+│   │   ├── logo.jpg
+│   │   ├── w3c-codesencbox.jpg
+│   │   ├── w3c-css-exercise-題庫練習.jpg
+│   │   ├── w3c-css-exercise.jpg
+│   │   ├── w3c-css-quiz.jpg
+│   │   ├── w3c-css.jpg
+│   │   ├── w3c-html-exercise-題庫練習.jpg
+│   │   ├── w3c-html-exercise.jpg
+│   │   ├── w3c-html-page-structure.jpg
+│   │   ├── w3c-html-quiz.jpg
+│   │   ├── w3c-html.jpg
+│   │   ├── w3c-javascript.jpg
+│   │   ├── w3c-js-exercise-題庫練習.jpg
+│   │   ├── w3c-js-exercise-題庫練習2.jpg
+│   │   ├── w3c-js-exercise.jpg
+│   │   ├── w3c-js-quiz.jpg
+│   │   ├── w3c-org.jpg
+│   │   ├── w3c-play-game.jpg
+│   │   ├── w3c-sql.jpg
+│   │   ├── w3c_css_quiz_start.jpg
+│   │   ├── w3c_html5.jpg
+│   │   ├── w3c_html5_level.jpg
+│   │   ├── w3c_html_quiz_start.jpg
+│   │   ├── w3c_js_quiz_start.jpg
+│   │   └── 興田-SOQI好口氣牙膏.png
+│   ├── wearefamilybank.jpg
+│   ├── xispace-logo0.png
+│   ├── xispace-logo1.jpg
+│   ├── xispace-logo2.jpg
+│   ├── 中信bank.jpg
+│   └── 十二經絡養生時間表.jpg
+├── index.html
+├── index2.html
+├── index3.html
+├── index4.html
+├── index5.html
+├── index7.html
+├── js
+│   └── sweetalert2
+│       └── 11.6.15
+├── luopan
+│   ├── css
+│   │   ├── luopan.css
+│   │   ├── pei.css
+│   │   └── reset.css
+│   ├── images
+│   │   ├── logo.png
+│   │   ├── luopan-01.png
+│   │   ├── luopan-02.jpg
+│   │   ├── luopan-02.png
+│   │   ├── luopan-201904-now.png
+│   │   ├── luopan-201904-無極.ai
+│   │   ├── luopan-201904-無極.jpg
+│   │   ├── luopan-201904-無極.pdf
+│   │   ├── luopan-201904-無極.png
+│   │   ├── luopan-201904.png
+│   │   ├── luopan-201909-cc-無極.ai
+│   │   ├── luopan-201909-now.png
+│   │   ├── luopan-201909-無極 拷貝.png
+│   │   ├── luopan-201909-無極.ai
+│   │   ├── luopan-201909-無極.jpg
+│   │   ├── luopan-201909-無極.png
+│   │   ├── luopan-不圓-1.jpg
+│   │   ├── luopan-不圓.jpg
+│   │   └── luopan-正圓.jpg
+│   ├── index.html
+│   ├── js
+│   │   ├── jQueryRotate.js
+│   │   ├── jquery-3.4.1.min.js
+│   │   ├── luopan.js
+│   │   └── main.js
+│   ├── luopan.html
+│   └── scss
+│       ├── _function.scss
+│       ├── _iconFont.scss
+│       ├── _mixins.scss
+│       ├── _settings.scss
+│       ├── _var.scss
+│       └── main.scss
+├── notify-bot-line
+│   ├── cb-fysh
+│   └── fysh
+├── package-lock.json
+├── package.json
+├── postbuild.js
+├── qsenow.js
+├── robots.txt
+├── sitemap.txt
+├── sitemap.xml
+├── tic-tac-toe
+│   ├── README.md
+│   ├── README.pdf
+│   ├── background-image.jpg
+│   ├── index.html
+│   ├── tic_tac_toe_learning.pdf
+│   ├── tic_tac_toe_learning.pptx
+│   └── tic_tac_toe_learning_10min.pptx
+├── tree.txt
+├── vite.config.js
+├── w3c
+│   ├── 2021-css.html
+│   ├── band.html
+│   ├── basic.html
+│   ├── border-round.html
+│   ├── border-round2.html
+│   ├── circle.html
+│   ├── display-container.html
+│   ├── google-fonts.html
+│   ├── images
+│   │   ├── bandmember.jpg
+│   │   ├── cars
+│   │   ├── chicago.jpg
+│   │   ├── img_car.jpg
+│   │   ├── img_porsche1.jpg
+│   │   ├── img_porsche2.jpg
+│   │   ├── img_porsche3.jpg
+│   │   ├── img_porsche4.jpg
+│   │   ├── img_porsche5.jpg
+│   │   ├── img_porsche6.jpg
+│   │   ├── img_porsche7.jpg
+│   │   ├── img_porsche8.jpg
+│   │   ├── img_ss.jpg
+│   │   ├── img_ss1.jpg
+│   │   ├── img_ss10.jpg
+│   │   ├── img_ss2.jpg
+│   │   ├── img_ss3.jpg
+│   │   ├── img_ss4.jpg
+│   │   ├── img_ss5.jpg
+│   │   ├── img_ss6.jpg
+│   │   ├── img_ss7.jpg
+│   │   ├── img_ss8.jpg
+│   │   ├── img_ss9.jpg
+│   │   ├── img_ss_1.jpg
+│   │   ├── img_ss_10.jpg
+│   │   ├── img_ss_2.jpg
+│   │   ├── img_ss_3.jpg
+│   │   ├── img_ss_4.jpg
+│   │   ├── img_ss_5.jpg
+│   │   ├── img_ss_6.jpg
+│   │   ├── img_ss_7.jpg
+│   │   ├── img_ss_8.jpg
+│   │   ├── img_ss_9.jpg
+│   │   ├── la.jpg
+│   │   ├── map.jpg
+│   │   ├── newyork.jpg
+│   │   ├── ny.jpg
+│   │   ├── paris.jpg
+│   │   └── sanfran.jpg
+│   ├── index.html
+│   ├── ios-css.html
+│   ├── navbar.html
+│   ├── notes.html
+│   ├── panel.html
+│   ├── responsive-text.html
+│   ├── slides copy.html
+│   ├── slideshow.html
+│   └── w3images
+│       ├── architect.jpg
+│       ├── avatar_hat.jpg
+│       ├── bandmember.jpg
+│       ├── chef.jpg
+│       ├── cherries.jpg
+│       ├── chicago.jpg
+│       ├── croissant.jpg
+│       ├── gondol.jpg
+│       ├── hamburger.jpg
+│       ├── house2.jpg
+│       ├── house3.jpg
+│       ├── house4.jpg
+│       ├── house5.jpg
+│       ├── la.jpg
+│       ├── map.jpg
+│       ├── newyork.jpg
+│       ├── ny.jpg
+│       ├── p1.jpg
+│       ├── p2.jpg
+│       ├── p3.jpg
+│       ├── p4.jpg
+│       ├── p5.jpg
+│       ├── p6.jpg
+│       ├── p7.jpg
+│       ├── p8.jpg
+│       ├── parallax1.jpg
+│       ├── parallax2.jpg
+│       ├── parallax3.jpg
+│       ├── paris.jpg
+│       ├── popsicle.jpg
+│       ├── salmon.jpg
+│       ├── sandwich.jpg
+│       ├── sanfran.jpg
+│       ├── steak.jpg
+│       ├── tablesetting.jpg
+│       ├── tablesetting2.jpg
+│       ├── team1.jpg
+│       ├── team2.jpg
+│       ├── team3.jpg
+│       ├── team4.jpg
+│       ├── wine.jpg
+│       └── workshop.jpg
+└── whack-a-mole
+    ├── README.md
+    ├── assets
+    │   ├── hole.png
+    │   ├── hole2.png
+    │   ├── mole.png
+    │   ├── mole2.png
+    │   └── whack-a-mole.jpg
+    ├── gemini.html
+    ├── perplexity.html
+    └── script.js
+
+41 directories, 499 files

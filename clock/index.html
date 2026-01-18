@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天干地支時鐘 | 60甲子互動式時鐘 | 傳統曆法與現代時間的完美結合</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="天干地支時鐘融合中國傳統曆法與現代時間顯示，將60甲子、12地支與24小時制巧妙結合，展現中華文化的時間智慧。即時顯示甲子分秒、地支時辰，中心太極圖動態旋轉，體現陰陽相生哲學。">
+    <meta name="keywords" content="天干地支時鐘,60甲子,12地支,傳統曆法,中國時間,干支紀時,太極圖,時辰,甲子,地支時鐘,傳統文化,互動時鐘,SVG時鐘,中華曆法">
+    <meta name="author" content="析空間">
+    <meta name="application-name" content="天干地支時鐘">
+    <meta name="apple-mobile-web-app-title" content="天干地支時鐘">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="天干地支時鐘 | 60甲子互動式時鐘 | 傳統曆法時間顯示">
+    <meta property="og:description"
+        content="融合中國傳統60甲子、12地支與現代24小時制的互動式時鐘。即時顯示甲子分秒、地支時辰，中心太極圖象徵時間永恆流動。將古老的干支紀時智慧以現代視覺化方式呈現，展現陰陽相生的哲學思想與天人合一的時間觀念。">
+    <meta property="og:url" content="https://xispace.app/tiangan-dizhi-clock">
+    <meta property="og:site_name" content="析空間 | 天干地支時鐘">
+    <meta property="og:locale" content="zh_TW">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="天干地支時鐘 | 60甲子互動式時鐘">
+    <meta name="twitter:description" content="融合傳統60甲子、12地支與現代時間的互動式時鐘，展現中華文化時間智慧">
+
+    <!-- Mobile Meta Tags -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="tiangan-dizhi-clock-container">
+        <div class="clock-wrapper">
+            <svg width="600" height="600" viewBox="0 0 400 400" class="clock-svg" id="clockSvg">
+                <!-- 外圈：60甲子圈 -->
+                <circle cx="200" cy="200" r="170" fill="none" stroke="#2c3e50" stroke-width="1" class="outer-circle" />
+
+                <!-- 60甲子刻度線和文字 -->
+                <g id="jiazi60Group"></g>
+
+                <!-- 中圈：12地支刻度 -->
+                <circle cx="200" cy="200" r="120" fill="none" stroke="#1a252f" stroke-width="1.5"
+                    class="middle-circle" />
+
+                <!-- 12地支刻度線 -->
+                <g id="dizhiGroup"></g>
+
+                <!-- 24小時圈 -->
+                <circle cx="200" cy="200" r="120" fill="none" stroke="#1a252f" stroke-width="1" class="middle-circle" />
+
+                <!-- 24小時刻度 -->
+                <g transform="rotate(180 200 200)" id="hour24Group"></g>
+
+                <!-- 96刻圈 -->
+                <g transform="rotate(180 200 200)">
+                    <circle cx="200" cy="200" r="120" fill="none" stroke="#1a252f" stroke-width="0.5"
+                        class="ke-circle" />
+                    <g id="ke96Group"></g>
+                </g>
+
+                <!-- 太極圖 -->
+                <g id="taiji" transform="translate(200 200) rotate(180)">
+                    <circle cx="0" cy="0" r="50" fill="black" stroke="black" stroke-width="0" class="taiji-circle" />
+                    <path d="M 0 -50 A 50 50 0 0 0 0 50 A 25 25 0 0 1 0 0 A 25 25 0 0 0 0 -50 Z" fill="white" />
+                    <circle cx="0" cy="-25" r="25" fill="black" />
+                    <circle cx="0" cy="25" r="25" fill="white" />
+                    <circle cx="0" cy="-25" r="6.25" fill="white" />
+                    <circle cx="0" cy="25" r="6.25" fill="black" />
+                    <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="360 0 0"
+                        to="0 0 0" dur="0s" repeatCount="indefinite" additive="sum" />
+                </g>
+
+                <!-- 中心點 -->
+                <circle cx="200" cy="200" r="1" fill="#696969" />
+            </svg>
+        </div>
+
+        <div class="info-legend">
+            <div class="time-display">
+                <div class="current-time" id="currentTime">目前時間 --:--:--</div>
+                <div class="ganzhi-time" id="ganzhiTime">--時辰 --</div>
+            </div>
+
+            <div class="legend">
+                <div class="legend-item">
+                    <span class="legend-color hour-color"></span>
+                    <span>地支時辰(每2小時)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color minute-color"></span>
+                    <span>60甲子分鐘(每1分鐘)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color second-color"></span>
+                    <span>60甲子秒數(每1秒)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+</body>
+
+</html>

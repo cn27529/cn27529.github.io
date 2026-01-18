@@ -1,0 +1,267 @@
+:root {
+  --tick-second-color: #e74c3c;
+  --tick-minute-color: #3498db;
+  --tick-hour-color: #2ecc71;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans TC", "Microsoft JhengHei", "SimHei", sans-serif;
+}
+
+.tiangan-dizhi-clock-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #696969 0%, #000000 80%);
+  box-sizing: border-box;
+}
+
+.clock-wrapper {
+  margin: 0 auto;
+  border-radius: 50%;
+  padding: 1px;
+  transform: scale(1.15);
+}
+
+.taiji-circle {
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 12px #969696);
+}
+
+.clock-svg {
+  display: block;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+.outer-circle {
+  stroke: rgba(255, 255, 255, 0.2);
+}
+
+.ke-circle {
+  stroke: rgba(255, 255, 255, 0.2);
+}
+
+.middle-circle {
+  stroke: rgba(255, 255, 255, 0.3);
+}
+
+.tick {
+  stroke: #bdc3c7;
+  stroke-width: 1;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tick-60 {
+  stroke-width: 1.2;
+}
+
+.tick-12 {
+  stroke-width: 2;
+}
+
+.tick-second-highlight {
+  stroke: var(--tick-second-color) !important;
+  stroke-width: 10 !important;
+}
+
+.tick-minute-highlight {
+  stroke: var(--tick-minute-color) !important;
+  stroke-width: 10 !important;
+  filter: drop-shadow(0 0 6px #3498db);
+}
+
+.tick-ke-highlight {
+  stroke: var(--tick-hour-color) !important;
+  stroke-width: 2 !important;
+  filter: drop-shadow(0 0 8px #2ecc71);
+}
+
+.tick-hour-highlight {
+  stroke: var(--tick-hour-color) !important;
+  stroke-width: 10 !important;
+  filter: drop-shadow(0 0 8px #2ecc71);
+}
+
+.tick-text {
+  font-family: "Noto Sans TC", "Microsoft JhengHei", "SimHei", sans-serif;
+  font-weight: bold;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.tick-text-60 {
+  font-size: 6px;
+  fill: #a0a0a0;
+  opacity: 0.8;
+}
+
+.tick-text-12 {
+  font-size: 10px;
+  fill: #ecf0f1;
+  font-weight: 900;
+}
+
+.tick-text-24 {
+  font-size: 5px;
+  fill: #ecf0f1;
+  font-weight: 900;
+}
+
+.text-second-highlight {
+  fill: var(--tick-second-color) !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  opacity: 1 !important;
+}
+
+.text-minute-highlight {
+  fill: var(--tick-minute-color) !important;
+  font-size: 15px !important;
+  font-weight: 900 !important;
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 5px #3498db);
+}
+
+.text-hour-highlight {
+  fill: #2ecc71 !important;
+  font-size: 20px;
+  font-weight: 900 !important;
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 8px #2ecc71);
+}
+
+.text-hour24-highlight {
+  fill: #2ecc71 !important;
+  font-size: 5px;
+  font-weight: 900 !important;
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 8px #2ecc71);
+}
+
+.info-legend {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #000000;
+  padding: 15px 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  max-width: 300px;
+  z-index: 100;
+  box-shadow: 0 1px 5px #ffffff;
+  transition: all 0.3s ease;
+}
+
+.time-display {
+  text-align: left;
+  margin-bottom: 15px;
+  opacity: 0.5 !important;
+}
+
+.current-time {
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 2px;
+  font-family: "Courier New", monospace;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.ganzhi-time {
+  font-size: 15px;
+  color: #ffeb3b;
+  font-weight: bold;
+  font-family: "Courier New", monospace;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: #ffffff;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+}
+
+.legend-color {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.hour-color {
+  background: var(--tick-hour-color);
+}
+
+.minute-color {
+  background: var(--tick-minute-color);
+}
+
+.second-color {
+  background: var(--tick-second-color);
+}
+
+@media (max-width: 768px) {
+  .clock-wrapper {
+    padding: 15px;
+    margin-bottom: 30px;
+  }
+
+  .clock-svg {
+    width: 350px;
+    height: 350px;
+  }
+
+  .tick-text-60 {
+    font-size: 7px;
+  }
+
+  .tick-text-12 {
+    font-size: 16px;
+  }
+
+  .info-legend {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .clock-wrapper {
+    padding: 10px;
+  }
+
+  .clock-svg {
+    width: 280px;
+    height: 280px;
+  }
+
+  .tick-text-60 {
+    font-size: 7px;
+  }
+
+  .tick-text-12 {
+    font-size: 14px;
+  }
+
+  .info-legend {
+    display: none;
+  }
+}

@@ -63,7 +63,7 @@
 <body>
 
     <div class="w3-container profile-container">
-        <img id="profile-image" src="" alt="My Profile Picture" class="profile-img">
+        <img id="profile-image" src="" alt="My Profile Picture" class="profile-image">
         <div class="about-me">
             <h2>About Me</h2>
             <p>我是一个热爱前端开发的工程师。我喜欢创建美观且具有响应性的网页。欢迎来到我的个人页面，了解更多关于我和我的工作。</p>
@@ -76,29 +76,24 @@
     </div>
 
     <script>
-        //// JavaScript部分：随机选择头像图片
-        // const profileImages = [
-        //     'team1.jpg',
-        //     'team2.jpg',
-        //     'team3.jpg'
-        // ];
-        // const randomIndex = Math.floor(Math.random() * profileImages.length);
-        // const selectedProfileImage = profileImages[randomIndex];
-        // const profileImageElement = document.getElementById('profile-image');
-        // profileImageElement.src = selectedProfileImage;
-
 
         // JavaScript代码用于轮播头像图片
-        const profileImages = ['team1.jpg', 'team2.jpg', 'team3.jpg'];
+        const profileImages = ['./images/team1.jpg', './images/team2.jpg', './images/team3.jpg'];
         let currentIndex = 0;
+        const imgElement = document.querySelector('#profile-image');
+        imgElement.src = './images/team1.jpg'; //預設圖片
 
-        function changeProfileImage() {
+        function change_image() {
             currentIndex = (currentIndex + 1) % profileImages.length;
-            const profileImage = document.querySelector('.profile-image');
-            profileImage.src = profileImages[currentIndex];
+            imgElement.style.opacity = 0; // 图片淡出
+            imgElement.style.display = "none";
+            setTimeout(() => {
+                imgElement.style.display = "";
+                imgElement.src = images[currentIndex];
+                imgElement.style.opacity = 1; // 图片淡入
+            }, 1000);
         }
-
-        setInterval(changeProfileImage, 5000); // 每5秒切换一次头像
+        setInterval(change_image, 5000); // 5秒切换一次头像
     </script>
 
     <script>

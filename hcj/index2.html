@@ -15,7 +15,7 @@
     <div class="container">
         <div class="profile-card">
             <div class="profile-image-bg">
-                <img src="myCat.jpg" alt="Team 1" id="profile-image" class="profile-image">
+                <img src="./images/myCat.jpg" alt="Team 1" id="profile-image" class="profile-image">
             </div>
             <div class="profile-name">
                 <h1 id="en_name"></h1>
@@ -62,7 +62,7 @@
     .container {
         border: 5px solid #9bf80c;
         padding-top: 100px;
-        background-image: url(beach00.jpg);
+        background-image: url(./images/beach00.jpg);
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -172,7 +172,7 @@
         .container {
             border: 0px solid #898989;
             padding-top: 100px;
-            background-image: url(beach06.jpg);
+            background-image: url(./images/beach06.jpg);
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -290,17 +290,17 @@
 
 
     // JavaScript代码，用于轮播头像图片
-    const images = ['Cat3.jpg', 'Cat4.jpg', 'Cat2.jpg'];
+    const profileImages = ['./images/Cat3.jpg', './images/Cat4.jpg', './images/Cat2.jpg'];
     let currentIndex = 0;
 
     function changeImage() {
-        currentIndex = (currentIndex + 1) % images.length;
+        currentIndex = (currentIndex + 1) % profileImages.length;
         const imgElement = document.querySelector('#profile-image');
         imgElement.style.opacity = 0; // 图片淡出
         imgElement.style.display = "none";
         setTimeout(() => {
             imgElement.style.display = "";
-            imgElement.src = images[currentIndex];
+            imgElement.src = profileImages[currentIndex];
             imgElement.style.opacity = 1; // 图片淡入
         }, 1000);
     }

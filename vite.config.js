@@ -3,17 +3,57 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 
 export default defineConfig({
-  // 設定根目錄為當前目錄
   root: ".",
 
+  plugins: [
+    {
+      name: "html-minifier",
+      enforce: "post", // 在最后处理
+      transformIndexHtml: {
+        order: "post", // 最后执行
+        handler(html, ctx) {
+          // 只在生产环境压缩
+          if (process.env.NODE_ENV === "production") {
+            // 动态导入，避免开发环境依赖
+            const { minify } = require("html-minifier-terser");
+            return minify(html, {
+              removeComments: true,
+              collapseWhitespace: true,
+              collapseBooleanAttributes: true,
+              removeRedundantAttributes: true,
+              removeScriptTypeAttributes: true,
+              removeStyleLinkTypeAttributes: true,
+              useShortDoctype: true,
+              removeEmptyAttributes: true,
+              removeOptionalTags: false,
+              minifyCSS: true,
+              minifyJS: {
+                compress: {
+                  drop_console: true,
+                  drop_debugger: true,
+                  pure_funcs: ["console.log"], // 移除 console.log
+                  ecma: 2020,
+                  passes: 2, // 多次压缩
+                },
+                mangle: {
+                  toplevel: true, // 混淆顶级变量
+                },
+                format: {
+                  comments: false, // 移除注释
+                },
+              },
+              minifyURLs: true,
+            });
+          }
+          return html;
+        },
+      },
+    },
+  ],
+
   build: {
-    // 輸出到 dist 資料夾
     outDir: "dist",
-
-    // 靜態資源輸出目錄
     assetsDir: "assets",
-
-    // 最小化設定
     minify: "terser",
     terserOptions: {
       compress: {
@@ -22,13 +62,9 @@ export default defineConfig({
       },
     },
     cssMinify: true,
+    assetsInlineLimit: 4096,
 
-    // 設定資源大小限制，小檔案內聯
-    assetsInlineLimit: 4096, // 4KB
-
-    // Rollup 配置
     rollupOptions: {
-      // 多頁面入口點
       input: {
         main: "index.html",
         index2: "index2.html",
@@ -48,14 +84,12 @@ export default defineConfig({
       },
 
       output: {
-        // 檔案命名規則
         entryFileNames: "assets/js/[name]-[hash].js",
         chunkFileNames: "assets/js/[name]-[hash].js",
         assetFileNames: (assetInfo) => {
           const info = assetInfo.name.split(".");
           const extType = info[info.length - 1];
 
-          // 根據副檔名分類
           if (/\.(png|jpe?g|gif|svg|webp|avif)$/.test(assetInfo.name)) {
             return "assets/images/[name]-[hash][extname]";
           }
@@ -72,17 +106,17 @@ export default defineConfig({
     },
   },
 
-  // 伺服器配置
   server: {
     port: 3000,
     open: true,
   },
 
-  // 公共路徑設定
   base: "./",
 
-  // 優化設定
   optimizeDeps: {
-    include: [], // 如有需要，可在此添加需要預打包的依賴
+    include: [],
   },
+
+  // 添加資源處理
+  assetsInclude: ["**/*.jpg", "**/*.jpeg", "**/*.png", "**/*.gif", "**/*.svg"],
 });

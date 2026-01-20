@@ -41,6 +41,6 @@
     "vite-plugin-imagemin": "^0.6.1"
   },
   "dependencies": {
-    "hexo": "^5.4.0"
+    "hexo": "^7.2.0"
   }
 }

@@ -120,6 +120,7 @@ body {
   font-size: 10px !important;
   font-weight: 900 !important;
   opacity: 1 !important;
+  filter: drop-shadow(0 0 8px #e74c3c);
 }
 
 .text-minute-highlight {
